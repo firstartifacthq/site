@@ -8,7 +8,7 @@
 
 ## Chosen direction
 
-The home hero follows the user-supplied stacked-character template for composition and motion only. First Artifact owns the identity: a 120vh signal-red field, grayscale decorative character, four offset lowercase GoCake “obsess” layers, and lowercase Source Sans principle columns that move inward over the sticky range. A white GoCake marquee separates the artwork from the manifesto. The fixed header is deliberately layered behind the hero and marquee, and there is no navigation or CTA over the artwork.
+The home hero follows the user-supplied stacked-character template for composition and motion only. First Artifact owns the identity: a 120vh signal-red field, grayscale decorative character, four offset lowercase GoCake “obsess” layers, and lowercase Source Sans principle columns that move inward over the sticky range. A white GoCake marquee separates the artwork from the manifesto. The shared fixed header stays visibly layered above the hero and marquee; the hero itself adds no separate CTA.
 
 Only the template’s z-order, sizing, word-column math, and marquee timing carry forward. Its orange, green, blue, Bamboly, Poppins, Inter, and uppercase treatments do not. Route heroes and every downstream section retain the red/white line system. The decorative character is not a member portrait or proof claim.
 
@@ -25,7 +25,7 @@ Only the template’s z-order, sizing, word-column math, and marquee timing carr
 
 | Ingredient | Commitment | Medium |
 | --- | --- | --- |
-| Fixed navigation | Logo/name, Home, Admission, Events, FAQ, Apply; layered behind the home hero/marquee | Semantic HTML, Next Link, local PNG logo |
+| Fixed navigation | Logo/name, Home, Admission, Events, FAQ, Apply; `z-index: 70` above the home hero and marquee | Semantic HTML, Next Link, local PNG logo |
 | Stacked character hero | 120vh signal-red field, grayscale supplied character, four lowercase GoCake “obsess” layers | One semantic `h1`; repeated layers and image are `aria-hidden` |
 | Side principle columns | Build/imagine/evolve/render and ship/genesis/purpose/ignite, exact responsive scroll math | Client scroll listener with passive event and reduced-motion rest state |
 | Principle marquee | Four identical lowercase strings on white | CSS 18-second linear loop; paused under reduced motion |

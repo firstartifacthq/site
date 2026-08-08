@@ -13,7 +13,7 @@ const links = [
 
 export function SiteHeader() {
   return (
-    <header className="fixed inset-x-0 top-0 z-50 border-b border-white/18 bg-[hsl(var(--signal))] px-4 py-4 text-white md:px-10">
+    <header className="fixed inset-x-0 top-0 z-[70] border-b border-white/18 bg-[hsl(var(--signal))] px-4 py-4 text-white md:px-10">
       <div className="mx-auto flex max-w-[90rem] items-center justify-between gap-4">
         <Link href="/" aria-label="First Artifact home" className="focus-ring flex shrink-0 items-center gap-2 rounded-full">
           <Image src="/brand/first-artifact-logo.png" width={36} height={36} alt="" priority className="h-9 w-9 rounded-full" />

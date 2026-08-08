@@ -221,7 +221,7 @@ Circles are semantic accents, reserved for the five founding-member signals and 
 
 ### Fixed header and navigation
 
-- Keep the header fixed at the top with a stable, opaque signal-red background and a subtle white bottom rule. It must not change color or depend on underlying content for contrast.
+- Keep the header fixed above every surface, including the home hero and marquee, with a stable, opaque signal-red background, `z-index: 70`, and a subtle white bottom rule. It must not change color or depend on underlying content for contrast.
 - Use the local logo plus lowercase GoCake wordmark, primary route links, and one near-black Apply action. Desktop navigation uses line framing; mobile uses a native `details` disclosure with a solid near-black menu.
 - Navigation targets are Home, Admission, Events, FAQ, and `/#apply`. Preserve semantic `nav` labels, a descriptive home-link label, and the skip link before the header.
 - Hover uses a modest opacity or solid-color change. Keyboard focus remains visible with a 2px outline/ring and clear offset.
@@ -234,7 +234,7 @@ Circles are semantic accents, reserved for the five founding-member signals and 
 
 ### Hero and route hero
 
-- The home hero uses a 120vh signal-red field, a grayscale decorative character, stacked lowercase GoCake “obsess” lettering, and two Source Sans principle columns. It contains no navigation, CTA, member proof, or claim beyond the single heading.
+- The home hero uses a 120vh signal-red field, a grayscale decorative character, stacked lowercase GoCake “obsess” lettering, and two Source Sans principle columns. The shared fixed navigation remains visibly layered above it; the hero itself contains no CTA, member proof, or claim beyond the single heading.
 - Side words begin at the documented mobile/desktop offsets and resolve to zero with opacity 0.35–1 over the sticky range. Reduced motion renders them at rest and fully opaque.
 - The white GoCake marquee repeats four identical lowercase copies on an 18-second linear loop; reduced motion pauses it.
 - Route heroes continue to use the sparse structural grid, bottom-aligned GoCake declarations, and Source Sans support copy.

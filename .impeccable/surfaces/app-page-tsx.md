@@ -15,7 +15,7 @@ related_targets: ["app/admission/page.tsx","app/events/page.tsx","app/faq/page.t
 
 ## Chosen direction
 
-The home hero uses the supplied stacked-character template for composition and motion only. First Artifact’s implementation is a 120vh signal-red field with a grayscale decorative character, four offset lowercase GoCake “obsess” layers, and lowercase Source Sans principle columns that resolve inward as the visitor crosses the sticky range. A white GoCake marquee separates the artwork from the manifesto. Navigation and CTAs stay out of the hero artwork.
+The home hero uses the supplied stacked-character template for composition and motion only. First Artifact’s implementation is a 120vh signal-red field with a grayscale decorative character, four offset lowercase GoCake “obsess” layers, and lowercase Source Sans principle columns that resolve inward as the visitor crosses the sticky range. A white GoCake marquee separates the artwork from the manifesto. The shared fixed navigation stays visibly above the artwork; the hero adds no separate CTA.
 
 The template’s orange, green, blue, Bamboly, Poppins, Inter, and uppercase treatments are intentionally replaced by the project’s red/white palette, local GoCake, local Source Sans 3, and lowercase voice. Route heroes and downstream surfaces retain sparse 1px grids and solid fields. The supplied character is decorative and must never imply a real member.
 
@@ -32,7 +32,7 @@ The template’s orange, green, blue, Bamboly, Poppins, Inter, and uppercase tre
 
 | Ingredient | Commitment | Medium |
 | --- | --- | --- |
-| Fixed navigation | Logo/name, Home, Admission, Events, FAQ, Apply; layered behind home artwork | Semantic HTML, Next Link, local PNG logo |
+| Fixed navigation | Logo/name, Home, Admission, Events, FAQ, Apply; `z-index: 70` above home artwork | Semantic HTML, Next Link, local PNG logo |
 | Stacked character hero | 120vh red field, grayscale supplied character, four lowercase GoCake “obsess” layers | One semantic `h1`; repeated layers and image are decorative |
 | Side principle columns | Two four-word Source Sans columns with exact responsive scroll math | Passive scroll/resize listeners and reduced-motion rest state |
 | Principle marquee | Four identical lowercase GoCake strings | CSS 18-second linear loop; paused under reduced motion |
