@@ -1,16 +1,14 @@
 "use client";
 
-import { motion, useReducedMotion } from "framer-motion";
+import { motion } from "framer-motion";
 import type { ReactNode } from "react";
 
 export function FadeUp({ children, className, delay = 0 }: { children: ReactNode; className?: string; delay?: number }) {
-  const reducedMotion = useReducedMotion();
-
   return (
     <motion.div
       className={`fade-up ${className ?? ""}`}
-      initial={reducedMotion ? false : { y: 12, filter: "blur(1px)" }}
-      whileInView={reducedMotion ? undefined : { y: 0, filter: "blur(0px)" }}
+      initial={{ y: 12, filter: "blur(1px)" }}
+      whileInView={{ y: 0, filter: "blur(0px)" }}
       viewport={{ once: true, margin: "-80px" }}
       transition={{ duration: 0.6, delay, ease: [0.16, 1, 0.3, 1] }}
     >

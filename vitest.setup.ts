@@ -6,9 +6,25 @@ class ResizeObserverMock {
   disconnect() {}
 }
 
+class IntersectionObserverMock {
+  readonly root = null;
+  readonly rootMargin = "0px";
+  readonly thresholds = [0];
+
+  observe() {}
+  unobserve() {}
+  disconnect() {}
+  takeRecords() { return []; }
+}
+
 Object.defineProperty(globalThis, "ResizeObserver", {
   configurable: true,
   value: ResizeObserverMock,
+});
+
+Object.defineProperty(globalThis, "IntersectionObserver", {
+  configurable: true,
+  value: IntersectionObserverMock,
 });
 
 Object.defineProperty(globalThis, "matchMedia", {
