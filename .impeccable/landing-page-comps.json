@@ -1,0 +1,44 @@
+{
+  "title": "Choose the First Artifact composition",
+  "question": "All three use the approved Living Signal world and the template's visual mechanics. Choose one, combine them, or request a revision.",
+  "options": [
+    {
+      "id": "centered",
+      "label": "Centered Signal Portal",
+      "kicker": "COMPOSITION A",
+      "lineage": "the supplied template's centered cinematic hero",
+      "thesis": "The clearest conversion path: belief, proof of five members, then one application action.",
+      "palette": ["#EF1308", "#FFFFFF", "#170505"],
+      "materials": ["living red field", "restrained liquid glass", "white manifesto interruption"],
+      "viewport": "Five member signals sit above a centered headline and wide application action; the manifesto appears as the next white fold.",
+      "risk": "The centered stack is immediately legible but is the most familiar composition.",
+      "hero": ".impeccable/mocks/living-signal-centered.png"
+    },
+    {
+      "id": "asymmetric",
+      "label": "Asymmetric Signal Editorial",
+      "kicker": "COMPOSITION B",
+      "lineage": "editorial declaration crossed with a live signal map",
+      "thesis": "The strongest point of view: the belief owns the left side while five founders animate the right.",
+      "palette": ["#EF1308", "#FFFFFF", "#170505"],
+      "materials": ["living red field", "signal contour", "edge reading rail"],
+      "viewport": "A left-aligned declaration, right-side member signal path, compact application action, and visible manifesto fold.",
+      "risk": "Its reading rail and large asymmetry require the most careful mobile translation.",
+      "hero": ".impeccable/mocks/living-signal-asymmetric.png"
+    },
+    {
+      "id": "member-stage",
+      "label": "Member Signal Stage",
+      "kicker": "COMPOSITION C",
+      "lineage": "cinematic signal field with a live evidence rail",
+      "thesis": "The five founding members become the bridge between the opening belief and the manifesto.",
+      "palette": ["#EF1308", "#FFFFFF", "#170505"],
+      "materials": ["cropped signal rings", "liquid-glass evidence rail", "white manifesto stage"],
+      "viewport": "A low-anchored headline and application action lead into a five-member rail and a forceful manifesto reveal.",
+      "risk": "The evidence rail must not resemble a decorative carousel while member profiles are pending.",
+      "hero": ".impeccable/mocks/living-signal-member-stage.png"
+    }
+  ],
+  "reroll": true,
+  "steer": true
+}

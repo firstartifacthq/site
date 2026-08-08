@@ -1,0 +1,76 @@
+{
+  "title": "Choose the minimal First Artifact world",
+  "question": "The Threshold is the new assigned direction. Keep it, take a restrained challenger, steer again, or re-roll.",
+  "options": [
+    {
+      "id": "assigned",
+      "label": "The Threshold",
+      "kicker": "THE RE-ROLL",
+      "lineage": "architectural thresholds and juried exhibition entrances",
+      "thesis": "The bar becomes physical: proven work crosses a precise red threshold and aspiration does not.",
+      "palette": ["#ED160B", "#FFFFFF", "#171111"],
+      "materials": ["white architectural field", "one red structural plane", "precise black captions"],
+      "viewport": "Immense white space holds FIRST ARTIFACT and OBSESSION BEATS TALENT beside one monumental red gate; five tiny accepted artifacts sit beyond it and the application begins at the threshold.",
+      "risk": "The restraint fails if the threshold becomes a decorative rectangle instead of a meaningful transition.",
+      "sketch": ".impeccable/sketches/minimal-threshold.png"
+    },
+    {
+      "id": "challenger-shader",
+      "label": "The Living Signal",
+      "kicker": "CHALLENGER",
+      "lineage": "full-bleed experiential shader portals",
+      "thesis": "One responsive red field makes high agency feel alive before a single section appears.",
+      "case": "Audience identification: high. Product clarity: medium-low because atmosphere cannot prove the admission standard by itself.",
+      "palette": ["#E9150A", "#FFFFFF", "#160505"],
+      "materials": ["single-hue living field", "fine film grain", "thin white interface type"],
+      "viewport": "A slowly breathing red field carries FIRST ARTIFACT, OBSESSION BEATS TALENT, one application action, and five quiet evidence coordinates at the edge.",
+      "risk": "It can become generic creative-tech spectacle and adds performance cost without strengthening proof.",
+      "sketch": ".impeccable/sketches/minimal-living-signal.png",
+      "hero": "https://impeccable.style/worlds/cards/webgl-shader-portal-hero.webp",
+      "board": "https://impeccable.style/worlds/cards/webgl-shader-portal.webp"
+    },
+    {
+      "id": "challenger-dispatch",
+      "label": "The Field Dispatch",
+      "kicker": "CHALLENGER",
+      "lineage": "expedition papers printed under impossible conditions",
+      "thesis": "Obsession is documented in sparse dispatches from people who kept building when conditions were bad.",
+      "case": "Audience identification: medium-high. Product clarity: strong through real member dispatches, but the historical register is less playful.",
+      "palette": ["#E1170C", "#FFFDF8", "#191313"],
+      "materials": ["white rag paper", "uneven red plate pull", "hand-set issue marks"],
+      "viewport": "A nearly empty red-on-white issue opens with FIRST ARTIFACT and OBSESSION BEATS TALENT, one member dispatch, a five-name issue index, and a SEND YOUR WORK action.",
+      "risk": "The expedition metaphor can feel solemn and may fight GoCake's playful character.",
+      "sketch": ".impeccable/sketches/minimal-field-dispatch.png",
+      "hero": "https://impeccable.style/worlds/cards/graphic-worlds-publishing-expedition-ice-press-hero.webp",
+      "board": "https://impeccable.style/worlds/cards/graphic-worlds-publishing-expedition-ice-press.webp"
+    },
+    {
+      "id": "challenger-index",
+      "label": "The Numbered Index",
+      "kicker": "CHALLENGER",
+      "lineage": "broadcast teletext page addressing",
+      "thesis": "Every member, artifact, criterion, and event receives one direct address with no ornamental browsing.",
+      "case": "Audience identification: medium. Product clarity: high, but it fuses poorly because teletext density and bitmap type conflict with the minimal brief and approved typography.",
+      "palette": ["#EF1B0E", "#FFFFFF", "#080808"],
+      "materials": ["black broadcast field", "red status cells", "white fixed-grid text"],
+      "viewport": "A strict numbered index labels FIRST ARTIFACT as page 001, OBSESSION BEATS TALENT as the only double-height line, five member addresses, and page 100 for APPLY.",
+      "risk": "Its rigid nostalgia can overpower the brand and make the page feel dense rather than minimal.",
+      "sketch": ".impeccable/sketches/minimal-numbered-index.png",
+      "hero": "https://impeccable.style/worlds/cards/broadcast-programming-teletext-service-hero.webp",
+      "board": "https://impeccable.style/worlds/cards/broadcast-programming-teletext-service.webp"
+    }
+  ],
+  "reroll": true,
+  "canon": true,
+  "canonCard": {
+    "label": "The polished members club",
+    "lineage": "the category standard, executed impeccably",
+    "thesis": "A clean exclusive-tech-community landing page with member portraits and a direct application CTA.",
+    "palette": ["#E90D06", "#FFFFFF", "#111111"],
+    "materials": ["crisp digital panels", "studio member portraits", "minimal interface chrome"],
+    "viewport": "A conventional navigation bar, split hero, member grid, benefits, criteria, and application form in a familiar reading order.",
+    "risk": "Highly legible and trustworthy, but easy to confuse with every other selective founder community.",
+    "sketch": ".impeccable/sketches/category-standard.png"
+  },
+  "steer": true
+}

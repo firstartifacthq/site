@@ -1,0 +1,76 @@
+{
+  "title": "Choose the First Artifact visual world",
+  "question": "The Proof Wall is the assigned direction. Keep it, take a challenger, steer the hand, or re-roll.",
+  "options": [
+    {
+      "id": "assigned",
+      "label": "The Proof Wall",
+      "kicker": "THE ROLL",
+      "lineage": "print-shop maker's proofs and approval sheets",
+      "thesis": "Membership is a wall of evidence: nothing enters without a real artifact.",
+      "palette": ["#EF1408", "#FFFFFF", "#1A0908"],
+      "materials": ["inked proof paper", "registration marks", "rubber approval stamps"],
+      "viewport": "A wall-sized red-and-white proof sheet leads with FIRST ARTIFACT, OBSESSION BEATS TALENT, five member proofs, and a SUBMIT YOUR PROOF action.",
+      "risk": "It can feel bureaucratic if approval marks overpower the playful maker energy.",
+      "sketch": ".impeccable/sketches/proof-wall.png"
+    },
+    {
+      "id": "challenger-risograph",
+      "label": "The Scene Bulletin",
+      "kicker": "CHALLENGER",
+      "lineage": "two-ink risograph club zines",
+      "thesis": "The club feels like a living independent publication made by its members.",
+      "case": "Audience identification: high. Product clarity: strong, but admission evidence is less immediate than the Proof Wall.",
+      "palette": ["#F01910", "#FFF9EF", "#241010"],
+      "materials": ["risograph grain", "misregistered spot inks", "folded bulletin paper"],
+      "viewport": "Issue 001 opens as a red-and-white bulletin with FIRST ARTIFACT, OBSESSION BEATS TALENT, member bylines, and an APPLY TO THE NEXT ISSUE action.",
+      "risk": "Its editorial energy may make the admission standard feel like taste rather than evidence.",
+      "sketch": ".impeccable/sketches/scene-bulletin.png",
+      "hero": "https://impeccable.style/worlds/cards/risograph-web-system-hero.webp",
+      "board": "https://impeccable.style/worlds/cards/risograph-web-system.webp"
+    },
+    {
+      "id": "challenger-endurance",
+      "label": "The Night Shift Garage",
+      "kicker": "CHALLENGER",
+      "lineage": "endurance-racing garage identity",
+      "thesis": "Obsession is endurance: members prove they can keep building through the long night.",
+      "case": "Audience identification: medium-high. Product clarity: medium because the racing metaphor competes with the admission mechanism.",
+      "palette": ["#EC160F", "#FFFFFF", "#101010"],
+      "materials": ["painted livery stripes", "pit-board numerals", "worn workshop panels"],
+      "viewport": "A red-white-black garage bill leads with BUILT FOR THE LONG NIGHT, five member roundels, and an ENTER QUALIFYING application action.",
+      "risk": "Racing culture can narrow the community signal and needs imagery the project does not yet own.",
+      "sketch": ".impeccable/sketches/night-shift-garage.png",
+      "hero": "https://impeccable.style/worlds/cards/pop-culture-shelf-endurance-livery-garage-hero.webp",
+      "board": "https://impeccable.style/worlds/cards/pop-culture-shelf-endurance-livery-garage.webp"
+    },
+    {
+      "id": "challenger-neon",
+      "label": "The Always-On Circuit",
+      "kicker": "CHALLENGER",
+      "lineage": "hand-bent neon as one continuous circuit",
+      "thesis": "Obsession becomes an unbroken current connecting every builder and artifact.",
+      "case": "Audience identification: high. Product clarity: medium; it fuses poorly because its dark glow system fights the approved red-white identity.",
+      "palette": ["#F2180A", "#FFFFFF", "#090909"],
+      "materials": ["clear glass tubing", "red gas-discharge glow", "visible electrodes"],
+      "viewport": "FIRST ARTIFACT runs as one luminous circuit above OBSESSION BEATS TALENT, with five member nodes and an ACTIVATE APPLICATION control.",
+      "risk": "It can slip into familiar neon-tech nightlife and hide the shipped-work standard.",
+      "sketch": ".impeccable/sketches/always-on-circuit.png",
+      "hero": "https://impeccable.style/worlds/cards/magnetism-electricity-plasma-hand-bent-neon-circuit-hero.webp",
+      "board": "https://impeccable.style/worlds/cards/magnetism-electricity-plasma-hand-bent-neon-circuit.webp"
+    }
+  ],
+  "reroll": true,
+  "canon": true,
+  "canonCard": {
+    "label": "The polished members club",
+    "lineage": "the category standard, executed impeccably",
+    "thesis": "A clean exclusive-tech-community landing page with member portraits and a direct application CTA.",
+    "palette": ["#E90D06", "#FFFFFF", "#111111"],
+    "materials": ["crisp digital panels", "studio member portraits", "minimal interface chrome"],
+    "viewport": "A conventional navigation bar, split hero, member grid, benefits, criteria, and application form in a familiar reading order.",
+    "risk": "Highly legible and trustworthy, but easy to confuse with every other selective founder community.",
+    "sketch": ".impeccable/sketches/category-standard.png"
+  },
+  "steer": true
+}

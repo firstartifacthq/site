@@ -1,0 +1,25 @@
+/node_modules
+/.next
+/coverage
+/.env*
+!.env.example
+*.log
+.DS_Store
+*.tsbuildinfo
+
+# Local agent tooling installations
+/.agents/
+/.claude/
+/.codex/
+/.cursor/
+/.kiro/
+/.opencode/
+/.pi/
+
+# Local Impeccable runtime data and superseded visual explorations
+/.impeccable/config.local.json
+/.impeccable/hook.cache.json
+/.impeccable/questions/
+/.impeccable/sketches/
+/.impeccable/quality-bars/
+/.impeccable/mocks/*.png
