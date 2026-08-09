@@ -2,12 +2,12 @@
 version: 1
 slug: "app-page-tsx"
 primary_target: "app/page.tsx"
-related_targets: ["app/admission/page.tsx","app/events/page.tsx","app/faq/page.tsx"]
+related_targets: ["components/home/manifesto.tsx","components/home/admission-standard.tsx","components/home/members.tsx","components/home/community-formats.tsx"]
 ---
 
 # First Artifact launch surface
 
-- Scope: Home plus Admission, Events, and FAQ routes. Visitor mode: Persuade.
+- Scope: One canonical home landing page. Visitor mode: Persuade.
 - Audience and job: proven, high-agency builders and founders deciding whether this selective club recognizes them and whether they should apply.
 - Primary action: complete the on-page application with name, email, role, strongest shipped-work URL, build description, and obsession answer.
 - Proof and content: five real founding members exist; use honest profile placeholders until approved names, photos, and biographies arrive. Do not invent projects, testimonials, event history, partner logos, acceptance metrics, pricing, or response times.
@@ -15,13 +15,13 @@ related_targets: ["app/admission/page.tsx","app/events/page.tsx","app/faq/page.t
 
 ## Chosen direction
 
-The home hero uses the supplied stacked-character template for composition and motion only. First Artifact’s implementation is a 120vh signal-red field with a clearly visible 40px white grid at 28% and far-edge radial fade, a grayscale decorative character, four offset lowercase GoCake “obsess” layers, and lowercase Source Sans principle columns that resolve inward as the visitor crosses the sticky range. A white GoCake marquee separates the artwork from the manifesto. The shared fixed navigation stays visibly above the artwork; the hero adds no separate CTA.
+The home hero uses the supplied stacked-character template for composition and motion only. First Artifact’s implementation is a 120vh signal-red field with a clearly visible 40px white grid at 28% and far-edge radial fade, a grayscale decorative character, four offset lowercase GoCake “obsess” layers, and lowercase Source Sans principle columns that resolve inward as the visitor crosses the sticky range. A white GoCake marquee separates the artwork from the manifesto transmission. The shared fixed navigation stays visibly above the artwork; the hero adds no separate CTA.
 
 The template’s orange, green, blue, Bamboly, Poppins, Inter, and uppercase treatments are intentionally replaced by the project’s red/white palette, local GoCake, local Source Sans 3, and lowercase voice. Route heroes and downstream surfaces retain sparse 1px grids and solid fields. The supplied character is decorative and must never imply a real member.
 
 ## Component grammar
 
-- Color strategy: Committed. Signal red owns the hero and closing CTA; white is the compact transition and primary evidence surface; near-black owns the manifesto and footer.
+- Color strategy: Committed. Signal red owns the hero, manifesto transmission, and closing CTA; white is the compact transition and primary evidence surface; near-black owns the footer and application state.
 - Corners: major fields and form controls stay square or lightly rounded; circles are reserved for the five member-count markers and profile placeholders.
 - Lines: sparse 1px white or red guides establish the grid; borders clarify navigation, interaction, and editorial rows.
 - Elevation: flat. No backdrop blur, glass, glow, or drop-shadow card stack.
@@ -37,12 +37,12 @@ The template’s orange, green, blue, Bamboly, Poppins, Inter, and uppercase tre
 | Side principle columns | Two four-word Source Sans columns with exact responsive scroll math | Passive scroll/resize listeners and reduced-motion rest state |
 | Principle marquee | Four identical lowercase GoCake strings | CSS 18-second linear loop; paused under reduced motion |
 | Member signal row | Exactly five honest founding-member placeholders downstream | Semantic list with abstract CSS/SVG signals; replace with `next/image` when assets arrive |
-| Manifesto | Near-black field, real red/white mark, sparse signal frame, one short reveal sentence, and six compact beliefs | Semantic section plus decorative `next/image`; readable static text and reduced-motion fallback |
+| Manifesto | Full-height signal-red field, centered white mark, Source Sans 3 mission, GoCake `F.A.` signature, two concise paragraphs, and bottom Cloudinary video | Semantic section, inline SVG, native video, and functional red blend |
 | Admission standard | Evidence, agency, engagement, and technology familiarity without fabricated metrics | Semantic ordered content; no generic card grid |
 | Community experiences | Hacker houses, hackathons, buildathons, networking; clearly framed as intended formats | Semantic editorial rows with small authored SVG marks |
 | Application | Six fields, accessible validation, backend-unavailable preservation and retry state | Client React form with pure tested validation; shadcn-owned form primitives |
 | Closing CTA | Red media-like field with line controls and supporting-route links | Solid red fallback with optional HLS enhancement; no remote video dependency for core meaning |
-| Supporting routes | Admission, Events, FAQ in the same world with simpler static fields | Server Components and shared shell |
+| One-page anchors | Standard, Team, Formats, and Apply remain discoverable from the fixed header/footer | Same-document links with semantic section IDs |
 
 ## Unresolved decisions
 

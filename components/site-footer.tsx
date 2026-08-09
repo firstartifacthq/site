@@ -6,9 +6,9 @@ export function SiteFooter() {
       <div className="mx-auto flex max-w-[90rem] flex-col gap-5 text-sm text-white/62 sm:flex-row sm:items-center sm:justify-between">
         <p>© 2026 First Artifact. Built by people who ship.</p>
         <nav aria-label="Footer" className="flex flex-wrap gap-5">
-          <Link href="/admission" className="focus-ring rounded-sm hover:text-white">Admission</Link>
-          <Link href="/events" className="focus-ring rounded-sm hover:text-white">Events</Link>
-          <Link href="/faq" className="focus-ring rounded-sm hover:text-white">FAQ</Link>
+          <Link href="/#standard" className="focus-ring rounded-sm hover:text-white">Standard</Link>
+          <Link href="/#team" className="focus-ring rounded-sm hover:text-white">Team</Link>
+          <Link href="/#formats" className="focus-ring rounded-sm hover:text-white">Formats</Link>
         </nav>
       </div>
     </footer>

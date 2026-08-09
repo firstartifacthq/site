@@ -1,55 +1,46 @@
-import Image from "next/image";
+import { ManifestoVideo } from "@/components/home/manifesto-video";
 
-import { ManifestoReveal } from "@/components/manifesto-reveal";
-
-const beliefs = [
-  ["Obsession beats talent", "Return longer."],
-  ["Proof over promise", "Show the work."],
-  ["Agency over permission", "Move first."],
-  ["Build when nobody watches", "Earn the pattern."],
-  ["Progress should feel fun", "Keep momentum playful."],
-  ["Protect the density", "Keep the room rare."],
-] as const;
+function ManifestoLogo() {
+  return (
+    <svg aria-hidden="true" className="mt-10 mb-12 h-20 w-20" fill="none" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+      <path
+        clipRule="evenodd"
+        d="M60 120C26.8629 120 0 93.1371 0 60V0C22.5654 0 42.2213 12.4569 52.4662 30.8691C38.4788 34.2089 28.0787 46.7902 28.0787 61.8006V63.1443C28.0787 79.9648 41.7146 93.6006 58.5353 93.6006H59.8789L59.8785 61.8006C59.8785 79.3633 74.1159 93.6006 91.6787 93.6006L91.6787 61.8006C91.6787 44.2783 77.5071 30.0661 60 30.0008L60 0H62.5352C94.2722 0 120 25.7279 120 57.4648V60C120 93.1371 93.1371 120 60 120Z"
+        fill="white"
+        fillRule="evenodd"
+      />
+    </svg>
+  );
+}
 
 export function Manifesto() {
   return (
-    <section aria-labelledby="manifesto-title" className="relative overflow-hidden bg-black py-24 text-white md:py-36">
-      <div aria-hidden="true" className="pointer-events-none absolute inset-0">
-        <span className="absolute inset-y-0 left-[9%] border-l border-white/10" />
-        <span className="absolute inset-y-0 right-[9%] border-r border-white/10" />
-        <span className="absolute inset-x-0 top-[42%] border-t border-white/10" />
-      </div>
+    <section aria-labelledby="manifesto-title" className="relative z-10 flex min-h-screen w-full scroll-mt-24 flex-col overflow-hidden bg-[hsl(var(--signal))] text-white" id="manifesto">
+      <div className="flex flex-1 flex-col items-center px-8 pt-[100px] md:pt-[400px]">
+        <div className="relative z-20 mx-auto flex h-auto w-full max-w-[900px] flex-col items-center text-center md:h-[620px]">
+          <h2 id="manifesto-title" className="sr-only">First Artifact manifesto</h2>
+          <ManifestoLogo />
 
-      <div className="page-shell relative z-10">
-        <div className="grid gap-12 lg:grid-cols-[0.92fr_1.08fr] lg:items-center lg:gap-20">
-          <h2 id="manifesto-title" className="font-display text-balance max-w-[12ch] text-[clamp(3.4rem,8vw,6rem)] lowercase leading-[0.88] tracking-[-0.035em]">
-            Talent is everywhere. Obsession is rare.
-          </h2>
+          <p className="mb-[40px] h-auto w-full max-w-[400px] font-sans text-[16px] uppercase leading-[1.6] tracking-wider text-white">
+            We make room for people who build until the idea becomes an artifact.
+          </p>
 
-          <div aria-hidden="true" className="relative grid min-h-64 place-items-center overflow-hidden border-y border-white/20 md:min-h-[28rem]">
-            <span className="absolute inset-y-0 left-1/2 border-l border-white/20" />
-            <span className="absolute inset-x-0 top-1/2 border-t border-white/20" />
-            <span className="absolute left-[12%] top-[12%] h-2 w-2 bg-[hsl(var(--signal))]" />
-            <span className="absolute bottom-[12%] right-[12%] h-2 w-2 bg-[hsl(var(--signal))]" />
-            <Image alt="" className="relative h-auto w-[min(64%,20rem)]" height={1254} src="/brand/first-artifact-logo.png" width={1254} />
+          <div className="mb-[32px] font-display text-[120px] leading-none text-white">F.A.</div>
+
+          <div className="mb-[100px] flex w-full flex-col items-center font-sans font-light leading-[1.6] md:mb-24">
+            <p className="mb-[24px] w-[400px] max-w-full text-center text-[16px]">
+              I was tired of rooms that rewarded talking more than shipping. First Artifact is built for people who move from uncertainty to an artifact.
+            </p>
+            <p className="w-[400px] max-w-full text-center text-[16px]">
+              Your work should compound with the right people around it. Bring the thing you built, the question you cannot drop, and make the next move together.
+            </p>
           </div>
         </div>
+      </div>
 
-        <div className="mt-16 grid gap-14 lg:mt-24 lg:grid-cols-[0.9fr_1.1fr] lg:items-start lg:gap-20">
-          <ManifestoReveal text="A dense room where shipped work turns individual obsession into momentum." />
-
-          <ul aria-label="Manifesto beliefs" className="grid border-t border-white/24 sm:grid-cols-2">
-            {beliefs.map(([title, description], index) => (
-              <li key={title} className={`flex min-h-28 gap-4 border-b border-white/24 py-5 ${index % 2 === 0 ? "sm:pr-6" : "sm:border-l sm:pl-6"}`}>
-                <span aria-hidden="true" className="mt-1.5 h-2 w-2 shrink-0 bg-[hsl(var(--signal))]" />
-                <div>
-                  <strong className="text-base font-semibold">{title}</strong>
-                  <p className="mt-1 text-sm leading-relaxed text-white/64">{description}</p>
-                </div>
-              </li>
-            ))}
-          </ul>
-        </div>
+      <div className="relative w-full shrink-0">
+        <div aria-hidden="true" className="pointer-events-none absolute left-0 top-0 z-10 h-[100px] w-full bg-gradient-to-b from-[hsl(var(--signal))] to-transparent" />
+        <ManifestoVideo />
       </div>
     </section>
   );

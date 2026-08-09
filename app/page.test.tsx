@@ -11,8 +11,8 @@ describe("home page", () => {
     expect(screen.queryByTestId("living-signal")).not.toBeInTheDocument();
     expect(container.querySelector('[tabindex="0"]')).not.toBeInTheDocument();
     expect(screen.getByRole("heading", { level: 1, name: /^obsess$/i })).toBeInTheDocument();
-    expect(screen.getByRole("region", { name: /first artifact principles/i })).toBeInTheDocument();
-    expect(screen.getByRole("heading", { name: /talent is everywhere\. obsession is rare/i })).toBeInTheDocument();
+    expect(screen.getByRole("region", { name: /first artifact manifesto/i })).toBeInTheDocument();
+    expect(screen.getByText(/we make room for people who build/i)).toBeInTheDocument();
     expect(screen.getByRole("heading", { name: /the bar is shipped work/i })).toBeInTheDocument();
     expect(screen.getByRole("heading", { name: /meet the team/i })).toBeInTheDocument();
     expect(screen.getByRole("heading", { name: /make progress feel like play/i })).toBeInTheDocument();
@@ -25,23 +25,13 @@ describe("home page", () => {
     expect(screen.getByText(/formats we intend to host/i)).toBeInTheDocument();
     expect(container.querySelector("#apply")).toBeInTheDocument();
 
-    const manifesto = screen.getByRole("region", { name: /talent is everywhere\. obsession is rare/i });
-    expect(manifesto).toHaveClass("bg-black");
-  });
-
-  it("states all six manifesto beliefs", () => {
-    render(<Home />);
-    const manifesto = screen.getByRole("list", { name: /manifesto beliefs/i });
-
-    for (const belief of [
-      "Obsession beats talent",
-      "Proof over promise",
-      "Agency over permission",
-      "Build when nobody watches",
-      "Progress should feel fun",
-      "Protect the density",
-    ]) {
-      expect(within(manifesto).getByText(belief, { exact: true })).toBeInTheDocument();
-    }
+    const manifesto = screen.getByRole("region", { name: /first artifact manifesto/i });
+    expect(manifesto).toHaveClass("bg-[hsl(var(--signal))]");
+    expect(within(manifesto).getByText("F.A.")).toHaveClass("font-display");
+    expect(within(manifesto).getByText(/we make room for people who build/i)).toHaveClass("font-sans");
+    expect(within(manifesto).getByText("F.A.")).toBeInTheDocument();
+    expect(within(manifesto).getByTestId("manifesto-video")).toHaveAttribute("src", "https://res.cloudinary.com/daklr2whx/video/upload/v1778602552/track-video_2_s9lp53.mp4");
+    expect(within(manifesto).getByTestId("manifesto-video-fallback")).toHaveAttribute("src", "https://stream.mux.com/8wrHPCX2dC3msyYU9ObwqNdm00u3ViXvOSHUMRYSEe5Q.m3u8");
+    expect(screen.queryByRole("list", { name: /manifesto beliefs/i })).not.toBeInTheDocument();
   });
 });

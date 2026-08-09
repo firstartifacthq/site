@@ -1,6 +1,3 @@
-import Link from "next/link";
-import { ArrowUpRight } from "lucide-react";
-
 import { FadeUp } from "@/components/fade-up";
 
 const standards = [
@@ -12,14 +9,13 @@ const standards = [
 
 export function AdmissionStandard() {
   return (
-    <section className="bg-black py-24 text-white md:py-36">
+    <section aria-labelledby="standard-title" className="scroll-mt-8 bg-black py-24 text-white md:py-36" id="standard">
       <div className="page-shell">
         <FadeUp>
           <div className="grid gap-12 lg:grid-cols-[0.8fr_1.2fr]">
             <div>
-              <h2 className="font-display text-balance max-w-[10ch] text-[clamp(3.4rem,7vw,6rem)] lowercase leading-[0.88] tracking-[-0.03em]">The bar is shipped work.</h2>
+              <h2 id="standard-title" className="font-display text-balance max-w-[10ch] text-[clamp(3.4rem,7vw,6rem)] lowercase leading-[0.88] tracking-[-0.03em]">The bar is shipped work.</h2>
               <p className="mt-6 max-w-md text-lg leading-relaxed text-white/64">This is for builders and founders who have already crossed the distance between an idea and an artifact.</p>
-              <Link href="/admission" className="focus-ring mt-8 inline-flex items-center gap-2 rounded-sm text-sm font-semibold uppercase tracking-[0.08em] text-white hover:text-white/72">Read the admission standard <ArrowUpRight aria-hidden="true" size={17} /></Link>
             </div>
             <ol className="border-t border-white/22">
               {standards.map(([title, description]) => (

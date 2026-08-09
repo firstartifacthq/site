@@ -4,7 +4,7 @@ import { describe, expect, it } from "vitest";
 import { SiteHeader } from "@/components/site-header";
 
 describe("SiteHeader", () => {
-  it("provides every primary route and the application target", () => {
+  it("provides one-page navigation and the application target", () => {
     const { container } = render(<SiteHeader />);
 
     expect(container.querySelector(".liquid-glass")).not.toBeInTheDocument();
@@ -12,13 +12,14 @@ describe("SiteHeader", () => {
     expect(container.querySelector("header")).toHaveClass("z-[70]");
     expect(container.querySelector("header img")).not.toBeInTheDocument();
     expect(container.querySelector("header svg[data-brand-mark]")).toHaveAttribute("stroke-width", "56");
-    expect(screen.getByText("First Artifact")).toHaveClass("text-[1.75rem]");
+    expect(container.querySelector("header svg[data-brand-mark]")).toHaveClass("h-8", "w-8");
+    expect(screen.getByText("First Artifact")).toHaveClass("font-sans", "text-xl", "font-semibold");
     expect(screen.getByRole("link", { name: /first artifact home/i })).toHaveAttribute("href", "/");
     const primary = screen.getByRole("navigation", { name: /primary/i });
     expect(within(primary).getByRole("link", { name: /^home$/i })).toHaveAttribute("href", "/");
-    expect(within(primary).getByRole("link", { name: /^admission$/i })).toHaveAttribute("href", "/admission");
-    expect(within(primary).getByRole("link", { name: /^events$/i })).toHaveAttribute("href", "/events");
-    expect(within(primary).getByRole("link", { name: /^faq$/i })).toHaveAttribute("href", "/faq");
+    expect(within(primary).getByRole("link", { name: /^standard$/i })).toHaveAttribute("href", "/#standard");
+    expect(within(primary).getByRole("link", { name: /^team$/i })).toHaveAttribute("href", "/#team");
+    expect(within(primary).getByRole("link", { name: /^formats$/i })).toHaveAttribute("href", "/#formats");
     expect(screen.getByRole("link", { name: /^apply$/i })).toHaveAttribute("href", "/#apply");
   });
 });

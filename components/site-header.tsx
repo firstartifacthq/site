@@ -6,9 +6,9 @@ import { cn } from "@/lib/utils";
 
 const links = [
   ["Home", "/"],
-  ["Admission", "/admission"],
-  ["Events", "/events"],
-  ["FAQ", "/faq"],
+  ["Standard", "/#standard"],
+  ["Team", "/#team"],
+  ["Formats", "/#formats"],
 ] as const;
 
 export function SiteHeader() {
@@ -16,8 +16,8 @@ export function SiteHeader() {
     <header className="fixed inset-x-0 top-0 z-[70] border-b border-white/18 bg-[hsl(var(--signal))] px-4 py-4 text-white md:px-10">
       <div className="mx-auto flex max-w-[90rem] items-center justify-between gap-4">
         <Link href="/" aria-label="First Artifact home" className="focus-ring flex shrink-0 items-center gap-3 rounded-sm">
-          <BrandMark className="h-12 w-12 shrink-0 text-white" strokeWidth={56} />
-          <span className="font-display hidden text-[1.75rem] leading-none lowercase tracking-[-0.02em] sm:inline">First Artifact</span>
+          <BrandMark className="h-8 w-8 shrink-0 text-white" strokeWidth={56} />
+          <span className="hidden font-sans text-xl font-semibold leading-none lowercase tracking-[-0.02em] sm:inline">First Artifact</span>
         </Link>
 
         <nav aria-label="Primary" className="hidden border-y border-white/55 px-5 py-3 md:block">

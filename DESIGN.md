@@ -13,6 +13,7 @@ colors:
   border-gray: "hsl(0 0% 82%)"
   input-gray: "hsl(0 0% 88%)"
   line-on-red: "hsl(0 0% 100% / 0.16)"
+  hero-grid: "rgb(255 255 255 / 0.28)"
   line-on-white: "hsl(0 0% 0% / 0.18)"
   field-border: "hsl(0 0% 0% / 0.24)"
 typography:
@@ -46,16 +47,15 @@ typography:
     letterSpacing: "-0.03em"
   wordmark:
     fontFamily: "GoCake, Source Sans 3, sans-serif"
-    fontSize: "1.25rem"
+    fontSize: "1.75rem"
     fontWeight: 400
     lineHeight: 1
     letterSpacing: "-0.02em"
-  reveal:
-    fontFamily: "Source Sans 3, sans-serif"
-    fontSize: "clamp(2rem, 5.4vw, 5rem)"
-    fontWeight: 500
-    lineHeight: 0.98
-    letterSpacing: "-0.035em"
+  signature:
+    fontFamily: "GoCake, Source Sans 3, sans-serif"
+    fontSize: "7.5rem"
+    fontWeight: 400
+    lineHeight: 1
   title:
     fontFamily: "Source Sans 3, sans-serif"
     fontSize: "1.25rem"
@@ -131,15 +131,15 @@ components:
 
 First Artifact should feel like a transmission from people already in motion: immediate signal red, hard white interruptions, near-black declarations, and enough empty space for every claim to carry weight. Its energy comes from scale, contrast, editorial sequencing, and crisp structure—not from visual effects or simulated prestige.
 
-The system is playful and experimental without becoming ornamental. Lowercase GoCake declarations give the site its unmistakable voice; Source Sans 3 makes the proof, controls, and unresolved details easy to trust. Sparse 1px guides suggest an active field, while stark sectional changes turn the manifesto into the page's memorable reveal.
+The system is playful and experimental without becoming ornamental. Lowercase GoCake declarations give the site its unmistakable voice; Source Sans 3 makes the proof, controls, and unresolved details easy to trust. A visible 40px hero grid and crisp 1px downstream rules create structure, while the compact white marquee turns the red hero into the red manifesto transmission.
 
 **Key Characteristics:**
 
 - Saturated signal red, white, and near-black as the dominant three-part palette; the home portrait is deliberately grayscale.
 - Lowercase GoCake wordmarks and major declarations paired with practical Source Sans 3 UI.
-- Flat, solid surfaces organized by sparse 1px lines and generous negative space.
+- Flat, solid surfaces organized by a hero grid, sparse downstream 1px lines, and generous negative space.
 - Honest placeholders and explicit unavailable states instead of invented proof.
-- Restrained motion that disappears completely when the visitor requests reduced motion.
+- CSS and scroll-driven motion resolves to a static state under reduced motion; the manifesto video pauses and stops loading when reduction is requested.
 
 ## Colors
 
@@ -147,7 +147,7 @@ Signal red is the public beacon, white is the editorial reading surface, and nea
 
 ### Primary
 
-- **Signal Red:** Owns the fixed header, hero and route fields, community-format field, application surround, closing signal, error borders, and primary red action.
+- **Signal Red:** Owns the fixed header, hero, manifesto, community-format field, application surround, closing signal, error borders, and primary red action.
 - **Deep Signal Red:** The red action hover and readable error-copy color on light surfaces.
 - **Soft Signal Red:** A restrained error or signal tint; never a substitute for the main red field.
 
@@ -178,9 +178,10 @@ Signal red is the public beacon, white is the editorial reading surface, and nea
 
 - **Home hero display:** GoCake Regular; `clamp(7.5rem, 30vw, 28rem)`, 0.85 line-height, and 0.02em tracking. It is a special oversized stacked treatment used only for “obsess.”
 - **Marquee display:** GoCake Regular; `clamp(1.75rem, 4vw, 3.25rem)` at 1.0 line-height.
-- **Section and route headline:** GoCake Regular; fluid 51–96px, approximately 0.88–0.90 line-height. Keep most declarations to 10–14 characters per line through measured `ch` widths.
-- **Manifesto reveal:** Source Sans 3 Medium; fluid 32–80px, 0.98 line-height, maximum 24ch. This is deliberately not GoCake so the statement feels spoken and readable.
-- **Row title:** Source Sans 3 Semibold; 18–20px. Use for standards, formats, member labels, and FAQ prompts.
+- **Section headline:** GoCake Regular; fluid 51–96px, approximately 0.88–0.90 line-height. Keep most declarations to 10–14 characters per line through measured `ch` widths.
+- **Manifesto signature:** GoCake Regular; 120px at 1.0 line-height for the centered `F.A.` signature only.
+- **Manifesto mission and copy:** Source Sans 3 Regular; 16px, 1.6 line-height. The mission is uppercase and tracked; the two supporting paragraphs remain centered and sentence case.
+- **Row title:** Source Sans 3 Semibold; 18–20px. Use for standards, formats, and member labels.
 - **Lead body:** Source Sans 3 Regular; 18–20px with relaxed line-height. Keep primary explanations around 36–42rem wide.
 - **Body:** Source Sans 3 Regular; 16px with relaxed line-height. Use Medium sparingly for emphasis and metadata.
 - **Label and control:** Source Sans 3 Semibold; 12–14px, uppercase where it functions as a control, with 0.08em tracking.
@@ -195,19 +196,21 @@ Signal red is the public beacon, white is the editorial reading surface, and nea
 
 The primary content shell is `min(100% - 2rem, 80rem)` on small screens and `min(100% - 5rem, 80rem)` from 768px upward. The fixed header uses a wider 90rem ceiling with 16px mobile and 40px desktop horizontal padding. Core breakpoints follow the implementation at 640px, 768px, and 1024px.
 
-Sections usually breathe at 96px vertically on small screens and 144px on desktop; closing and supporting-route endings may use 128–160px to hold a final declaration. Within sections, 24px separates copy within a thought, 48–64px separates major content groups, and editorial rows use 20–28px vertical padding.
+Sections usually breathe at 96px vertically on small screens and 144px on desktop; the closing section may use 112–160px to hold its final declaration. Within sections, 24px separates copy within a thought, 48–64px separates major content groups, and editorial rows use 20–28px vertical padding.
 
-Large sections use asymmetric two-column grids, typically a narrower declaration column and a wider proof or interaction column. Collapse them into a single reading sequence on small screens. Avoid generic equal card grids: standards, beliefs, events, and FAQs are line-separated editorial rows. The five-member list progresses from compact label-and-signal rows on mobile to five columns on large screens, with a subtle alternating vertical offset.
+Large sections use asymmetric two-column grids, typically a narrower declaration column and a wider proof or interaction column. Collapse them into a single reading sequence on small screens. Avoid generic equal card grids: standards and intended formats are line-separated editorial rows. The five-member list progresses from compact label-and-signal rows on mobile to five columns on large screens, with a subtle alternating vertical offset.
 
-The home hero is the single compositional exception: a 120vh signal-red field with a grayscale decorative character, four offset GoCake word layers, and Source Sans side-word columns that resolve inward across the sticky range. A user-approved 40px white line grid sits behind the composition at 28% opacity, remains clear through the central 42%, and fades only toward the far perimeter through a radial mask. Its title stack begins after the fixed-header clearance plus 2vh mobile / 3vh desktop breathing room. Route heroes retain three sparse vertical guides plus one horizontal guide. Never add concentric rings or a glass panel.
+The hero is a 120vh signal-red field with a grayscale decorative character, four offset GoCake word layers, and Source Sans side-word columns that resolve inward across the sticky range. A 40px white line grid sits behind the composition at 28% opacity, remains clear through the central 42%, and fades only toward the far perimeter through a radial mask. Its title stack begins after the fixed-header clearance plus 2vh mobile / 3vh desktop breathing room. Never add concentric rings or a glass panel.
 
-**The Hard-Fold Rule.** The home narrative moves from the signal-red hero through a compact white marquee into a near-black manifesto. Preserve those abrupt field changes; do not soften them with gradients or translucent panels.
+The site ships as one `/` route in this order: hero, marquee, manifesto, `#standard`, `#team`, `#formats`, `#apply`, closing signal, and footer. The fixed header and footer navigate within that sequence; there are no standalone Admission, Events, or FAQ routes.
+
+**The Transmission Fold Rule.** The home narrative moves from the signal-red hero through a compact white marquee into a signal-red manifesto. Preserve the crisp white interruption; do not insert a near-black manifesto or translucent panel.
 
 ## Elevation & Depth
 
 First Artifact is flat. Depth comes from section color, 1px borders, type scale, overlap-free spacing, and motion—not from glassmorphism, backdrop blur, glowing edges, or a stack of drop-shadow cards. Permanent surfaces remain solid. The existing fade-up may transiently move 12px and apply a 1px content blur during entry; both resolve completely and are removed under reduced motion.
 
-The optional closing HLS background is media texture, not elevation. A solid signal-red field and red overlay preserve the composition if video is unsupported, blocked, slow, or intentionally not loaded.
+The manifesto's bottom media is a full-width Cloudinary MP4 with a Mux HLS fallback and a 100px red-to-transparent edge blend. That gradient is a functional transition into real media, not a reusable surface effect. Separately, the closing CTA has an optional Mux HLS texture behind a 94%-opaque signal-red overlay; its solid red field preserves the composition if media is unavailable.
 
 **The Solid Surface Rule.** Do not use `backdrop-filter`, translucent glass panels, glow, or decorative shadow to create hierarchy. Use a field change or 1px rule.
 
@@ -222,8 +225,8 @@ Circles are semantic accents, reserved for the five founding-member signals and 
 ### Fixed header and navigation
 
 - Keep the header fixed above every surface, including the home hero and marquee, with a stable, opaque signal-red background, `z-index: 70`, and a subtle white bottom rule. It must not change color or depend on underlying content for contrast.
-- Use the transparent inline `BrandMark` at 48px with controllable `currentColor` stroke plus the 28px lowercase GoCake wordmark, primary route links, and one near-black Apply action. Desktop navigation uses line framing; mobile uses a native `details` disclosure with a solid near-black menu.
-- Navigation targets are Home, Admission, Events, FAQ, and `/#apply`. Preserve semantic `nav` labels, a descriptive home-link label, and the skip link before the header.
+- Use the transparent inline `BrandMark` at 48px with controllable `currentColor` stroke plus the 28px lowercase GoCake wordmark, anchored navigation links, and one near-black Apply action. Desktop navigation uses line framing; mobile uses a native `details` disclosure with a solid near-black menu.
+- Navigation targets are Home, Standard, Team, Formats, and `/#apply`. Preserve semantic `nav` labels, a descriptive home-link label, and the skip link before the header.
 - Hover uses a modest opacity or solid-color change. Keyboard focus remains visible with a 2px outline/ring and clear offset.
 
 ### Buttons and text links
@@ -232,19 +235,18 @@ Circles are semantic accents, reserved for the five founding-member signals and 
 - Near-black primary, signal-red primary, and transparent 1px line variants are the complete launch vocabulary. A line button inherits its surrounding foreground color.
 - Hover changes fill or opacity in 200ms. Active may compress to 98%. Disabled actions prevent interaction and use 50% opacity. Never communicate state with motion or color alone.
 
-### Hero and route hero
+### Hero and marquee
 
 - The home hero uses a 120vh signal-red field, a grayscale decorative character, stacked lowercase GoCake “obsess” lettering, and two Source Sans principle columns. The shared fixed navigation remains visibly layered above it; the hero itself contains no CTA, member proof, or claim beyond the single heading.
 - Side words begin at the documented mobile/desktop offsets and resolve to zero with opacity 0.35–1 over the sticky range. Reduced motion renders them at rest and fully opaque.
 - The white GoCake marquee repeats four identical lowercase copies on an 18-second linear loop; reduced motion pauses it.
-- Route heroes continue to use the sparse structural grid, bottom-aligned GoCake declarations, and Source Sans support copy.
-- No concentric field, glass panel, autoplay dependency, or fake proof belongs in any hero.
+- No concentric field, glass panel, CTA, autoplay dependency, or fake proof belongs in the hero.
 
 ### Manifesto and editorial rows
 
-- The manifesto opens on near-black with one large GoCake declaration, the real red/white brand mark in a sparse signal frame, one concise Source Sans scroll-reveal sentence, and six compact beliefs in a two-column line grid.
-- Words may move from 50% to 100% opacity as the statement scrolls into view. Static HTML remains complete and readable before hydration; reduced motion forces every word to full opacity.
-- Admission standards, formats, and FAQs reuse top and bottom rules instead of cards. FAQs use native `details`/`summary`, retaining keyboard and disclosure behavior.
+- The manifesto is a full-height signal-red transmission with a centered 80px white inline SVG, one concise uppercase mission, a 120px GoCake `F.A.` signature, two product-specific Source Sans paragraphs, and a full-width Cloudinary MP4 at its bottom.
+- If the MP4 errors, the client attaches the Mux HLS source through `hls.js` when supported, or assigns it directly for native HLS playback. A 100px red-to-transparent blend at the media edge is functional media blending, not decorative elevation. The core copy remains visible without playback.
+- Admission standards and intended formats reuse top and bottom rules instead of cards. There are no standalone supporting routes.
 
 ### Founding-member placeholders
 
@@ -262,36 +264,38 @@ Circles are semantic accents, reserved for the five founding-member signals and 
 ### Closing signal and footer
 
 - The closing section works first as a solid red CTA. HLS video is an optional, low-opacity, luminosity-mixed enhancement behind a red overlay; it is decorative, silent, unfocusable, and absent under reduced motion.
-- Remote media failure must not remove copy, controls, contrast, or meaning. The footer returns to solid near-black with the three supporting routes.
+- Remote media failure must not remove copy, controls, contrast, or meaning. The footer returns to solid near-black with anchored Standard, Team, and Formats links.
 
 ### Accessibility and motion contract
 
 - Meet WCAG 2.2 AA at minimum. Preserve semantic landmarks, one ordered heading hierarchy, visible labels, native controls, named navigation regions, and a keyboard-visible skip link.
 - `.focus-ring` uses a 2px current-color outline with a 5px offset. Component focus rings use 2px with a 4px offset; field rings use a visible 2px near-black treatment.
-- The global reduced-motion query disables smooth scrolling, constrains all animation and transition durations to 0.01ms with one iteration, forces manifesto words to full opacity, and removes fade-up transforms and filters. Framer Motion also checks `useReducedMotion`; HLS loading stops when reduction is requested.
+- The global reduced-motion query disables smooth scrolling, constrains CSS animation and transition durations to 0.01ms with one iteration, removes fade-up transforms and filters, resolves hero side words at rest and full opacity, and pauses the marquee. Framer Motion also checks `useReducedMotion`; the optional closing HLS texture does not load when reduction is requested.
+- The bottom manifesto video is decorative, silent, unfocusable, and pauses under reduced motion; its surrounding copy remains complete without playback.
+- The mobile menu currently adds 16px/12px rounding and a `0 16px 40px rgb(0 0 0 / 25%)` shadow. This is an implementation mismatch with the flat, square-or-lightly-rounded component grammar; do not propagate it.
 - Meaning and navigation never depend on animation, video, hover, pointer position, or color alone.
 
 ### Asset replacement rules
 
-- Use `components/brand-mark.tsx` for the transparent navbar mark. It renders the approved geometry as inline SVG with `currentColor` and a configurable `strokeWidth` (navbar default `56`), and stays decorative inside the labelled home link. Keep `public/brand/first-artifact-mark.svg` as the portable vector asset. Preserve `public/brand/first-artifact-logo.png` unchanged for the manifesto tile and favicon; do not crop or recolor it.
-- Load GoCake and Source Sans 3 only from the committed files under `public/fonts/`, keep their license files beside them, and retain `display: swap` plus readable fallbacks. The home hero and marquee introduce no external font dependency.
+- Use `components/brand-mark.tsx` for the transparent navbar mark. It renders the approved geometry as inline SVG with `currentColor` and a configurable `strokeWidth` (navbar default `56`), and stays decorative inside the labelled home link. The manifesto uses its own centered white inline SVG. Keep `public/brand/first-artifact-mark.svg` as the portable vector asset and preserve `public/brand/first-artifact-logo.png` unchanged for the favicon; do not crop or recolor either asset.
+- Load GoCake and Source Sans 3 from the committed files under `public/fonts/`, keep their license files beside them, and retain readable fallbacks across the hero, manifesto, and supporting sections.
 - Replace a founding-member placeholder only when the member's approved name, image, and biography are all supplied. Store optimized, project-owned portraits as `public/members/<stable-member-slug>.<avif|webp>` and render with `next/image`. Use the approved full name as alt text only when no adjacent visible name already identifies the member; otherwise use empty alt text.
 - Preserve exactly five members until product approval changes the count, and retain the abstract fallback for missing or failed images.
-- The supplied remote character URL is approved as decorative home-hero art and is rendered grayscale with empty alt text. Do not present it as a member or product proof. Do not generate a substitute logo, event photograph, partner mark, or evidence asset. The remote HLS source remains optional enhancement only.
+- The supplied remote character URL is approved as decorative home-hero art and is rendered grayscale with empty alt text. Do not present it as a member or product proof. Do not generate a substitute logo, event photograph, partner mark, or evidence asset. The closing-section HLS texture remains optional enhancement only; the manifesto's Mux HLS source is the explicit fallback for its Cloudinary MP4.
 
 ## Do's and Don'ts
 
 ### Do:
 
-- **Do** preserve the red hero-to-white marquee-to-near-black manifesto rhythm and the stable red fixed header.
-- **Do** use sparse 1px guides, borders, editorial rows, generous spacing, and type scale to organize the experience.
+- **Do** preserve the red hero-to-white marquee-to-red manifesto transmission rhythm and the stable red fixed header.
+- **Do** use the 40px hero grid, sparse downstream 1px guides, editorial rows, generous spacing, and type scale to organize the experience.
 - **Do** keep headings and the wordmark lowercase, with GoCake confined to major declarations and Source Sans 3 handling everything operational.
 - **Do** state unknowns plainly: five profiles are pending, formats are intended, pricing and dates are unannounced, and application submission is unavailable.
 - **Do** preserve complete static meaning and the CSS-enforced reduced-motion path.
 
 ### Don't:
 
-- **Don't** add concentric hero contours, glassmorphism, backdrop blur, gradients, glow, decorative shadows, or a card stack.
+- **Don't** add concentric hero contours, glassmorphism, backdrop blur, unearned gradients, glow, decorative shadows, or a card stack. The manifesto's red/video blend is the one user-supplied functional gradient exception.
 - **Don't** round major surfaces, fields, or editorial containers; keep controls square or lightly rounded and reserve circles for member/signal markers.
 - **Don't** fabricate members, testimonials, shipped work, event history, partner or investor relationships, acceptance metrics, pricing, dates, locations, or response times.
 - **Don't** claim the application was sent. Keep answers recoverable and make unavailable, copy-success, and copy-failure states explicit.

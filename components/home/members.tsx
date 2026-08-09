@@ -4,11 +4,11 @@ const members = [1, 2, 3, 4, 5];
 
 export function Members() {
   return (
-    <section className="bg-white py-24 md:py-36">
+    <section aria-labelledby="team-title" className="scroll-mt-8 bg-white py-24 md:py-36" id="team">
       <div className="page-shell">
         <FadeUp>
           <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
-            <h2 className="font-display text-balance max-w-[11ch] text-[clamp(3.4rem,7vw,6rem)] lowercase leading-[0.88] tracking-[-0.03em]">Meet the team.</h2>
+            <h2 id="team-title" className="font-display text-balance max-w-[11ch] text-[clamp(3.4rem,7vw,6rem)] lowercase leading-[0.88] tracking-[-0.03em]">Meet the team.</h2>
             <p className="max-w-md text-lg leading-relaxed text-black/62">Five founding members are already here. Profiles will appear as names, photos, and biographies are approved.</p>
           </div>
         </FadeUp>

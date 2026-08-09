@@ -15,7 +15,7 @@ export function ClosingSignal() {
         <p className="mx-auto mt-6 max-w-xl text-lg leading-relaxed text-white">If you have already shipped and you cannot stop, we want to see the artifact.</p>
         <div className="mx-auto mt-9 flex max-w-xl flex-col justify-center gap-3 sm:flex-row">
           <Link href="#apply" className={cn(buttonVariants({ variant: "primary" }), "focus-ring")}>Apply now</Link>
-          <Link href="/admission" className={cn(buttonVariants({ variant: "line" }), "focus-ring")}>See the standard</Link>
+          <Link href="#standard" className={cn(buttonVariants({ variant: "line" }), "focus-ring")}>See the standard</Link>
         </div>
       </div>
     </section>
