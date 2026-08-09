@@ -15,7 +15,7 @@ related_targets: ["app/admission/page.tsx","app/events/page.tsx","app/faq/page.t
 
 ## Chosen direction
 
-The home hero uses the supplied stacked-character template for composition and motion only. First Artifact’s implementation is a 120vh signal-red field with a user-approved 40px white grid at 16% and radial edge fade, a grayscale decorative character, four offset lowercase GoCake “obsess” layers, and lowercase Source Sans principle columns that resolve inward as the visitor crosses the sticky range. A white GoCake marquee separates the artwork from the manifesto. The shared fixed navigation stays visibly above the artwork; the hero adds no separate CTA.
+The home hero uses the supplied stacked-character template for composition and motion only. First Artifact’s implementation is a 120vh signal-red field with a clearly visible 40px white grid at 28% and far-edge radial fade, a grayscale decorative character, four offset lowercase GoCake “obsess” layers, and lowercase Source Sans principle columns that resolve inward as the visitor crosses the sticky range. A white GoCake marquee separates the artwork from the manifesto. The shared fixed navigation stays visibly above the artwork; the hero adds no separate CTA.
 
 The template’s orange, green, blue, Bamboly, Poppins, Inter, and uppercase treatments are intentionally replaced by the project’s red/white palette, local GoCake, local Source Sans 3, and lowercase voice. Route heroes and downstream surfaces retain sparse 1px grids and solid fields. The supplied character is decorative and must never imply a real member.
 

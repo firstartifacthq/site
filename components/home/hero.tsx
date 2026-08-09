@@ -95,11 +95,11 @@ export function Hero() {
       <div aria-hidden="true" className="pointer-events-none absolute inset-0 z-[1]">
         <div
           data-hero-grid
-          className="absolute inset-0 [background-size:40px_40px] [background-image:linear-gradient(to_right,rgba(255,255,255,0.16)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.16)_1px,transparent_1px)]"
+          className="absolute inset-0 [background-size:40px_40px] [background-image:linear-gradient(to_right,rgba(255,255,255,0.28)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.28)_1px,transparent_1px)]"
         />
         <div
           data-hero-grid-fade
-          className="absolute inset-0 bg-[hsl(var(--signal))] [mask-image:radial-gradient(ellipse_at_center,transparent_18%,black_76%)]"
+          className="absolute inset-0 bg-[hsl(var(--signal))] [mask-image:radial-gradient(ellipse_at_center,transparent_42%,black_94%)]"
         />
       </div>
 

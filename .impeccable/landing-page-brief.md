@@ -8,7 +8,7 @@
 
 ## Chosen direction
 
-The home hero follows the user-supplied stacked-character template for composition and motion only. First Artifact owns the identity: a 120vh signal-red field, user-approved 40px white grid at 16% with a radial edge fade, grayscale decorative character, four offset lowercase GoCake “obsess” layers, and lowercase Source Sans principle columns that move inward over the sticky range. A white GoCake marquee separates the artwork from the manifesto. The shared fixed header stays visibly layered above the hero and marquee; the hero itself adds no separate CTA.
+The home hero follows the user-supplied stacked-character template for composition and motion only. First Artifact owns the identity: a 120vh signal-red field, clearly visible 40px white grid at 28% with a far-edge radial fade, grayscale decorative character, four offset lowercase GoCake “obsess” layers, and lowercase Source Sans principle columns that move inward over the sticky range. A white GoCake marquee separates the artwork from the manifesto. The shared fixed header stays visibly layered above the hero and marquee; the hero itself adds no separate CTA.
 
 Only the template’s z-order, sizing, word-column math, and marquee timing carry forward. Its orange, green, blue, Bamboly, Poppins, Inter, and uppercase treatments do not. Route heroes and every downstream section retain the red/white line system. The decorative character is not a member portrait or proof claim.
 

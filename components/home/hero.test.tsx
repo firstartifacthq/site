@@ -25,8 +25,13 @@ describe("Hero", () => {
     expect(heading).toBeInTheDocument();
     expect(heading.parentElement).toHaveClass("pt-[calc(5.5rem+2vh)]", "md:pt-[calc(5.5rem+3vh)]");
     expect(container.querySelectorAll('[aria-hidden="true"][data-title-layer]')).toHaveLength(3);
-    expect(container.querySelector("[data-hero-grid]")).toHaveClass("[background-size:40px_40px]");
-    expect(container.querySelector("[data-hero-grid-fade]")).toBeInTheDocument();
+    expect(container.querySelector("[data-hero-grid]")).toHaveClass(
+      "[background-size:40px_40px]",
+      "[background-image:linear-gradient(to_right,rgba(255,255,255,0.28)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.28)_1px,transparent_1px)]",
+    );
+    expect(container.querySelector("[data-hero-grid-fade]")).toHaveClass(
+      "[mask-image:radial-gradient(ellipse_at_center,transparent_42%,black_94%)]",
+    );
     expect(container.querySelector("section")).toHaveStyle({ height: "120vh" });
     expect(container.querySelector('img[src*="images.higgs.ai"]')).toBeInTheDocument();
   });
