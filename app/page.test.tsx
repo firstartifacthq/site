@@ -17,6 +17,12 @@ describe("home page", () => {
     expect(screen.getByRole("heading", { name: /meet the team/i })).toBeInTheDocument();
     expect(screen.getByRole("heading", { name: /make progress feel like play/i })).toBeInTheDocument();
     expect(screen.getByRole("heading", { name: /apply with your work/i })).toBeInTheDocument();
+    const discordLinks = screen.getAllByRole("link", { name: /join the discord/i });
+    expect(discordLinks).toHaveLength(1);
+    for (const discord of discordLinks) {
+      expect(discord).toHaveAttribute("href", "https://discord.gg/3nqumWTuHb");
+      expect(discord).toHaveAttribute("target", "_blank");
+    }
 
     const memberList = screen.getByRole("list", { name: /founding members/i });
     expect(within(memberList).getAllByRole("listitem")).toHaveLength(5);

@@ -21,5 +21,12 @@ describe("SiteHeader", () => {
     expect(within(primary).getByRole("link", { name: /^team$/i })).toHaveAttribute("href", "/#team");
     expect(within(primary).getByRole("link", { name: /^formats$/i })).toHaveAttribute("href", "/#formats");
     expect(screen.getByRole("link", { name: /^apply$/i })).toHaveAttribute("href", "/#apply");
+    const discordLinks = screen.getAllByRole("link", { name: /join the discord/i });
+    expect(discordLinks).toHaveLength(2);
+    for (const discord of discordLinks) {
+      expect(discord).toHaveAttribute("href", "https://discord.gg/3nqumWTuHb");
+      expect(discord).toHaveAttribute("target", "_blank");
+      expect(discord).toHaveAttribute("rel", expect.stringContaining("noopener"));
+    }
   });
 });

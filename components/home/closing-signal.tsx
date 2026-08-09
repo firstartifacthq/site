@@ -2,6 +2,7 @@ import Link from "next/link";
 
 import { HlsBackground } from "@/components/hls-background";
 import { buttonVariants } from "@/components/ui/button";
+import { discordInviteUrl } from "@/lib/site-links";
 import { cn } from "@/lib/utils";
 
 export function ClosingSignal() {
@@ -16,6 +17,7 @@ export function ClosingSignal() {
         <div className="mx-auto mt-9 flex max-w-xl flex-col justify-center gap-3 sm:flex-row">
           <Link href="#apply" className={cn(buttonVariants({ variant: "primary" }), "focus-ring")}>Apply now</Link>
           <Link href="#standard" className={cn(buttonVariants({ variant: "line" }), "focus-ring")}>See the standard</Link>
+          <a href={discordInviteUrl} target="_blank" rel="noopener noreferrer" className={cn(buttonVariants({ variant: "line" }), "focus-ring")}>Join the Discord</a>
         </div>
       </div>
     </section>
