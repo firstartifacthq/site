@@ -25,7 +25,7 @@ The template’s orange, green, blue, Bamboly, Poppins, Inter, and uppercase tre
 - Corners: major fields and form controls stay square or lightly rounded; circles are reserved for the five member-count markers and profile placeholders.
 - Lines: sparse 1px white or red guides establish the grid; borders clarify navigation, interaction, and editorial rows.
 - Elevation: flat. No backdrop blur, glass, glow, or drop-shadow card stack.
-- Type ramp: lowercase GoCake for the wordmark, `clamp(7.5rem, 30vw, 28rem)` hero title, compact `clamp(1.75rem, 4vw, 3.25rem)` marquee, and 51–96px section declarations; Source Sans 3 for principle columns, navigation, controls, reading text, and metadata.
+- Type ramp: lowercase GoCake for the wordmark, `clamp(7.5rem, 30vw, 28rem)` hero title, compact `clamp(1.125rem, 2.5vw, 1.75rem)` marquee, and 51–96px section declarations; Source Sans 3 for principle columns, navigation, controls, reading text, and metadata.
 - Motion: exact sticky side-word math and 18-second marquee timing join restrained fade-up entries, optional closing media, and the manifesto reveal. Reduced motion places words at rest, pauses the marquee, and removes remote motion.
 
 ## Implementation inventory

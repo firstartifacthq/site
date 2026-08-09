@@ -17,6 +17,7 @@
   --signal: 0 100% 44%;
   --signal-deep: 0 91% 37%;
   --signal-soft: 0 100% 96%;
+  --soft-gray: 0 0% 94%;
 }
 
 @theme inline {

@@ -9,7 +9,7 @@ export function Marquee() {
             key={index}
             className="font-display shrink-0 select-none lowercase text-[hsl(var(--signal))]"
             style={{
-              fontSize: "clamp(1.75rem, 4vw, 3.25rem)",
+              fontSize: "clamp(1.125rem, 2.5vw, 1.75rem)",
               lineHeight: 1,
               paddingRight: "0.25em",
             }}

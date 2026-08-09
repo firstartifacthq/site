@@ -25,7 +25,7 @@ typography:
     letterSpacing: "0.02em"
   marquee:
     fontFamily: "GoCake, Source Sans 3, sans-serif"
-    fontSize: "clamp(1.75rem, 4vw, 3.25rem)"
+    fontSize: "clamp(1.125rem, 2.5vw, 1.75rem)"
     fontWeight: 400
     lineHeight: 1
   hero-side:
@@ -33,6 +33,17 @@ typography:
     fontSize: "clamp(1.6rem, 7vw, 9rem)"
     fontWeight: 500
     lineHeight: 1.1
+  manifesto-title:
+    fontFamily: "Source Sans 3, sans-serif"
+    fontSize: "clamp(2rem, 7vw, 4.5rem)"
+    fontWeight: 600
+    lineHeight: 1.1
+    letterSpacing: "-0.02em"
+  manifesto-subline:
+    fontFamily: "Source Sans 3, sans-serif"
+    fontSize: "clamp(1.05rem, 2.4vw, 1.375rem)"
+    fontWeight: 400
+    lineHeight: 1.45
   display:
     fontFamily: "GoCake, Source Sans 3, sans-serif"
     fontSize: "clamp(4rem, 10vw, 6rem)"
@@ -177,7 +188,8 @@ Signal red is the public beacon, white is the editorial reading surface, and nea
 ### Hierarchy
 
 - **Home hero display:** GoCake Regular; `clamp(7.5rem, 30vw, 28rem)`, 0.85 line-height, and 0.02em tracking. It is a special oversized stacked treatment used only for “obsess.”
-- **Marquee display:** GoCake Regular; `clamp(1.75rem, 4vw, 3.25rem)` at 1.0 line-height.
+- **Marquee display:** GoCake Regular; `clamp(1.125rem, 2.5vw, 1.75rem)` at 1.0 line-height.
+- **Manifesto title:** Source Sans 3 Semibold; `clamp(2rem, 7vw, 4.5rem)` at 1.1 line-height with -0.02em tracking for “Obsession beats talent everytime”. The supporting line “and the proof is the artifact.” uses Source Sans 3 Regular at `clamp(1.05rem, 2.4vw, 1.375rem)`.
 - **Section headline:** GoCake Regular; fluid 51–96px, approximately 0.88–0.90 line-height. Keep most declarations to 10–14 characters per line through measured `ch` widths.
 - **Manifesto signature:** GoCake Regular; 120px at 1.0 line-height for the centered `F.A.` signature only.
 - **Manifesto mission and copy:** Source Sans 3 Regular; 16px, 1.6 line-height. The mission is uppercase and tracked; the two supporting paragraphs remain centered and sentence case.
@@ -189,6 +201,8 @@ Signal red is the public beacon, white is the editorial reading surface, and nea
 ### Named Rules
 
 **The Lowercase Declaration Rule.** Every `h1`, `h2`, and `h3`, plus the visible wordmark, renders lowercase. Preserve semantic source text and heading order; casing is a visual treatment.
+
+**The Open Title Rule.** Section titles (`h1`–`h3`) never end with a full stop. Keep titles as open declarations, not closed sentences. Body copy, supporting lines, and UI messages may use normal punctuation.
 
 **The GoCake Boundary Rule.** Use GoCake only for the wordmark and large declarations whose characters the shipped font supports. Body, UI, long-form text, unsupported glyphs, and future localization fall back to Source Sans 3.
 
@@ -290,11 +304,13 @@ Circles are semantic accents, reserved for the five founding-member signals and 
 - **Do** preserve the red hero-to-white marquee-to-red manifesto transmission rhythm and the stable red fixed header.
 - **Do** use the 40px hero grid, sparse downstream 1px guides, editorial rows, generous spacing, and type scale to organize the experience.
 - **Do** keep headings and the wordmark lowercase, with GoCake confined to major declarations and Source Sans 3 handling everything operational.
-- **Do** state unknowns plainly: five profiles are pending, formats are intended, pricing and dates are unannounced, and application submission is unavailable.
+- **Do** leave section titles without a trailing full stop; treat them as open declarations.
+- **Do** state unknowns plainly where they affect a visitor action: formats are intended, pricing and dates are unannounced, and application submission is unavailable. Do not narrate internal profile-approval process on the public team section.
 - **Do** preserve complete static meaning and the CSS-enforced reduced-motion path.
 
 ### Don't:
 
+- **Don't** end section titles with a full stop. Titles stay open; sentences live in body copy.
 - **Don't** add concentric hero contours, glassmorphism, backdrop blur, unearned gradients, glow, decorative shadows, or a card stack. The manifesto's red/video blend is the one user-supplied functional gradient exception.
 - **Don't** round major surfaces, fields, or editorial containers; keep controls square or lightly rounded and reserve circles for member/signal markers.
 - **Don't** fabricate members, testimonials, shipped work, event history, partner or investor relationships, acceptance metrics, pricing, dates, locations, or response times.

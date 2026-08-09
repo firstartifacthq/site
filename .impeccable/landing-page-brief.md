@@ -18,7 +18,7 @@ Only the template’s z-order, sizing, word-column math, and marquee timing carr
 - Corners: major fields and form controls stay square or lightly rounded; circles are reserved for the five member-count markers and profile placeholders.
 - Lines: sparse 1px white or red guides establish the grid; borders clarify navigation, interaction, and editorial rows.
 - Elevation: flat. No backdrop blur, glass, glow, or drop-shadow card stack.
-- Type ramp: lowercase GoCake for the wordmark, `clamp(7.5rem, 30vw, 28rem)` hero stack, compact `clamp(1.75rem, 4vw, 3.25rem)` marquee, and 51–96px section declarations; Source Sans 3 for side words, UI, reading text, and metadata.
+- Type ramp: lowercase GoCake for the wordmark, `clamp(7.5rem, 30vw, 28rem)` hero stack, compact `clamp(1.125rem, 2.5vw, 1.75rem)` marquee, and 51–96px section declarations; Source Sans 3 for side words, UI, reading text, and metadata.
 - Motion: exact sticky side-word offsets and an 18-second marquee join restrained fade-up entries, optional closing media, and the manifesto reveal. Reduced motion places side words at rest, pauses the marquee, and removes nonessential transforms.
 
 ## Implementation inventory

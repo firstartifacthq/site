@@ -3,7 +3,7 @@
 import Hls from "hls.js";
 import { useEffect, useRef, useState } from "react";
 
-export const manifestoVideoSource = "https://res.cloudinary.com/daklr2whx/video/upload/v1778602552/track-video_2_s9lp53.mp4";
+export const manifestoVideoSource = "/video/manifesto.mp4";
 export const manifestoVideoFallback = "https://stream.mux.com/8wrHPCX2dC3msyYU9ObwqNdm00u3ViXvOSHUMRYSEe5Q.m3u8";
 
 export function ManifestoVideo() {

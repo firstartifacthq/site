@@ -23,12 +23,13 @@ No additional accent family is part of the launch system. Build hierarchy from r
 
 ## Type
 
-- **GoCake Regular (400):** lowercase wordmark and major declarations. The home “obsess” stack is `clamp(7.5rem, 30vw, 28rem)` at `0.85`; its compact marquee is `clamp(1.75rem, 4vw, 3.25rem)` at `1`. Section headlines remain roughly `clamp(3.2rem, 7vw, 6rem)` at `0.88–0.90`.
+- **GoCake Regular (400):** lowercase wordmark and major declarations. The home “obsess” stack is `clamp(7.5rem, 30vw, 28rem)` at `0.85`; its compact marquee is `clamp(1.125rem, 2.5vw, 1.75rem)` at `1`. Section headlines remain roughly `clamp(3.2rem, 7vw, 6rem)` at `0.88–0.90`.
 - **GoCake signature:** the manifesto's centered `F.A.` is 120px at 1.0 line-height.
 - **Source Sans 3 Medium (500):** hero side words and restrained emphasis.
 - **Source Sans 3 Regular (400):** 16px body and 18–20px lead copy with relaxed line-height.
-- **Source Sans 3 Semibold (600):** navigation, row titles, labels, and controls. Controls are 12–14px uppercase with `0.08em` tracking.
+- **Source Sans 3 Semibold (600):** navigation, row titles, labels, controls, and the manifesto title at `clamp(2rem, 7vw, 4.5rem)`. Controls are 12–14px uppercase with `0.08em` tracking.
 - All `h1`, `h2`, and `h3` output is lowercase. Keep semantic heading levels and source text intact; lowercase is presentation.
+- Section titles never end with a full stop. Write them as open declarations; reserve sentence punctuation for body copy and UI messages.
 
 ## Structure
 
