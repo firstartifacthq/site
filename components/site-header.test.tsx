@@ -27,6 +27,7 @@ describe("SiteHeader", () => {
       expect(discord).toHaveAttribute("href", "https://discord.gg/3nqumWTuHb");
       expect(discord).toHaveAttribute("target", "_blank");
       expect(discord).toHaveAttribute("rel", expect.stringContaining("noopener"));
+      expect(discord.querySelector("svg")).not.toBeNull();
     }
   });
 });

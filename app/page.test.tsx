@@ -22,6 +22,7 @@ describe("home page", () => {
     for (const discord of discordLinks) {
       expect(discord).toHaveAttribute("href", "https://discord.gg/3nqumWTuHb");
       expect(discord).toHaveAttribute("target", "_blank");
+      expect(discord.querySelector("svg")).not.toBeNull();
     }
 
     const memberList = screen.getByRole("list", { name: /founding members/i });

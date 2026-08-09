@@ -1,5 +1,6 @@
 import Link from "next/link";
 
+import { DiscordMark } from "@/components/discord-mark";
 import { BrandMark } from "@/components/brand-mark";
 import { buttonVariants } from "@/components/ui/button";
 import { discordInviteUrl } from "@/lib/site-links";
@@ -37,10 +38,10 @@ export function SiteHeader() {
             <summary className="focus-ring flex min-h-10 cursor-pointer list-none items-center border border-white/60 px-4 text-xs font-semibold uppercase tracking-[0.08em]">Menu</summary>
             <nav aria-label="Mobile" className="absolute right-0 mt-2 w-44 overflow-hidden rounded-2xl bg-black p-2 text-white shadow-[0_16px_40px_rgba(0,0,0,0.25)]">
               {links.map(([label, href]) => <Link key={href} href={href} className="focus-ring block rounded-xl px-3 py-3 text-sm font-semibold hover:bg-white/10">{label}</Link>)}
-              <a href={discordInviteUrl} target="_blank" rel="noopener noreferrer" className="focus-ring mt-1 block rounded-xl border-t border-white/20 px-3 py-3 text-sm font-semibold hover:bg-white/10">Join the Discord</a>
+              <a href={discordInviteUrl} target="_blank" rel="noopener noreferrer" className="focus-ring mt-1 flex items-center gap-2 rounded-xl border-t border-white/20 px-3 py-3 text-sm font-semibold hover:bg-white/10"><DiscordMark className="h-4 w-4 shrink-0" />Join the Discord</a>
             </nav>
           </details>
-          <a href={discordInviteUrl} target="_blank" rel="noopener noreferrer" className="focus-ring hidden min-h-10 items-center border border-white/60 px-3 text-xs font-semibold uppercase tracking-[0.08em] sm:inline-flex">Join the Discord</a>
+          <a href={discordInviteUrl} target="_blank" rel="noopener noreferrer" className="focus-ring hidden min-h-10 items-center gap-2 border border-white/60 px-3 text-xs font-semibold uppercase tracking-[0.08em] sm:inline-flex"><DiscordMark className="h-4 w-4 shrink-0" />Join the Discord</a>
           <Link href="/#apply" className={cn(buttonVariants({ variant: "primary", size: "compact" }), "focus-ring")}>Apply</Link>
         </div>
       </div>
