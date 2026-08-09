@@ -10,6 +10,9 @@ describe("SiteHeader", () => {
     expect(container.querySelector(".liquid-glass")).not.toBeInTheDocument();
     expect(container.querySelector("header")).toHaveClass("bg-[hsl(var(--signal))]");
     expect(container.querySelector("header")).toHaveClass("z-[70]");
+    expect(container.querySelector("header img")).not.toBeInTheDocument();
+    expect(container.querySelector("header svg[data-brand-mark]")).toHaveAttribute("stroke-width", "56");
+    expect(screen.getByText("First Artifact")).toHaveClass("text-[1.75rem]");
     expect(screen.getByRole("link", { name: /first artifact home/i })).toHaveAttribute("href", "/");
     const primary = screen.getByRole("navigation", { name: /primary/i });
     expect(within(primary).getByRole("link", { name: /^home$/i })).toHaveAttribute("href", "/");

@@ -199,7 +199,7 @@ Sections usually breathe at 96px vertically on small screens and 144px on deskto
 
 Large sections use asymmetric two-column grids, typically a narrower declaration column and a wider proof or interaction column. Collapse them into a single reading sequence on small screens. Avoid generic equal card grids: standards, beliefs, events, and FAQs are line-separated editorial rows. The five-member list progresses from compact label-and-signal rows on mobile to five columns on large screens, with a subtle alternating vertical offset.
 
-The home hero is the single compositional exception: a 120vh signal-red field with a grayscale decorative character, four offset GoCake word layers, and Source Sans side-word columns that resolve inward across the sticky range. Its title stack begins after the fixed-header clearance plus 2vh mobile / 3vh desktop breathing room. Route heroes retain three sparse vertical guides plus one horizontal guide. Never add concentric rings, dense graph paper, a glass panel, or gradients.
+The home hero is the single compositional exception: a 120vh signal-red field with a grayscale decorative character, four offset GoCake word layers, and Source Sans side-word columns that resolve inward across the sticky range. A user-approved 40px white line grid sits behind the composition at 16% opacity and fades toward the perimeter through a radial mask. Its title stack begins after the fixed-header clearance plus 2vh mobile / 3vh desktop breathing room. Route heroes retain three sparse vertical guides plus one horizontal guide. Never add concentric rings or a glass panel.
 
 **The Hard-Fold Rule.** The home narrative moves from the signal-red hero through a compact white marquee into a near-black manifesto. Preserve those abrupt field changes; do not soften them with gradients or translucent panels.
 
@@ -222,7 +222,7 @@ Circles are semantic accents, reserved for the five founding-member signals and 
 ### Fixed header and navigation
 
 - Keep the header fixed above every surface, including the home hero and marquee, with a stable, opaque signal-red background, `z-index: 70`, and a subtle white bottom rule. It must not change color or depend on underlying content for contrast.
-- Use the local logo plus lowercase GoCake wordmark, primary route links, and one near-black Apply action. Desktop navigation uses line framing; mobile uses a native `details` disclosure with a solid near-black menu.
+- Use the transparent inline `BrandMark` at 48px with controllable `currentColor` stroke plus the 28px lowercase GoCake wordmark, primary route links, and one near-black Apply action. Desktop navigation uses line framing; mobile uses a native `details` disclosure with a solid near-black menu.
 - Navigation targets are Home, Admission, Events, FAQ, and `/#apply`. Preserve semantic `nav` labels, a descriptive home-link label, and the skip link before the header.
 - Hover uses a modest opacity or solid-color change. Keyboard focus remains visible with a 2px outline/ring and clear offset.
 
@@ -273,7 +273,7 @@ Circles are semantic accents, reserved for the five founding-member signals and 
 
 ### Asset replacement rules
 
-- Use `public/brand/first-artifact-logo.png` as supplied. Preserve its aspect ratio; do not crop, recolor, redraw, or use the reference comp as production imagery. When adjacent text says First Artifact, use empty alt text; when the mark is the only label, use `alt="First Artifact"`.
+- Use `components/brand-mark.tsx` for the transparent navbar mark. It renders the approved geometry as inline SVG with `currentColor` and a configurable `strokeWidth` (navbar default `56`), and stays decorative inside the labelled home link. Keep `public/brand/first-artifact-mark.svg` as the portable vector asset. Preserve `public/brand/first-artifact-logo.png` unchanged for the manifesto tile and favicon; do not crop or recolor it.
 - Load GoCake and Source Sans 3 only from the committed files under `public/fonts/`, keep their license files beside them, and retain `display: swap` plus readable fallbacks. The home hero and marquee introduce no external font dependency.
 - Replace a founding-member placeholder only when the member's approved name, image, and biography are all supplied. Store optimized, project-owned portraits as `public/members/<stable-member-slug>.<avif|webp>` and render with `next/image`. Use the approved full name as alt text only when no adjacent visible name already identifies the member; otherwise use empty alt text.
 - Preserve exactly five members until product approval changes the count, and retain the abstract fallback for missing or failed images.

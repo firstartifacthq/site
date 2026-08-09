@@ -42,8 +42,8 @@ No additional accent family is part of the launch system. Build hierarchy from r
 
 | Component | Required behavior |
 | --- | --- |
-| Fixed header | `z-index: 70`, visibly above hero and marquee; stable opaque signal red, subtle white bottom rule, local square logo and lowercase GoCake wordmark, primary routes, dark Apply action |
-| Home hero | 120vh signal-red field, grayscale decorative character, four lowercase GoCake title layers with fixed-header clearance plus 2vh/3vh breathing room, exact sticky side-word math; shared fixed nav stays above |
+| Fixed header | `z-index: 70`, visibly above hero and marquee; stable signal red, subtle white bottom rule, 48px transparent inline SVG mark with adjustable stroke, 28px lowercase GoCake wordmark, primary routes, dark Apply action |
+| Home hero | 120vh signal-red field, user-approved 40px white grid at 16% with radial edge fade, grayscale decorative character, four lowercase GoCake title layers with fixed-header clearance plus 2vh/3vh breathing room, exact sticky side-word math |
 | Marquee | Four identical lowercase GoCake strings, white field, signal-red text, 18-second linear loop, paused under reduced motion |
 | Route hero | Red field, sparse line grid, GoCake declaration, Source Sans support copy |
 | Manifesto | White interruption, six confirmed beliefs, Source Sans word reveal; all words present in static HTML and fully visible under reduced motion |

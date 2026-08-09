@@ -31,7 +31,7 @@ npm run build
 
 GoCake is self-hosted for the lowercase wordmark, stacked home title, marquee, and major headings. Source Sans 3 is self-hosted for the hero side words, body copy, navigation, controls, and metadata. Signal red, white, near-black, and crisp 1px lines define the surface; the home portrait is grayscale and decorative. The site intentionally contains no external font dependency, glassmorphism, or concentric hero field.
 
-Brand files live under `public/brand` and `public/fonts`. Font license files must remain beside the distributed font files.
+Brand files live under `public/brand` and `public/fonts`. The navbar uses the transparent inline SVG from `components/brand-mark.tsx`; its color follows `currentColor` and its stroke is controlled through the `strokeWidth` prop. The supplied red-square PNG remains the manifesto tile and favicon. Font license files must remain beside the distributed font files.
 
 ## Application behavior
 
