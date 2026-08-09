@@ -26,9 +26,15 @@ npm run build
 
 ## Brand system
 
-GoCake is self-hosted for the lowercase wordmark, stacked home title, marquee, major headings, and manifesto signature. Source Sans 3 is self-hosted for the hero side words, manifesto copy, body copy, navigation, controls, and metadata. Signal red, white, near-black, and crisp 1px lines define the surface; the home portrait is grayscale and decorative. The site intentionally contains no external font dependency, glassmorphism, or concentric hero field.
+The canonical brand identity lives in [`BRAND.md`](BRAND.md) (strategy, voice, logo, distinctive assets). Printable HTML + PDF exports live in [`brand/`](brand/). Production tokens and component contracts live in [`DESIGN.md`](DESIGN.md); product truth lives in [`PRODUCT.md`](PRODUCT.md).
 
-Brand files live under `public/brand` and `public/fonts`. The navbar uses the transparent inline SVG from `components/brand-mark.tsx`; its color follows `currentColor` and its stroke is controlled through the `strokeWidth` prop. The supplied red-square PNG remains the manifesto tile and favicon. Font license files must remain beside the distributed font files.
+```bash
+npm run brand:pdf   # regenerate brand/first-artifact-brand-identity.pdf
+```
+
+GoCake is self-hosted for lowercase declarations, stacked home title, marquee, and manifesto signature. Source Sans 3 is self-hosted for reading text, navigation, controls, and metadata. Signal red, white, near-black, and crisp 1px lines define the surface; the home portrait is grayscale and decorative. The site intentionally contains no external font dependency, glassmorphism, or concentric hero field.
+
+Brand files live under `public/brand` and `public/fonts`. The navbar uses the transparent inline SVG from `components/brand-mark.tsx`; its color follows `currentColor` and its stroke is controlled through the `strokeWidth` prop. The supplied red-square PNG remains the favicon tile. Font license files must remain beside the distributed font files.
 
 ## Application behavior
 

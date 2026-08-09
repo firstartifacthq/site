@@ -1,0 +1,70 @@
+{
+  "version": 1,
+  "skills": {
+    "benchmarking": {
+      "source": "../../ai-projects/skills",
+      "sourceType": "local",
+      "computedHash": "35464b707f78d1a611983db35280a5703b953c07ad75fb99821beb1331757bb8"
+    },
+    "branding": {
+      "source": "../../ai-projects/skills",
+      "sourceType": "local",
+      "computedHash": "9ed6b4ad7fa6c2e1390977d78a74f0665e333ac323b7952fbb8be4bcac269768"
+    },
+    "discovery-learning": {
+      "source": "../../ai-projects/skills",
+      "sourceType": "local",
+      "computedHash": "2f509380cdb0ce7d1a6ba257614671795124a8136dc93c7ede205d4016174b6c"
+    },
+    "execution": {
+      "source": "../../ai-projects/skills",
+      "sourceType": "local",
+      "computedHash": "eae5fc9d82ec74a8c890cf30e4cc11db66e516309f7f5e75c66bc7e9970f5ded"
+    },
+    "fashion": {
+      "source": "../../ai-projects/skills",
+      "sourceType": "local",
+      "computedHash": "42579d1c3e6f98d55b2a2419229859c117ca4f646c84868f7a5be1888df05c1e"
+    },
+    "finance-capital": {
+      "source": "../../ai-projects/skills",
+      "sourceType": "local",
+      "computedHash": "f05b2546fef8ebb8089aebf8e811f1de0e7761b4dd7eb5cd6e6263b88ed0ea4e"
+    },
+    "founder-survival": {
+      "source": "../../ai-projects/skills",
+      "sourceType": "local",
+      "computedHash": "9085125a71ecf4c8604b93faa0352a13fbbd11428b480e1065439a1336cb94bb"
+    },
+    "leadership": {
+      "source": "../../ai-projects/skills",
+      "sourceType": "local",
+      "computedHash": "5692acaecb9c5240d6dedd88afb4fc129724a528842949aec4fb82c12d3adbcd"
+    },
+    "marketing": {
+      "source": "../../ai-projects/skills",
+      "sourceType": "local",
+      "computedHash": "8766e5ec7980d347e390de4b2299a7083b0ec21eadd2ffb42f792dbf8440bfc7"
+    },
+    "sales": {
+      "source": "../../ai-projects/skills",
+      "sourceType": "local",
+      "computedHash": "8a0992d99b11e247382e9ed29e57a36fff042144ab8be23dc5b6c6c58ac7fe0c"
+    },
+    "strategy": {
+      "source": "../../ai-projects/skills",
+      "sourceType": "local",
+      "computedHash": "0ba45382d4084154693bbfcba816d2a8254c851e49975fb4a15e6fe6cc350ce3"
+    },
+    "systems-thinking": {
+      "source": "../../ai-projects/skills",
+      "sourceType": "local",
+      "computedHash": "942bfed4bf87840ad984ba436ba30372530f8bf7ba6e0fc026d140d23e32480f"
+    },
+    "taste": {
+      "source": "../../ai-projects/skills",
+      "sourceType": "local",
+      "computedHash": "730d57f2bdd28d23dac672fbe73d316c5ef3352dcb18bb35dcd6096d73cd650d"
+    }
+  }
+}

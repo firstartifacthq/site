@@ -23,3 +23,11 @@
 /.impeccable/sketches/
 /.impeccable/quality-bars/
 /.impeccable/mocks/*.png
+
+# OpenNext
+.open-next
+
+# wrangler files
+.wrangler
+.dev.vars*
+!.dev.vars.example

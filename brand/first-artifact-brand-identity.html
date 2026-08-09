@@ -1,0 +1,1007 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>First Artifact — Brand Identity System</title>
+  <style>
+    @font-face {
+      font-family: "GoCake";
+      src: url("../public/fonts/gocake/Gocake.ttf") format("truetype");
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: "Source Sans 3";
+      src: url("../public/fonts/source-sans-3/SourceSans3-Regular.woff2") format("woff2");
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: "Source Sans 3";
+      src: url("../public/fonts/source-sans-3/SourceSans3-Medium.woff2") format("woff2");
+      font-weight: 500;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: "Source Sans 3";
+      src: url("../public/fonts/source-sans-3/SourceSans3-Semibold.woff2") format("woff2");
+      font-weight: 600;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    :root {
+      --signal: hsl(0 100% 44%);
+      --signal-deep: hsl(0 91% 37%);
+      --signal-soft: hsl(0 100% 96%);
+      --white: hsl(0 0% 100%);
+      --near-black: hsl(0 0% 5%);
+      --muted-ink: hsl(0 0% 36%);
+      --soft-gray: hsl(0 0% 94%);
+      --border: hsl(0 0% 82%);
+      --page: 210mm;
+      --page-h: 297mm;
+    }
+
+    * { box-sizing: border-box; }
+    html { background: var(--near-black); }
+    body {
+      margin: 0;
+      color: var(--near-black);
+      font-family: "Source Sans 3", "Segoe UI", sans-serif;
+      font-weight: 400;
+      font-size: 1rem;
+      line-height: 1.625;
+      background: var(--near-black);
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    h1, h2, h3 { text-transform: lowercase; font-weight: 400; }
+    .label {
+      font-size: 0.875rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      line-height: 1;
+    }
+    .muted { color: var(--muted-ink); }
+    .rule { border: 0; border-top: 1px solid var(--border); margin: 1.5rem 0; }
+
+    .page {
+      width: var(--page);
+      min-height: var(--page-h);
+      margin: 0 auto 24px;
+      background: var(--white);
+      position: relative;
+      overflow: hidden;
+      page-break-after: always;
+      break-after: page;
+    }
+    .page:last-child { margin-bottom: 0; page-break-after: auto; }
+    .page-pad { padding: 18mm 16mm 22mm; }
+    .page-pad-tight { padding: 14mm 16mm 20mm; }
+
+    .footer-meta {
+      position: absolute;
+      left: 16mm;
+      right: 16mm;
+      bottom: 10mm;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.875rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted-ink);
+    }
+    .footer-meta.on-dark { color: rgba(255,255,255,0.72); }
+
+    .cover {
+      background: var(--signal);
+      color: var(--white);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 22mm 16mm 18mm;
+      background-image:
+        linear-gradient(rgb(255 255 255 / 0.28) 1px, transparent 1px),
+        linear-gradient(90deg, rgb(255 255 255 / 0.28) 1px, transparent 1px);
+      background-size: 40px 40px;
+    }
+    .cover-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; }
+    .cover-mark {
+      width: 4.5rem;
+      height: 4.5rem;
+      border: 1px solid rgba(255,255,255,0.35);
+      display: grid;
+      place-items: center;
+      background: var(--signal);
+    }
+    .cover-mark svg { width: 3rem; height: 3rem; }
+    .cover-title {
+      font-family: "GoCake", "Source Sans 3", sans-serif;
+      font-size: 4rem;
+      line-height: 0.88;
+      letter-spacing: -0.03em;
+      margin: 0 0 0.75rem;
+      max-width: 12ch;
+    }
+    .cover-sub {
+      font-size: 1.125rem;
+      font-weight: 500;
+      line-height: 1.45;
+      max-width: 28ch;
+      margin: 0;
+    }
+    .cover-bottom {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 1.5rem;
+      border-top: 1px solid rgba(255,255,255,0.28);
+      padding-top: 1.125rem;
+    }
+    .cover-bottom p { margin: 0.5rem 0 0; font-size: 1rem; line-height: 1.45; color: rgba(255,255,255,0.9); }
+
+    .toc-list { list-style: none; padding: 0; margin: 1.5rem 0 0; }
+    .toc-list li {
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      gap: 0.75rem;
+      align-items: baseline;
+      padding: 0.75rem 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 1rem;
+    }
+    .toc-list .num { font-weight: 600; color: var(--signal); width: 1.5rem; }
+    .toc-list .dots { border-bottom: 1px dotted var(--border); height: 0.7em; align-self: end; }
+
+    .section-kicker { color: var(--signal); margin: 0 0 0.5rem; }
+    .section-title {
+      font-family: "GoCake", "Source Sans 3", sans-serif;
+      font-size: clamp(2.5rem, 6vw, 3.75rem);
+      line-height: 0.88;
+      letter-spacing: -0.03em;
+      margin: 0 0 0.75rem;
+      max-width: 16ch;
+    }
+    .lead {
+      font-size: 1.125rem;
+      line-height: 1.625;
+      max-width: 42rem;
+      margin: 0 0 1.25rem;
+    }
+
+    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0.75rem; }
+    .grid-4 { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 0.75rem; }
+
+    .panel {
+      border: 1px solid var(--border);
+      padding: 1rem 1.125rem;
+      background: var(--white);
+    }
+    .panel-red { background: var(--signal); color: var(--white); border-color: transparent; }
+    .panel-black { background: var(--near-black); color: var(--white); border-color: transparent; }
+    .panel-soft { background: var(--soft-gray); border-color: transparent; }
+    .panel h3 {
+      font-family: "Source Sans 3", sans-serif;
+      font-size: 1.25rem;
+      font-weight: 600;
+      line-height: 1.3;
+      margin: 0 0 0.5rem;
+      text-transform: lowercase;
+    }
+    .panel p { margin: 0; font-size: 1rem; line-height: 1.5; }
+    .panel .label { margin-bottom: 0.5rem; display: block; }
+
+    .quote {
+      background: var(--signal);
+      color: var(--white);
+      padding: 1.25rem 1.5rem;
+      margin: 1rem 0 1.25rem;
+      font-size: 1.125rem;
+      font-weight: 500;
+      line-height: 1.45;
+      max-width: 42rem;
+    }
+
+    table.spec {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 1rem;
+      margin: 0.75rem 0 1.25rem;
+    }
+    table.spec th, table.spec td {
+      text-align: left;
+      vertical-align: top;
+      padding: 0.65rem 0.75rem;
+      border-bottom: 1px solid var(--border);
+      line-height: 1.4;
+    }
+    table.spec th {
+      font-size: 0.875rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted-ink);
+      border-bottom-color: var(--near-black);
+    }
+
+    .swatch {
+      min-height: 7.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 0.75rem;
+      border: 1px solid var(--border);
+    }
+    .swatch strong { display: block; font-size: 1rem; font-weight: 600; }
+    .swatch span { font-size: 0.875rem; line-height: 1.35; opacity: 0.92; }
+    .swatch.on-dark { color: white; border-color: transparent; }
+    .swatch.on-light { color: var(--near-black); }
+
+    .fold {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 0.25rem;
+      margin: 1rem 0;
+    }
+    .fold div {
+      min-height: 3.5rem;
+      display: flex;
+      align-items: flex-end;
+      padding: 0.5rem;
+      font-size: 0.875rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      line-height: 1.2;
+    }
+
+    .logo-row {
+      display: grid;
+      grid-template-columns: 1.1fr 1fr 1fr;
+      gap: 0.75rem;
+      margin: 1rem 0;
+    }
+    .logo-card {
+      border: 1px solid var(--border);
+      min-height: 9rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.75rem;
+      padding: 1rem;
+      text-align: center;
+    }
+    .logo-card.red { background: var(--signal); border-color: transparent; color: white; }
+    .logo-card.black { background: var(--near-black); border-color: transparent; color: white; }
+    .logo-card img { width: 4.5rem; height: 4.5rem; object-fit: contain; }
+    .wordmark {
+      font-family: "GoCake", "Source Sans 3", sans-serif;
+      font-size: 1.75rem;
+      line-height: 1;
+      letter-spacing: -0.02em;
+    }
+    .signature {
+      font-family: "GoCake", "Source Sans 3", sans-serif;
+      font-size: 4.5rem;
+      line-height: 1;
+    }
+
+    .type-specimen { margin: 0.75rem 0 1.25rem; }
+    .type-specimen .row {
+      padding: 0.75rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .type-specimen .sample-gocake {
+      font-family: "GoCake", "Source Sans 3", sans-serif;
+      font-size: 2.5rem;
+      line-height: 0.95;
+      letter-spacing: -0.02em;
+      margin: 0.35rem 0;
+    }
+    .type-specimen .sample-sans {
+      font-size: 1.75rem;
+      font-weight: 600;
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      margin: 0.35rem 0;
+    }
+    .type-specimen .sample-body {
+      font-size: 1rem;
+      line-height: 1.625;
+      max-width: 38rem;
+      margin: 0.35rem 0 0;
+    }
+    .type-specimen .sample-label {
+      font-size: 0.875rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin: 0.35rem 0 0;
+    }
+
+    .do-dont { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; }
+    .do-dont .yes { border-top: 3px solid var(--near-black); }
+    .do-dont .no { border-top: 3px solid var(--signal); }
+    .do-dont ul { margin: 0.5rem 0 0; padding-left: 1.1rem; font-size: 1rem; }
+    .do-dont li { margin: 0.35rem 0; }
+
+    .chip-row { display: flex; flex-wrap: wrap; gap: 0.4rem; margin: 0.5rem 0 0; }
+    .chip {
+      border: 1px solid var(--border);
+      padding: 0.35rem 0.6rem;
+      font-size: 0.875rem;
+      font-weight: 500;
+    }
+    .chip.bad { color: var(--muted-ink); text-decoration: line-through; border-style: dashed; }
+
+    .msg-map .item {
+      display: grid;
+      grid-template-columns: 7rem 1fr;
+      gap: 0.75rem;
+      padding: 0.65rem 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 1rem;
+    }
+    .msg-map .item strong {
+      font-size: 0.875rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--signal);
+    }
+
+    .brief-page { background: var(--near-black); color: var(--white); }
+    .brief-page .section-title { color: var(--white); }
+    .brief-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.875rem;
+      margin-top: 1.5rem;
+    }
+    .brief-grid .cell {
+      border: 1px solid rgba(255,255,255,0.22);
+      padding: 1rem;
+    }
+    .brief-grid .cell .label { color: rgba(255,255,255,0.65); }
+    .brief-grid .cell p { margin: 0.5rem 0 0; font-size: 1rem; line-height: 1.45; }
+
+    .hero-demo {
+      background: var(--signal);
+      color: white;
+      padding: 2rem 1.25rem;
+      margin: 1rem 0;
+      min-height: 10rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-image:
+        linear-gradient(rgb(255 255 255 / 0.28) 1px, transparent 1px),
+        linear-gradient(90deg, rgb(255 255 255 / 0.28) 1px, transparent 1px);
+      background-size: 40px 40px;
+    }
+    .hero-demo .charge {
+      font-family: "GoCake", "Source Sans 3", sans-serif;
+      font-size: 5.5rem;
+      line-height: 0.85;
+      letter-spacing: 0.02em;
+    }
+    .marquee-demo {
+      background: white;
+      color: var(--signal);
+      border: 1px solid var(--border);
+      padding: 0.75rem 0;
+      overflow: hidden;
+      margin-bottom: 1rem;
+    }
+    .marquee-demo span {
+      font-family: "GoCake", "Source Sans 3", sans-serif;
+      font-size: 1.125rem;
+      white-space: nowrap;
+      display: inline-block;
+      padding: 0 0.5rem;
+    }
+
+    .clearspace {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1.5rem;
+      margin: 1rem 0;
+      flex-wrap: wrap;
+    }
+    .clearspace .box {
+      width: 7.5rem;
+      height: 7.5rem;
+      background: var(--signal);
+      display: grid;
+      place-items: center;
+      position: relative;
+    }
+    .clearspace .box::before {
+      content: "";
+      position: absolute;
+      inset: -1.125rem;
+      border: 1px dashed rgba(0,0,0,0.35);
+    }
+    .clearspace .box svg { width: 4rem; height: 4rem; color: white; }
+    .mini-sizes { display: flex; align-items: flex-end; gap: 1.125rem; }
+    .mini-sizes figure { margin: 0; text-align: center; }
+    .mini-sizes .tile {
+      background: var(--signal);
+      display: grid;
+      place-items: center;
+      margin: 0 auto 0.4rem;
+    }
+    .mini-sizes svg { color: white; }
+    .mini-sizes figcaption {
+      font-size: 0.875rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted-ink);
+    }
+
+    ul.compact { margin: 0.4rem 0 1rem; padding-left: 1.15rem; font-size: 1rem; }
+    ul.compact li { margin: 0.3rem 0; }
+    ol.compact { margin: 0.4rem 0 1rem; padding-left: 1.15rem; font-size: 1rem; }
+    ol.compact li { margin: 0.35rem 0; }
+
+    @media print {
+      html, body { background: white; }
+      .page {
+        margin: 0;
+        width: auto;
+        min-height: 100vh;
+        box-shadow: none;
+      }
+    }
+
+    @page { size: A4; margin: 0; }
+  </style>
+</head>
+<body>
+
+  <section class="page cover" aria-label="Cover">
+    <div class="cover-top">
+      <div class="cover-mark" aria-hidden="true">
+        <svg viewBox="200 150 600 700" fill="none" stroke="currentColor" stroke-width="56" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M500 190 240 790 500 610 760 790Z"/>
+          <path d="M500 280v530"/>
+          <path d="m410 680 90 130 90-130"/>
+        </svg>
+      </div>
+      <p class="label" style="color:rgba(255,255,255,0.8); text-align:right; margin:0;">
+        Brand Identity System<br />Version 1.0 · 2026
+      </p>
+    </div>
+    <div>
+      <h1 class="cover-title">first artifact</h1>
+      <p class="cover-sub">Brand identity system for a selective club of founders and builders.</p>
+    </div>
+    <div class="cover-bottom">
+      <div>
+        <p class="label" style="color:rgba(255,255,255,0.7); margin:0;">Creative north star</p>
+        <p>The Living Signal</p>
+      </div>
+      <div>
+        <p class="label" style="color:rgba(255,255,255,0.7); margin:0;">Membership</p>
+        <p>Founders and builders only</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="page page-pad">
+    <p class="label section-kicker">00 — Overview</p>
+    <h2 class="section-title">contents</h2>
+    <p class="lead muted">This book owns who we are, how we sound, and which assets make us recognizable. Product truth lives in PRODUCT.md. Production tokens live in DESIGN.md.</p>
+    <ol class="toc-list">
+      <li><span class="num">01</span><span>Strategy &amp; onliness</span><span class="dots"></span><span>03</span></li>
+      <li><span class="num">02</span><span>Audience: founders &amp; builders only</span><span class="dots"></span><span>04</span></li>
+      <li><span class="num">03</span><span>Personality &amp; voice</span><span class="dots"></span><span>05</span></li>
+      <li><span class="num">04</span><span>Logo system</span><span class="dots"></span><span>06</span></li>
+      <li><span class="num">05</span><span>Color system</span><span class="dots"></span><span>07</span></li>
+      <li><span class="num">06</span><span>Typography</span><span class="dots"></span><span>08</span></li>
+      <li><span class="num">07</span><span>Distinctive assets &amp; spatial system</span><span class="dots"></span><span>09</span></li>
+      <li><span class="num">08</span><span>Imagery, motion &amp; touchpoints</span><span class="dots"></span><span>10</span></li>
+      <li><span class="num">09</span><span>Messaging, validation &amp; governance</span><span class="dots"></span><span>11</span></li>
+      <li><span class="num">10</span><span>One-page identity brief</span><span class="dots"></span><span>12</span></li>
+    </ol>
+    <hr class="rule" />
+    <div class="grid-2">
+      <div class="panel panel-red">
+        <span class="label">Belief</span>
+        <h3 style="font-family:GoCake,Source Sans 3,sans-serif; font-size:1.75rem; line-height:0.95; margin:0.5rem 0;">obsession beats talent everytime</h3>
+        <p>and the proof is the artifact.</p>
+      </div>
+      <div class="panel panel-black">
+        <span class="label">Architecture</span>
+        <h3>monolithic branded house</h3>
+        <p>One master brand. Events, formats, and future products are descriptors under First Artifact — never independent sibling brands.</p>
+      </div>
+    </div>
+    <div class="footer-meta"><span>First Artifact</span><span>Brand Identity · 02</span></div>
+  </section>
+
+  <section class="page page-pad">
+    <p class="label section-kicker">01 — Strategy</p>
+    <h2 class="section-title">who we are</h2>
+    <p class="lead">First Artifact is a selective club <strong>for founders and builders only</strong>. It concentrates people whose defining trait is obsession expressed through action: they build, ship, learn, and persist — then meet peers at the same density.</p>
+    <div class="quote">First Artifact is the only selective club for founders and builders that admits on shipped proof and sustained obsession — not talent theater, credentials, or talk.</div>
+    <div class="grid-2">
+      <div class="panel">
+        <span class="label">Trueline (internal)</span>
+        <p>Obsession beats talent because obsessed people keep acting. The artifact is the proof. Membership is founders and builders only.</p>
+      </div>
+      <div class="panel">
+        <span class="label">Positioning</span>
+        <p>Not a broad networking group. Not a generic tech community. Distinction is a deliberately high, evidence-based acceptance bar. Exclusivity is functional — it protects density and creates a credible signal.</p>
+      </div>
+    </div>
+    <h3 style="font-family:Source Sans 3,sans-serif; font-weight:600; font-size:1.25rem; margin:1.25rem 0 0.5rem;">Category enemy</h3>
+    <p class="muted" style="margin:0 0 1rem;">Rooms that reward pitch, potential, and proximity over work. Soft networks that dilute density. Open “anyone in tech” clubs that blur builders with spectators.</p>
+    <table class="spec">
+      <thead><tr><th>Ideal</th><th>How it shows up</th></tr></thead>
+      <tbody>
+        <tr><td>Differentiation</td><td>Evidence bar + Living Signal system; fails Swap Test if a competitor logo still “fits”</td></tr>
+        <tr><td>Authenticity</td><td>Honest placeholders, explicit unknowns, no fabricated proof</td></tr>
+        <tr><td>Coherence</td><td>Red / white / near-black fields, lowercase declarations, flat surfaces</td></tr>
+        <tr><td>Flexibility</td><td>Same mark and palette across header, manifesto, social, future formats</td></tr>
+        <tr><td>Commitment</td><td>Density over volume; the bar does not loosen for growth vanity</td></tr>
+      </tbody>
+    </table>
+    <div class="footer-meta"><span>First Artifact</span><span>Brand Identity · 03</span></div>
+  </section>
+
+  <section class="page page-pad">
+    <p class="label section-kicker">02 — Audience</p>
+    <h2 class="section-title">founders and builders only</h2>
+    <p class="lead">No other member segments. Both must be proven people in technology with unusual agency — already shipped something meaningful, still moving without manufactured momentum.</p>
+    <div class="grid-2" style="margin-bottom:1rem;">
+      <div class="panel panel-red">
+        <span class="label">Founder</span>
+        <h3 style="font-size:1.75rem; font-family:GoCake,Source Sans 3,sans-serif;">founder</h3>
+        <p>Building or running a venture. The work is the company. Obsessed with a problem worth founding around.</p>
+      </div>
+      <div class="panel panel-black">
+        <span class="label">Builder</span>
+        <h3 style="font-size:1.75rem; font-family:GoCake,Source Sans 3,sans-serif;">builder</h3>
+        <p>Shipping product, systems, or tools with real traction or public weight. The work is the artifact.</p>
+      </div>
+    </div>
+    <table class="spec">
+      <thead><tr><th>Not members</th><th>Why</th></tr></thead>
+      <tbody>
+        <tr><td>Investors (as primary identity)</td><td>Dealflow is not the membership purpose</td></tr>
+        <tr><td>Recruiters</td><td>Extraction posture dilutes the room</td></tr>
+        <tr><td>Pure operators / advisors without a build practice</td><td>No shipped proof at the center</td></tr>
+        <tr><td>Students without shipped work</td><td>Potential is not evidence</td></tr>
+        <tr><td>Spectators / “anyone in tech”</td><td>Blurs builders with audience</td></tr>
+      </tbody>
+    </table>
+    <div class="panel panel-soft">
+      <span class="label">Admission language</span>
+      <p style="margin-top:0.5rem;"><strong>High agency</strong> — you notice what needs doing and move it.<br />
+      <strong>Obsession</strong> — the personal story that keeps you returning to the same problem.<br />
+      <strong>Traction</strong> — something real is already moving: shipped product, users, revenue, or public weight.</p>
+    </div>
+    <p class="muted" style="margin-top:1rem;">Adjacent roles may appear at carefully managed future touchpoints. They do not redefine who the club is for.</p>
+    <div class="footer-meta"><span>First Artifact</span><span>Brand Identity · 04</span></div>
+  </section>
+
+  <section class="page page-pad-tight">
+    <p class="label section-kicker">03 — Personality &amp; voice</p>
+    <h2 class="section-title">how we sound</h2>
+    <p class="lead">Fun, playful, experimental, and strong — never corporate-prestige theater and never soft motivational fluff. A transmission from people already in motion.</p>
+    <table class="spec">
+      <thead><tr><th>Trait</th><th>Means</th><th>Does not mean</th></tr></thead>
+      <tbody>
+        <tr><td>Direct</td><td>Short sentences; name the standard</td><td>Rudeness or gatekeeping theater</td></tr>
+        <tr><td>Selective</td><td>Clear bar, scarce access</td><td>Elitism for its own sake</td></tr>
+        <tr><td>Energetic</td><td>Motion, scale, signal red</td><td>Glow, hype copy, emoji</td></tr>
+        <tr><td>Honest</td><td>State intended vs. proven</td><td>Fake metrics or invented members</td></tr>
+        <tr><td>Irreverent</td><td>Lowercase GoCake declarations</td><td>Sloppy grammar as personality</td></tr>
+      </tbody>
+    </table>
+    <h3 style="font-family:Source Sans 3,sans-serif; font-weight:600; font-size:1.25rem; margin:0.5rem 0;">Voice principles</h3>
+    <ul class="compact">
+      <li><strong>Evidence over potential</strong> — prefer shipped, artifact, traction.</li>
+      <li><strong>Open declarations</strong> — titles lowercase, no trailing full stop.</li>
+      <li><strong>Name the unknown</strong> — intended formats, unannounced dates, unavailable submission.</li>
+      <li><strong>Agency language</strong> — members initiate; the brand does not manufacture momentum.</li>
+      <li><strong>One job per line</strong> — headlines carry one idea.</li>
+    </ul>
+    <div class="grid-2">
+      <div class="panel">
+        <span class="label">Use</span>
+        <div class="chip-row">
+          <span class="chip">founders</span><span class="chip">builders</span><span class="chip">obsessed</span>
+          <span class="chip">ship</span><span class="chip">artifact</span><span class="chip">agency</span>
+          <span class="chip">traction</span><span class="chip">density</span><span class="chip">signal</span>
+        </div>
+      </div>
+      <div class="panel">
+        <span class="label">Avoid</span>
+        <div class="chip-row">
+          <span class="chip bad">anyone in tech</span><span class="chip bad">networking mixer</span>
+          <span class="chip bad">thought leadership</span><span class="chip bad">passion</span>
+          <span class="chip bad">community for everyone</span><span class="chip bad">unicorn</span>
+        </div>
+      </div>
+    </div>
+    <table class="spec" style="margin-top:1rem;">
+      <thead><tr><th>Role</th><th>Signature line</th></tr></thead>
+      <tbody>
+        <tr><td>Belief</td><td>Obsession beats talent everytime</td></tr>
+        <tr><td>Proof hinge</td><td>and the proof is the artifact.</td></tr>
+        <tr><td>Hero charge</td><td>obsess</td></tr>
+        <tr><td>Principle stream</td><td>obsess · build · ship · prove · agency · evolve · purpose · artifact</td></tr>
+        <tr><td>Closing</td><td>Your move</td></tr>
+      </tbody>
+    </table>
+    <div class="footer-meta"><span>First Artifact</span><span>Brand Identity · 05</span></div>
+  </section>
+
+  <section class="page page-pad-tight">
+    <p class="label section-kicker">04 — Logo system</p>
+    <h2 class="section-title">the mark</h2>
+    <p class="lead">Angular white stroke on a signal-red square — a beacon or first stake. Validate black-and-white first; color second.</p>
+    <div class="logo-row">
+      <div class="logo-card red">
+        <img src="../public/brand/first-artifact-logo.png" alt="First Artifact logo tile" width="72" height="72" />
+        <span class="label" style="color:rgba(255,255,255,0.75);">Production tile</span>
+      </div>
+      <div class="logo-card red">
+        <div style="display:flex; align-items:center; gap:0.65rem;">
+          <svg width="40" height="40" viewBox="200 150 600 700" fill="none" stroke="currentColor" stroke-width="56" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M500 190 240 790 500 610 760 790Z"/><path d="M500 280v530"/><path d="m410 680 90 130 90-130"/>
+          </svg>
+          <span class="wordmark">first artifact</span>
+        </div>
+        <span class="label" style="color:rgba(255,255,255,0.75);">Mark + wordmark</span>
+      </div>
+      <div class="logo-card black">
+        <span class="signature">F.A.</span>
+        <span class="label" style="color:rgba(255,255,255,0.65);">Manifesto signature</span>
+      </div>
+    </div>
+    <div class="clearspace">
+      <div>
+        <div class="box" aria-hidden="true">
+          <svg viewBox="200 150 600 700" fill="none" stroke="currentColor" stroke-width="56" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M500 190 240 790 500 610 760 790Z"/><path d="M500 280v530"/><path d="m410 680 90 130 90-130"/>
+          </svg>
+        </div>
+        <p class="label" style="text-align:center; margin-top:2rem;">Clear space ≥ ¼ mark height</p>
+      </div>
+      <div class="mini-sizes">
+        <figure>
+          <div class="tile" style="width:3rem;height:3rem;"><svg width="28" height="28" viewBox="200 150 600 700" fill="none" stroke="currentColor" stroke-width="56" stroke-linecap="round" stroke-linejoin="round"><path d="M500 190 240 790 500 610 760 790Z"/><path d="M500 280v530"/><path d="m410 680 90 130 90-130"/></svg></div>
+          <figcaption>48px nav</figcaption>
+        </figure>
+        <figure>
+          <div class="tile" style="width:2rem;height:2rem;"><svg width="18" height="18" viewBox="200 150 600 700" fill="none" stroke="currentColor" stroke-width="56" stroke-linecap="round" stroke-linejoin="round"><path d="M500 190 240 790 500 610 760 790Z"/><path d="M500 280v530"/><path d="m410 680 90 130 90-130"/></svg></div>
+          <figcaption>32px</figcaption>
+        </figure>
+        <figure>
+          <div class="tile" style="width:1.5rem;height:1.5rem;"><svg width="14" height="14" viewBox="200 150 600 700" fill="none" stroke="currentColor" stroke-width="56" stroke-linecap="round" stroke-linejoin="round"><path d="M500 190 240 790 500 610 760 790Z"/><path d="M500 280v530"/><path d="m410 680 90 130 90-130"/></svg></div>
+          <figcaption>24px min</figcaption>
+        </figure>
+      </div>
+    </div>
+    <table class="spec">
+      <thead><tr><th>Asset</th><th>Path</th><th>Role</th></tr></thead>
+      <tbody>
+        <tr><td>Production tile</td><td>public/brand/first-artifact-logo.png</td><td>Favicon, square lockups</td></tr>
+        <tr><td>Portable vector</td><td>public/brand/first-artifact-mark.svg</td><td>Export &amp; reuse</td></tr>
+        <tr><td>Inline UI mark</td><td>components/brand-mark.tsx</td><td>currentColor + strokeWidth</td></tr>
+      </tbody>
+    </table>
+    <div class="do-dont">
+      <div class="panel yes">
+        <span class="label">Do</span>
+        <ul>
+          <li>Keep geometry identical across assets</li>
+          <li>Use transparent SVG on red chrome</li>
+          <li>Test silhouette in single color</li>
+        </ul>
+      </div>
+      <div class="panel no">
+        <span class="label">Don’t</span>
+        <ul>
+          <li>Crop into a circle or recolor casually</li>
+          <li>Add glow, shadow, or outlines</li>
+          <li>Redraw or “improve” the paths</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-meta"><span>First Artifact</span><span>Brand Identity · 06</span></div>
+  </section>
+
+  <section class="page page-pad">
+    <p class="label section-kicker">05 — Color</p>
+    <h2 class="section-title">three fields</h2>
+    <p class="lead">Signal red is the public beacon. White is the editorial reading surface. Near-black supplies authority. Gray is infrastructure only — never a fourth visual world.</p>
+    <div class="grid-3">
+      <div class="swatch on-dark" style="background:var(--signal);">
+        <strong>Signal red</strong>
+        <span>hsl(0 100% 44%)<br />--signal<br />Header, hero, manifesto, CTA</span>
+      </div>
+      <div class="swatch on-light" style="background:var(--white);">
+        <strong>White</strong>
+        <span>hsl(0 0% 100%)<br />Reading fields<br />Marquee interruption</span>
+      </div>
+      <div class="swatch on-dark" style="background:var(--near-black);">
+        <strong>Near-black</strong>
+        <span>hsl(0 0% 5%)<br />Primary text, footer<br />Dark actions</span>
+      </div>
+    </div>
+    <div class="grid-4" style="margin-top:0.75rem;">
+      <div class="swatch on-dark" style="background:var(--signal-deep); min-height:6rem;">
+        <strong>Deep signal</strong>
+        <span>hsl(0 91% 37%)<br />Hover / errors</span>
+      </div>
+      <div class="swatch on-light" style="background:var(--signal-soft); min-height:6rem;">
+        <strong>Soft signal</strong>
+        <span>hsl(0 100% 96%)<br />Tint only</span>
+      </div>
+      <div class="swatch on-light" style="background:hsl(0 0% 36%); color:white; min-height:6rem; border-color:transparent;">
+        <strong>Muted ink</strong>
+        <span>hsl(0 0% 36%)<br />Secondary copy</span>
+      </div>
+      <div class="swatch on-light" style="background:var(--border); min-height:6rem;">
+        <strong>Border gray</strong>
+        <span>hsl(0 0% 82%)<br />1px structure</span>
+      </div>
+    </div>
+    <h3 style="font-family:Source Sans 3,sans-serif; font-weight:600; font-size:1.25rem; margin:1.25rem 0 0.5rem;">Transmission fold</h3>
+    <div class="fold">
+      <div style="background:var(--signal); color:white;">Hero</div>
+      <div style="background:white; color:var(--signal); border:1px solid var(--border);">Marquee</div>
+      <div style="background:var(--signal); color:white;">Manifesto</div>
+      <div style="background:white; color:var(--near-black); border:1px solid var(--border);">Editorial</div>
+      <div style="background:var(--signal); color:white;">Closing</div>
+      <div style="background:var(--near-black); color:white;">Footer</div>
+    </div>
+    <p class="muted" style="margin:0;">Preserve the hard white interruption between hero and manifesto. Do not soften into gray or glass. No secondary accent family at launch.</p>
+    <div class="footer-meta"><span>First Artifact</span><span>Brand Identity · 07</span></div>
+  </section>
+
+  <section class="page page-pad-tight">
+    <p class="label section-kicker">06 — Typography</p>
+    <h2 class="section-title">two faces</h2>
+    <p class="lead">GoCake is rare and authored — the audible voice. Source Sans 3 is operational and trustworthy. Never set long reading text in GoCake.</p>
+    <div class="type-specimen">
+      <div class="row">
+        <span class="label">GoCake Regular — declarations</span>
+        <div class="sample-gocake">obsess · build · ship</div>
+        <p class="muted" style="margin:0;">Hero charge, marquee, section declarations, F.A. signature. Limited glyph set — fall back for unsupported characters.</p>
+      </div>
+      <div class="row">
+        <span class="label">Source Sans 3 Semibold — titles &amp; UI</span>
+        <div class="sample-sans">Obsession beats talent everytime</div>
+        <div class="sample-label">Apply · Standard · High agency</div>
+      </div>
+      <div class="row">
+        <span class="label">Source Sans 3 Regular — body</span>
+        <p class="sample-body">Most rooms reward talk. First Artifact is for founders and builders who move from uncertainty to a shipped thing. Bring the work, the question you cannot drop, and find peers who compound both.</p>
+      </div>
+    </div>
+    <table class="spec">
+      <thead><tr><th>Level</th><th>Spec</th></tr></thead>
+      <tbody>
+        <tr><td>Hero charge</td><td>GoCake, oversized stack, ~0.85 line-height</td></tr>
+        <tr><td>Section declaration</td><td>GoCake ~51–96px, ~0.88 lh, 10–14 characters/line</td></tr>
+        <tr><td>Manifesto title</td><td>Source Sans Semibold, large belief line</td></tr>
+        <tr><td>Lead / body</td><td>Source Sans Regular 16–20px, relaxed leading</td></tr>
+        <tr><td>Labels</td><td>Source Sans Semibold 12–14px, tracked uppercase</td></tr>
+      </tbody>
+    </table>
+    <div class="grid-2">
+      <div class="panel">
+        <span class="label">Laws</span>
+        <ul class="compact">
+          <li>Lowercase Declaration Rule for headings</li>
+          <li>Open Title Rule — no trailing period</li>
+          <li>Max two families</li>
+          <li>Centered type only for manifesto ritual</li>
+        </ul>
+      </div>
+      <div class="panel">
+        <span class="label">Files</span>
+        <p style="margin:0;">public/fonts/gocake/Gocake.ttf<br />public/fonts/source-sans-3/*.woff2<br />Keep LICENSE files beside distributed fonts.</p>
+      </div>
+    </div>
+    <div class="footer-meta"><span>First Artifact</span><span>Brand Identity · 08</span></div>
+  </section>
+
+  <section class="page page-pad-tight">
+    <p class="label section-kicker">07 — Distinctive assets</p>
+    <h2 class="section-title">what people remember</h2>
+    <p class="lead">Build fame and uniqueness. These cues should trigger First Artifact before the name is read.</p>
+    <div class="hero-demo" aria-hidden="true"><div class="charge">obsess</div></div>
+    <div class="marquee-demo" aria-hidden="true">
+      <span>obsess · build · ship · prove · agency · evolve · purpose · artifact · </span>
+      <span>obsess · build · ship · prove · agency · evolve · purpose · artifact · </span>
+    </div>
+    <table class="spec">
+      <thead><tr><th>Asset</th><th>Uniqueness</th><th>Fame plan</th></tr></thead>
+      <tbody>
+        <tr><td>Signal red field</td><td>High</td><td>Own the red transmission everywhere</td></tr>
+        <tr><td>Angular mark</td><td>High</td><td>Never redraw</td></tr>
+        <tr><td>Lowercase GoCake</td><td>High</td><td>Keep rare</td></tr>
+        <tr><td>40px hero grid</td><td>Med–High</td><td>Hero-only signature</td></tr>
+        <tr><td>White marquee fold</td><td>High</td><td>Protect red→white→red</td></tr>
+        <tr><td>Editorial 1px rows</td><td>Medium</td><td>Not cards</td></tr>
+        <tr><td>Circular member signals</td><td>Medium</td><td>Five-signal constellation</td></tr>
+      </tbody>
+    </table>
+    <div class="grid-2">
+      <div class="panel">
+        <span class="label">Spatial system</span>
+        <ul class="compact">
+          <li>Flat planes — depth from fields, rules, type</li>
+          <li>Square fields; light 8px on buttons only</li>
+          <li>Circles reserved for member/signal markers</li>
+          <li>Asymmetric columns over equal card grids</li>
+          <li>Solid Surface Rule: no glass, glow, blur</li>
+        </ul>
+      </div>
+      <div class="panel">
+        <span class="label">Non-assets</span>
+        <ul class="compact">
+          <li>Glassmorphism / backdrop blur</li>
+          <li>Purple accents or cream-serif prestige</li>
+          <li>Concentric hero rings</li>
+          <li>Pill stacks and card dashboards</li>
+          <li>Stock “community” photography tropes</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-meta"><span>First Artifact</span><span>Brand Identity · 09</span></div>
+  </section>
+
+  <section class="page page-pad">
+    <p class="label section-kicker">08 — Imagery, motion &amp; touchpoints</p>
+    <h2 class="section-title">where it lives</h2>
+    <div class="grid-2">
+      <div class="panel">
+        <span class="label">Imagery</span>
+        <ul class="compact">
+          <li>Hero character: grayscale, decorative, never a member</li>
+          <li>Portraits only with approved name + image + bio</li>
+          <li>Manifesto video as atmosphere; copy stands alone</li>
+          <li>Never fabricate events, partners, metrics, proof</li>
+        </ul>
+      </div>
+      <div class="panel">
+        <span class="label">Motion</span>
+        <ul class="compact">
+          <li>Sticky side-word convergence</li>
+          <li>18s linear marquee</li>
+          <li>Restrained fade-up entries</li>
+          <li>Reduced motion → complete static meaning</li>
+        </ul>
+      </div>
+    </div>
+    <table class="spec">
+      <thead><tr><th>Touchpoint</th><th>Identity expression</th></tr></thead>
+      <tbody>
+        <tr><td>Launch site /</td><td>Full Living Signal system — primary brand theater</td></tr>
+        <tr><td>Fixed header</td><td>Stable signal red, mark + lowercase name, dark Apply</td></tr>
+        <tr><td>Discord</td><td>Same voice; peer room, not funnel gimmick</td></tr>
+        <tr><td>Application</td><td>Six evidence fields; honest unavailable/copy states</td></tr>
+        <tr><td>Favicon / OG</td><td>Red tile mark</td></tr>
+        <tr><td>Future events</td><td>“First Artifact hacker house” descriptors — no new logos</td></tr>
+        <tr><td>Email / docs</td><td>Source Sans body; GoCake sparingly for titles</td></tr>
+      </tbody>
+    </table>
+    <div class="panel panel-red">
+      <span class="label">Monolithic rule</span>
+      <p style="margin-top:0.4rem;">New surfaces inherit this system. They do not invent sibling brands. Formats stay descriptors under First Artifact.</p>
+    </div>
+    <div class="footer-meta"><span>First Artifact</span><span>Brand Identity · 10</span></div>
+  </section>
+
+  <section class="page page-pad-tight">
+    <p class="label section-kicker">09 — Messaging &amp; governance</p>
+    <h2 class="section-title">stay sharp</h2>
+    <div class="msg-map">
+      <div class="item"><strong>Recognize</strong><span>Living Signal — red field, mark, lowercase charge</span></div>
+      <div class="item"><strong>Believe</strong><span>Obsession beats talent; proof is the artifact</span></div>
+      <div class="item"><strong>Qualify</strong><span>Founders and builders only · High agency · Obsession · Traction</span></div>
+      <div class="item"><strong>Invite</strong><span>Bring the work and the question you cannot drop</span></div>
+      <div class="item"><strong>Act</strong><span>Apply with the work / join the Discord — your move</span></div>
+      <div class="item"><strong>Protect</strong><span>Smaller exceptional room of founders and builders &gt; large weak membership</span></div>
+    </div>
+    <h3 style="font-family:Source Sans 3,sans-serif; font-weight:600; font-size:1.25rem; margin:1.1rem 0 0.4rem;">Validation battery</h3>
+    <ol class="compact">
+      <li><strong>Swap test</strong> — competitor logo on our layout feels wrong.</li>
+      <li><strong>Hand test</strong> — cover the mark; red + lowercase + flat editorial still feel like us.</li>
+      <li><strong>Concept test</strong> — selective · evidence · obsession · living signal.</li>
+      <li><strong>Field test</strong> — founders/builders feel seen; others feel correctly excluded.</li>
+    </ol>
+    <div class="do-dont">
+      <div class="panel yes">
+        <span class="label">Do</span>
+        <ul>
+          <li>Keep red → white → red transmission</li>
+          <li>Keep headings lowercase and open</li>
+          <li>Prefer evidence language and honest unknowns</li>
+          <li>Meet WCAG 2.2 AA</li>
+        </ul>
+      </div>
+      <div class="panel no">
+        <span class="label">Don’t</span>
+        <ul>
+          <li>Zig into purple, glass, glow, card stacks</li>
+          <li>Fabricate social proof</li>
+          <li>Set long reading text in GoCake</li>
+          <li>Loosen admission copy for growth vanity</li>
+        </ul>
+      </div>
+    </div>
+    <table class="spec" style="margin-top:1rem;">
+      <thead><tr><th>Doc</th><th>Authority</th></tr></thead>
+      <tbody>
+        <tr><td>BRAND.md</td><td>Strategy, voice, logo, distinctive assets</td></tr>
+        <tr><td>PRODUCT.md</td><td>Users, constraints, evidence policy</td></tr>
+        <tr><td>DESIGN.md</td><td>Tokens, components, a11y, motion</td></tr>
+        <tr><td>asset-manifest.md</td><td>Asset provenance &amp; replacement</td></tr>
+      </tbody>
+    </table>
+    <div class="footer-meta"><span>First Artifact</span><span>Brand Identity · 11</span></div>
+  </section>
+
+  <section class="page page-pad brief-page">
+    <p class="label" style="color:rgba(255,255,255,0.65);">10 — One-page brief</p>
+    <h2 class="section-title">first artifact</h2>
+    <p style="font-size:1.125rem; max-width:34ch; margin:0;">The Living Signal — for founders and builders only.</p>
+    <div class="brief-grid">
+      <div class="cell">
+        <span class="label">Onliness</span>
+        <p>The only selective club for founders and builders that admits on shipped proof and sustained obsession.</p>
+      </div>
+      <div class="cell">
+        <span class="label">Belief</span>
+        <p>Obsession beats talent everytime — and the proof is the artifact.</p>
+      </div>
+      <div class="cell">
+        <span class="label">Look</span>
+        <p>Signal red / white / near-black · angular mark · lowercase GoCake + Source Sans 3 · flat editorial · transmission fold.</p>
+      </div>
+      <div class="cell">
+        <span class="label">Feel</span>
+        <p>Direct, selective, energetic, honest, playfully strong.</p>
+      </div>
+      <div class="cell">
+        <span class="label">Enemy</span>
+        <p>Talk-first rooms. Diluted “anyone in tech” networks.</p>
+      </div>
+      <div class="cell">
+        <span class="label">Ask</span>
+        <p>Show the work. Apply — or join the Discord. Your move.</p>
+      </div>
+    </div>
+    <div style="margin-top:3rem; display:flex; justify-content:space-between; align-items:flex-end;">
+      <div style="display:flex; align-items:center; gap:0.75rem;">
+        <svg width="40" height="40" viewBox="200 150 600 700" fill="none" stroke="currentColor" stroke-width="56" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M500 190 240 790 500 610 760 790Z"/><path d="M500 280v530"/><path d="m410 680 90 130 90-130"/>
+        </svg>
+        <span class="wordmark">first artifact</span>
+      </div>
+      <p class="label" style="color:rgba(255,255,255,0.55); margin:0;">Brand Identity System · v1.0</p>
+    </div>
+    <div class="footer-meta on-dark"><span>First Artifact</span><span>Brand Identity · 12</span></div>
+  </section>
+
+</body>
+</html>

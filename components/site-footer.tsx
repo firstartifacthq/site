@@ -65,20 +65,6 @@ export function SiteFooter() {
   return (
     <footer className="bg-white">
       <section
-        aria-hidden="true"
-        className="flex h-[50vh] items-center justify-center bg-[#FDFDFD] md:h-[30vh] lg:h-[50vh]"
-      >
-        <motion.p
-          className="text-sm font-bold uppercase tracking-[0.5em] text-neutral-300"
-          initial={reduceMotion ? false : { opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-        >
-          below
-        </motion.p>
-      </section>
-
-      <section
         ref={containerRef}
         className="relative h-screen overflow-hidden bg-[hsl(var(--signal))]"
       >

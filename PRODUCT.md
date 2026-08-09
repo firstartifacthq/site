@@ -12,9 +12,9 @@ Next.js. The deployment target and backend architecture are undecided. The initi
 
 ## Users
 
-The primary users are proven builders and founders in technology who demonstrate unusually high agency. They are familiar with what is happening across the technology landscape, keep going without needing external pressure, and have already shipped something meaningful rather than only aspiring, talking, or presenting potential.
+First Artifact is **for founders and builders only**. Those are the only member segments — not a broader tech or professional audience.
 
-Builders and founders are the two initial audience segments because they are the clearest fit for the community and its future business model.
+Members are proven founders and builders in technology who demonstrate unusually high agency. They are familiar with what is happening across the technology landscape, keep going without needing external pressure, and have already shipped something meaningful rather than only aspiring, talking, or presenting potential.
 
 ## Product Purpose
 
@@ -48,7 +48,7 @@ Potential monetization directions include community-as-a-service and carefully m
 - The community must optimize for active, engaged members rather than membership volume.
 - Community participation must feel enjoyable and worthwhile, not like another recurring obligation.
 - The subject matter may include AI but is not restricted to AI; members should be deeply engaged with technology more broadly.
-- Builders and founders are the initial member segments.
+- Founders and builders are the only member segments.
 - Events are part of the intended community model, including hacker houses, hackathons, buildathons, and networking experiences.
 - Dynamic application, membership, event, or community features may be added after the initial landing page.
 - The exact admission rubric, application process, community platform, moderation model, pricing, deployment target, backend architecture, and monetization model remain open decisions.
