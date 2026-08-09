@@ -107,7 +107,7 @@ export function Hero() {
       </div>
 
       <div className="sticky top-0 z-[5] h-screen w-full">
-        <div className="absolute inset-0 flex items-start justify-center pt-[2vh] md:pt-[3vh]">
+        <div className="absolute inset-0 flex items-start justify-center pt-[calc(5.5rem+2vh)] md:pt-[calc(5.5rem+3vh)]">
           <span aria-hidden="true" data-title-layer className="beyond-title absolute select-none text-white/45 [transform:translateY(18px)] md:[transform:translateY(36px)]">
             obsess
           </span>

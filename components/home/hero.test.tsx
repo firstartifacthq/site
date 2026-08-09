@@ -21,7 +21,9 @@ describe("Hero", () => {
   it("renders the adapted stacked title and exact live character asset", () => {
     const { container } = render(<Hero />);
 
-    expect(screen.getByRole("heading", { level: 1, name: "obsess" })).toBeInTheDocument();
+    const heading = screen.getByRole("heading", { level: 1, name: "obsess" });
+    expect(heading).toBeInTheDocument();
+    expect(heading.parentElement).toHaveClass("pt-[calc(5.5rem+2vh)]", "md:pt-[calc(5.5rem+3vh)]");
     expect(container.querySelectorAll('[aria-hidden="true"][data-title-layer]')).toHaveLength(3);
     expect(container.querySelector("section")).toHaveStyle({ height: "120vh" });
     expect(container.querySelector('img[src*="images.higgs.ai"]')).toBeInTheDocument();

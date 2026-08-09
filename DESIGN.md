@@ -199,7 +199,7 @@ Sections usually breathe at 96px vertically on small screens and 144px on deskto
 
 Large sections use asymmetric two-column grids, typically a narrower declaration column and a wider proof or interaction column. Collapse them into a single reading sequence on small screens. Avoid generic equal card grids: standards, beliefs, events, and FAQs are line-separated editorial rows. The five-member list progresses from compact label-and-signal rows on mobile to five columns on large screens, with a subtle alternating vertical offset.
 
-The home hero is the single compositional exception: a 120vh signal-red field with a grayscale decorative character, four offset GoCake word layers, and Source Sans side-word columns that resolve inward across the sticky range. Route heroes retain three sparse vertical guides plus one horizontal guide. Never add concentric rings, dense graph paper, a glass panel, or gradients.
+The home hero is the single compositional exception: a 120vh signal-red field with a grayscale decorative character, four offset GoCake word layers, and Source Sans side-word columns that resolve inward across the sticky range. Its title stack begins after the fixed-header clearance plus 2vh mobile / 3vh desktop breathing room. Route heroes retain three sparse vertical guides plus one horizontal guide. Never add concentric rings, dense graph paper, a glass panel, or gradients.
 
 **The Hard-Fold Rule.** The home narrative moves from the signal-red hero through a compact white marquee into a near-black manifesto. Preserve those abrupt field changes; do not soften them with gradients or translucent panels.
 
