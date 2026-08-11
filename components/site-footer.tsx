@@ -31,6 +31,7 @@ const linkColumns = [
   {
     title: "Club",
     links: [
+      { label: "Manifesto", href: "/manifesto" },
       { label: "Standard", href: "/#standard" },
       { label: "Team", href: "/#team" },
       { label: "Formats", href: "/#formats" },
