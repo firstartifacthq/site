@@ -134,7 +134,7 @@ export function Members() {
                         {profile.building.label}
                       </a>
                     ) : (
-                      <span className="font-medium text-black">{profile.building.label}</span>
+                      <span>{profile.building.label}</span>
                     )}
                   </p>
                   <p className="mt-3 text-sm leading-relaxed text-black/70">{profile.bio}</p>
