@@ -3,7 +3,7 @@
 import { motion, useReducedMotion, useScroll, useTransform } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import Image from "next/image";
-import Link from "next/link";
+import { SectionLink } from "@/components/section-link";
 import { useRef } from "react";
 
 import { BrandMark } from "@/components/brand-mark";
@@ -109,12 +109,12 @@ export function SiteFooter() {
                               {link.label}
                             </a>
                           ) : (
-                            <Link
+                            <SectionLink
                               href={link.href}
                               className="focus-ring rounded-sm font-medium text-[hsl(var(--muted-foreground))] transition-colors hover:text-[hsl(var(--signal))]"
                             >
                               {link.label}
-                            </Link>
+                            </SectionLink>
                           )}
                         </li>
                       ))}
@@ -150,9 +150,9 @@ export function SiteFooter() {
                   }
 
                   return (
-                    <Link key={action.label} href={action.href} aria-label={action.label} className={className}>
+                    <SectionLink key={action.label} href={action.href} aria-label={action.label} className={className}>
                       <Icon className="h-5 w-5" />
-                    </Link>
+                    </SectionLink>
                   );
                 })}
               </div>

@@ -1,7 +1,6 @@
-import Link from "next/link";
-
 import { DiscordMark } from "@/components/discord-mark";
 import { FadeUp } from "@/components/fade-up";
+import { SectionLink } from "@/components/section-link";
 import { buttonVariants } from "@/components/ui/button";
 import { discordInviteUrl } from "@/lib/site-links";
 import { cn } from "@/lib/utils";
@@ -28,12 +27,12 @@ export function ClosingSignal() {
             </div>
 
             <div className="flex w-full shrink-0 flex-col gap-4 sm:w-auto sm:flex-row sm:items-center">
-              <Link
+              <SectionLink
                 className={cn(buttonVariants({ variant: "primary" }), "sm:min-w-44")}
                 href="#apply"
               >
                 Apply
-              </Link>
+              </SectionLink>
               <a
                 className={cn(buttonVariants({ variant: "line" }))}
                 href={discordInviteUrl}
