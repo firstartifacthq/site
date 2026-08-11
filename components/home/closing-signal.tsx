@@ -1,5 +1,6 @@
 import { DiscordMark } from "@/components/discord-mark";
 import { FadeUp } from "@/components/fade-up";
+import { MotionSitesBackground } from "@/components/motion-sites-background";
 import { buttonVariants } from "@/components/ui/button";
 import { applyFormUrl, discordInviteUrl } from "@/lib/site-links";
 import { cn } from "@/lib/utils";
@@ -8,9 +9,15 @@ export function ClosingSignal() {
   return (
     <section
       aria-labelledby="closing-title"
-      className="bg-[hsl(var(--foreground))] py-28 text-white md:py-40"
+      className="relative isolate overflow-hidden bg-[hsl(var(--signal))] py-28 text-white md:py-40"
     >
-      <div className="page-shell">
+      <MotionSitesBackground />
+      <div
+        aria-hidden="true"
+        className="absolute inset-0 z-[1] bg-[hsl(var(--signal)/0.28)]"
+      />
+
+      <div className="page-shell relative z-10">
         <FadeUp>
           <div className="flex flex-col items-start gap-12 md:flex-row md:items-end md:justify-between md:gap-16">
             <div>
@@ -20,7 +27,7 @@ export function ClosingSignal() {
               >
                 Your move
               </h2>
-              <p className="mt-6 max-w-[34ch] text-lg leading-relaxed text-white/72">
+              <p className="mt-6 max-w-[34ch] text-lg leading-relaxed text-white/90">
                 Already shipping? Apply with the work, or join the Discord and meet the room.
               </p>
             </div>
@@ -28,8 +35,8 @@ export function ClosingSignal() {
             <div className="flex w-full shrink-0 flex-col gap-4 sm:w-auto sm:flex-row sm:items-center">
               <a
                 className={cn(
-                  buttonVariants({ variant: "red" }),
-                  "sm:min-w-44 focus-visible:ring-offset-[hsl(var(--foreground))]",
+                  buttonVariants({ variant: "primary" }),
+                  "sm:min-w-44 focus-visible:ring-offset-[hsl(var(--signal))]",
                 )}
                 href={applyFormUrl}
                 rel="noopener noreferrer"
@@ -40,7 +47,7 @@ export function ClosingSignal() {
               <a
                 className={cn(
                   buttonVariants({ variant: "line" }),
-                  "focus-visible:ring-offset-[hsl(var(--foreground))]",
+                  "focus-visible:ring-offset-[hsl(var(--signal))]",
                 )}
                 href={discordInviteUrl}
                 rel="noopener noreferrer"

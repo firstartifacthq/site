@@ -128,7 +128,13 @@ export function Hero() {
           <span aria-hidden="true" data-title-layer className="beyond-title absolute select-none text-white/72 [transform:translateY(6px)] md:[transform:translateY(12px)]">
             obsess
           </span>
-          <h1 className="beyond-title relative select-none text-white">obsess</h1>
+          <h1 className="beyond-title relative select-none text-white">
+            obsess
+            <span className="sr-only">
+              . First Artifact is a private club for proven, high-agency builders and founders.
+              Obsession beats talent; the proof is the artifact.
+            </span>
+          </h1>
         </div>
 
         <div aria-hidden="true" className="pointer-events-none absolute inset-0 flex items-end justify-between px-[3vw] md:px-[6vw]" style={{ bottom: "-8vh" }}>

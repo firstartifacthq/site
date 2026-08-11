@@ -1,4 +1,8 @@
-export const discordInviteUrl = "https://discord.gg/3nqumWTuHb";
-
-/** External membership application form. */
-export const applyFormUrl = "https://forms.gle/FGJtVdbWxTLgVsKA9";
+export {
+  applyFormUrl,
+  discordInviteUrl,
+  siteDescription,
+  siteName,
+  siteTagline,
+  siteUrl,
+} from "@/lib/site";

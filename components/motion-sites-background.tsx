@@ -2,11 +2,11 @@
 
 import { useReducedMotion } from "framer-motion";
 
-/** Motionsites preview loop — https://motionsites.ai/backgrounds */
-export const motionSitesBackgroundUrl =
-  "https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/avideo%20preview/Digital%20Pulse.mp4";
+/** Closing CTA atmosphere loop — decorative only; copy and actions must stand alone. */
+export const closingCtaVideoUrl =
+  "https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260403_050628_c4e32401-fab4-4a27-b7a8-6e9291cd5959.mp4";
 
-export function MotionSitesBackground({ src = motionSitesBackgroundUrl }: { src?: string }) {
+export function MotionSitesBackground({ src = closingCtaVideoUrl }: { src?: string }) {
   const reduceMotion = useReducedMotion();
 
   if (reduceMotion) {
@@ -18,6 +18,7 @@ export function MotionSitesBackground({ src = motionSitesBackgroundUrl }: { src?
       aria-hidden="true"
       autoPlay
       className="absolute inset-0 h-full w-full object-cover"
+      data-testid="closing-cta-video"
       loop
       muted
       playsInline

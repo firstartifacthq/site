@@ -25,7 +25,7 @@ const socialActions = [
   },
 ] as const;
 
-const landmarkSrc = "/footer/bengaluru-tech-landmark.png";
+const landmarkSrc = "/footer/bengaluru-tech-landmark.webp";
 
 const linkColumns = [
   {
@@ -34,6 +34,7 @@ const linkColumns = [
       { label: "Standard", href: "/#standard" },
       { label: "Team", href: "/#team" },
       { label: "Formats", href: "/#formats" },
+      { label: "About", href: "/about" },
     ],
   },
   {
@@ -48,7 +49,8 @@ const linkColumns = [
     links: [
       { label: "Home", href: "/" },
       { label: "Obsession", href: "/#manifesto" },
-      { label: "Apply with work", href: applyFormUrl, external: true },
+      { label: "Privacy", href: "/privacy" },
+      { label: "Terms", href: "/terms" },
     ],
   },
 ] as const;
@@ -168,10 +170,10 @@ export function SiteFooter() {
           <Image
             alt=""
             className="h-full w-full origin-bottom object-contain object-bottom"
-            height={1024}
+            height={853}
+            sizes="100vw"
             src={landmarkSrc}
-            unoptimized
-            width={1536}
+            width={1279}
           />
         </motion.div>
       </section>

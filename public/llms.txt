@@ -1,0 +1,20 @@
+# First Artifact
+> A private club for proven, high-agency builders and founders.
+> Obsession beats talent; the proof is the artifact.
+
+First Artifact is an invitation-style membership community for people who already ship.
+It is not a funding accelerator and is not affiliated with Founders, Inc. Artifact.
+
+## Pages
+- [Home](https://firstartifact.org/): manifesto, admission standard, founding team, intended formats
+- [About](https://firstartifact.org/about): who runs the club and how it works
+- [Privacy](https://firstartifact.org/privacy): how application data is handled
+- [Terms](https://firstartifact.org/terms): membership and site terms
+
+## Join
+- Apply with shipped work: https://forms.gle/FGJtVdbWxTLgVsKA9
+- Discord: https://discord.gg/3nqumWTuHb
+
+## Standard
+Membership is earned through evidence of building — high agency, obsession, and traction —
+not interest, aspiration, credentials, or talk alone.

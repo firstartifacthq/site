@@ -158,8 +158,8 @@ Signal red is the public beacon, white is the editorial reading surface, and nea
 
 ### Primary
 
-- **Signal Red:** Owns the fixed header, hero, manifesto, community-format field, error borders, and primary red action.
-- **Near-black:** Owns the admission standard field, the closing CTA, footer authority, and sharp section changes that need to break consecutive red.
+- **Signal Red:** Owns the fixed header, hero, manifesto, community-format field, closing CTA, error borders, and primary red action.
+- **Near-black:** Owns the admission standard field, footer authority, and sharp section changes that need to break consecutive red.
 - **Deep Signal Red:** The red action hover and readable error-copy color on light surfaces.
 - **Soft Signal Red:** A restrained error or signal tint; never a substitute for the main red field.
 
@@ -190,7 +190,7 @@ Signal red is the public beacon, white is the editorial reading surface, and nea
 
 - **Home hero display:** GoCake Regular; `clamp(7.5rem, 30vw, 28rem)`, 0.85 line-height, and 0.02em tracking. It is a special oversized stacked treatment used only for “obsess.”
 - **Marquee display:** GoCake Regular; `clamp(1.125rem, 2.5vw, 1.75rem)` at 1.0 line-height.
-- **Manifesto title:** Source Sans 3 Semibold; `clamp(2rem, 7vw, 4.5rem)` at 1.1 line-height with -0.02em tracking for “Obsession beats talent everytime”. The supporting line “and the proof is the artifact.” uses Source Sans 3 Regular at `clamp(1.05rem, 2.4vw, 1.375rem)`.
+- **Manifesto title:** Source Sans 3 Semibold; `clamp(2rem, 7vw, 4.5rem)` at 1.1 line-height with -0.02em tracking for “Obsession beats talent every time”. The supporting line “and the proof is the artifact.” uses Source Sans 3 Regular at `clamp(1.05rem, 2.4vw, 1.375rem)`.
 - **Section headline:** GoCake Regular; fluid 51–96px, approximately 0.88–0.90 line-height. Keep most declarations to 10–14 characters per line through measured `ch` widths.
 - **Manifesto signature:** GoCake Regular; 120px at 1.0 line-height for the centered `F.A.` signature only.
 - **Manifesto mission and copy:** Source Sans 3 Regular; 16px, 1.6 line-height. The mission is uppercase and tracked; the two supporting paragraphs remain centered and sentence case.
@@ -225,7 +225,7 @@ The site ships as one `/` route in this order: hero, marquee, manifesto, `#stand
 
 First Artifact is flat. Depth comes from section color, 1px borders, type scale, overlap-free spacing, and motion—not from glassmorphism, backdrop blur, glowing edges, or a stack of drop-shadow cards. Permanent surfaces remain solid. The existing fade-up may transiently move 12px and apply a 1px content blur during entry; both resolve completely and are removed under reduced motion.
 
-The manifesto's bottom media is a full-width Cloudinary MP4 with a Mux HLS fallback and a 100px red-to-transparent edge blend. That gradient is a functional transition into real media, not a reusable surface effect. The closing CTA is a solid near-black field so the final ask stays distinct from the formats and working-model bands above it.
+The manifesto's bottom media is a full-width Cloudinary MP4 with a Mux HLS fallback and a 100px red-to-transparent edge blend. That gradient is a functional transition into real media, not a reusable surface effect. The closing CTA is a signal-red field with an optional decorative MP4 behind a light ~28% red overlay so the video reads clearly while the final ask stays on brand after the white working-model band; solid red remains when motion is reduced or media fails.
 
 **The Solid Surface Rule.** Do not use `backdrop-filter`, translucent glass panels, glow, or decorative shadow to create hierarchy. Use a field change or 1px rule.
 
@@ -265,8 +265,8 @@ Circles are semantic accents, reserved for the five founding-member signals and 
 
 ### Founding-member placeholders
 
-- Render exactly five semantic list items. Each uses an abstract red square field with simple white guide lines and a small circular signal, followed by “Founding member 01–05” and “Profile pending.”
-- Inner geometry is `aria-hidden`; the list and each visible label carry the meaning. Never infer a face, name, project, biography, or endorsement.
+- Render exactly five semantic list items. Approved members show portrait, name, current build, biography, and links. Any remaining empty slot uses an abstract red square field with simple white guide lines and a small circular signal, labeled by index until name and biography arrive.
+- Portrait inner geometry stays decorative (`alt=""`) when an adjacent visible name identifies the member. Never invent a face, name, project, biography, or endorsement.
 
 ### Application
 
@@ -275,14 +275,14 @@ Circles are semantic accents, reserved for the five founding-member signals and 
 
 ### Closing signal and footer
 
-- The closing section is a solid near-black CTA with a signal-red Apply action that opens the external form, plus a line Discord action.
+- The closing section is a signal-red CTA with optional decorative video under a red overlay, a near-black Apply action that opens the external form, and a line Discord action.
 - Remote media failure must not remove copy, controls, contrast, or meaning. The footer keeps anchored Standard, Team, and Formats links, plus external Apply and Discord join actions.
 
 ### Accessibility and motion contract
 
 - Meet WCAG 2.2 AA at minimum. Preserve semantic landmarks, one ordered heading hierarchy, visible labels, native controls, named navigation regions, and a keyboard-visible skip link.
 - `.focus-ring` uses a 2px current-color outline with a 5px offset. Component focus rings use 2px with a 4px offset; field rings use a visible 2px near-black treatment.
-- The global reduced-motion query disables smooth scrolling, constrains CSS animation and transition durations to 0.01ms with one iteration, removes fade-up transforms and filters, resolves hero side words at rest and full opacity, and pauses the marquee. Framer Motion also checks `useReducedMotion`; the optional closing HLS texture does not load when reduction is requested.
+- The global reduced-motion query disables smooth scrolling, constrains CSS animation and transition durations to 0.01ms with one iteration, removes fade-up transforms and filters, resolves hero side words at rest and full opacity, and pauses the marquee. Framer Motion also checks `useReducedMotion`; the optional closing MP4 texture does not load when reduction is requested.
 - The bottom manifesto video is decorative, silent, unfocusable, and pauses under reduced motion; its surrounding copy remains complete without playback.
 - The mobile menu currently adds 16px/12px rounding and a `0 16px 40px rgb(0 0 0 / 25%)` shadow. This is an implementation mismatch with the flat, square-or-lightly-rounded component grammar; do not propagate it.
 - Meaning and navigation never depend on animation, video, hover, pointer position, or color alone.
@@ -293,7 +293,7 @@ Circles are semantic accents, reserved for the five founding-member signals and 
 - Load GoCake and Source Sans 3 from the committed files under `public/fonts/`, keep their license files beside them, and retain readable fallbacks across the hero, manifesto, and supporting sections.
 - Replace a founding-member placeholder only when the member's approved name, image, and biography are all supplied. Store optimized, project-owned portraits as `public/members/<stable-member-slug>.<avif|webp>` and render with `next/image`. Use the approved full name as alt text only when no adjacent visible name already identifies the member; otherwise use empty alt text.
 - Preserve exactly five members until product approval changes the count, and retain the abstract fallback for missing or failed images.
-- The supplied remote character URL is approved as decorative home-hero art and is rendered grayscale with empty alt text. Do not present it as a member or product proof. Do not generate a substitute logo, event photograph, partner mark, or evidence asset. The closing-section HLS texture remains optional enhancement only; the manifesto's Mux HLS source is the explicit fallback for its Cloudinary MP4.
+- The supplied remote character URL is approved as decorative home-hero art and is rendered grayscale with empty alt text. Do not present it as a member or product proof. Do not generate a substitute logo, event photograph, partner mark, or evidence asset. The closing-section MP4 texture remains optional enhancement only and must not load under reduced motion; the manifesto's Mux HLS source is the explicit fallback for its Cloudinary MP4.
 
 ## Do's and Don'ts
 

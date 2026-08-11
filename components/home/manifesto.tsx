@@ -72,7 +72,7 @@ export function Manifesto() {
 
         <div className="relative z-20 mx-auto flex w-full max-w-[52rem] flex-1 flex-col items-center justify-center px-6 py-16 text-center md:justify-end md:px-10 md:pb-8 md:pt-28">
           <h2 id="manifesto-title" className="max-w-[18ch] font-sans text-balance text-[clamp(2rem,7vw,4.5rem)] font-semibold leading-[1.1] tracking-[-0.02em] text-white">
-            Obsession beats talent everytime
+            Obsession beats talent every time
           </h2>
           <p className="mt-4 max-w-[28ch] font-sans text-[clamp(1.05rem,2.4vw,1.375rem)] font-normal leading-[1.45] text-white/78">
             and the proof is the artifact.

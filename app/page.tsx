@@ -1,5 +1,6 @@
 import { AdmissionStandard } from "@/components/home/admission-standard";
 import { ClosingSignal } from "@/components/home/closing-signal";
+import { ClubAnswers } from "@/components/home/club-answers";
 import { CommunityFormats } from "@/components/home/community-formats";
 import { Hero } from "@/components/home/hero";
 import { Marquee } from "@/components/home/marquee";
@@ -17,6 +18,7 @@ export default function Home() {
       <Members />
       <CommunityFormats />
       <WorkingModel />
+      <ClubAnswers />
       <ClosingSignal />
     </main>
   );

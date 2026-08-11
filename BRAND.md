@@ -260,7 +260,7 @@ Non-assets (do not invest brand meaning in): glassmorphism, glow, purple accents
 - Sticky side-word convergence in the hero.
 - 18s linear marquee on white.
 - Restrained fade-up entries.
-- Optional closing HLS texture behind opaque red.
+- Optional closing MP4 texture behind a signal-red overlay.
 
 **Reduced motion:** Everything resolves to a complete static composition. Meaning never depends on animation, hover, or video.
 
