@@ -1,6 +1,5 @@
 import Image from "next/image";
 
-import { FunFormula } from "@/components/fun-formula";
 import { ManifestoVideo } from "@/components/home/manifesto-video";
 
 const creed = [
@@ -121,13 +120,9 @@ export function Manifesto() {
             })}
           </ul>
 
-          <div className="mt-10 md:mt-12">
-            <FunFormula
-              className="text-[clamp(1.25rem,3.2vw,2.5rem)]"
-              operatorClassName="text-[hsl(var(--foreground))]"
-            />
-            <p className="mt-8 text-lg font-semibold md:text-xl">That’s the whole thing.</p>
-          </div>
+          <p className="mt-10 text-lg font-semibold md:mt-12 md:text-xl">
+            That’s the whole thing.
+          </p>
         </div>
       </div>
 

@@ -216,7 +216,7 @@ Large sections use asymmetric two-column grids, typically a narrower declaration
 
 The hero is a 120vh signal-red field with a grayscale decorative character, four offset GoCake word layers, and Source Sans side-word columns that resolve inward across the sticky range. A 40px white line grid sits behind the composition at 28% opacity, remains clear through the central 42%, and fades only toward the far perimeter through a radial mask. Its title stack begins after the fixed-header clearance plus 2vh mobile / 3vh desktop breathing room. Never add concentric rings or a glass panel.
 
-The site ships as one `/` route in this order: hero, marquee, manifesto, `#standard`, `#team`, `#formats`, `#apply`, closing signal, and footer. The fixed header and footer navigate within that sequence; there are no standalone Admission, Events, or FAQ routes.
+The site ships as one `/` route in this order: hero, marquee, manifesto, `#standard`, `#team`, `#formats`, the white working-model band, `#apply`, closing signal, and footer. The working-model band is a compact white interruption carrying the model for fun; it also keeps the signal-red formats field from running straight into the signal-red application surround. The fixed header and footer navigate within that sequence; there are no standalone Admission, Events, or FAQ routes.
 
 **The Transmission Fold Rule.** The home narrative moves from the signal-red hero through a compact white marquee into a signal-red manifesto. Preserve the crisp white interruption; do not insert a near-black manifesto or translucent panel.
 
@@ -240,7 +240,7 @@ Circles are semantic accents, reserved for the five founding-member signals and 
 
 - Keep the header fixed above every surface, including the home hero and marquee, with a stable, opaque signal-red background, `z-index: 70`, and a subtle white bottom rule. It must not change color or depend on underlying content for contrast.
 - Use the transparent inline `BrandMark` at 48px with controllable `currentColor` stroke plus the 28px lowercase GoCake wordmark, anchored navigation links, and one near-black Apply action. Desktop navigation uses line framing; mobile uses a native `details` disclosure with a solid near-black menu.
-- Navigation targets are Home, Standard, Team, Formats, and `/#apply`. Preserve semantic `nav` labels, a descriptive home-link label, and the skip link before the header.
+- Navigation targets are Home, Manifesto, Standard, Team, Formats, and `/#apply`. Every target is an anchor within the single `/` sequence and appears in the order those sections appear on the page. Preserve semantic `nav` labels, a descriptive home-link label, and the skip link before the header.
 - Hover uses a modest opacity or solid-color change. Keyboard focus remains visible with a 2px outline/ring and clear offset.
 
 ### Buttons and text links

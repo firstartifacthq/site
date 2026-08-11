@@ -17,6 +17,7 @@ describe("SiteHeader", () => {
     expect(screen.getByRole("link", { name: /first artifact home/i })).toHaveAttribute("href", "/");
     const primary = screen.getByRole("navigation", { name: /primary/i });
     expect(within(primary).getByRole("link", { name: /^home$/i })).toHaveAttribute("href", "/");
+    expect(within(primary).getByRole("link", { name: /^manifesto$/i })).toHaveAttribute("href", "/#manifesto");
     expect(within(primary).getByRole("link", { name: /^standard$/i })).toHaveAttribute("href", "/#standard");
     expect(within(primary).getByRole("link", { name: /^team$/i })).toHaveAttribute("href", "/#team");
     expect(within(primary).getByRole("link", { name: /^formats$/i })).toHaveAttribute("href", "/#formats");
