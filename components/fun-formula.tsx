@@ -20,7 +20,14 @@ const operators = new Set(["≈", "×"]);
  * Operators carry their own trailing space so every term keeps a wrap
  * opportunity; without it the line cannot break on narrow viewports.
  */
-export function FunFormula({ className }: { className?: string }) {
+export function FunFormula({
+  className,
+  operatorClassName = "text-[hsl(var(--signal))]",
+}: {
+  className?: string;
+  /** Operators must change colour on a signal-red field, where red vanishes. */
+  operatorClassName?: string;
+}) {
   return (
     <>
       <p className="sr-only">
@@ -38,7 +45,7 @@ export function FunFormula({ className }: { className?: string }) {
         {parts.map((part, index) => (
           <span
             key={`${part}-${index}`}
-            className={operators.has(part) ? "text-[hsl(var(--signal))]" : undefined}
+            className={operators.has(part) ? operatorClassName : undefined}
           >
             {part}
             {index < parts.length - 1 ? " " : null}

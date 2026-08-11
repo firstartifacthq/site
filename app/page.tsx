@@ -6,7 +6,6 @@ import { Hero } from "@/components/home/hero";
 import { Marquee } from "@/components/home/marquee";
 import { Manifesto } from "@/components/home/manifesto";
 import { Members } from "@/components/home/members";
-import { WorkingModel } from "@/components/home/working-model";
 
 export default function Home() {
   return (
@@ -17,7 +16,6 @@ export default function Home() {
       <AdmissionStandard />
       <Members />
       <CommunityFormats />
-      <WorkingModel />
       <Apply />
       <ClosingSignal />
     </main>
