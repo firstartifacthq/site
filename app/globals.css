@@ -115,9 +115,30 @@ select {
   outline-offset: 5px;
 }
 
+/* The fixed header measures 73px below 768px and 79px above it. Anchor a few
+   pixels inside that, so a jumped-to section starts under the header edge with
+   its own field and the previous section never shows as a strip above it. */
+:root {
+  --anchor-offset: 4.25rem;
+}
+
+.section-anchor {
+  scroll-margin-top: var(--anchor-offset);
+}
+
+/* A section shorter than the screen it lands on leaves the next section's field
+   visible underneath it, which reads as a stray band of the wrong colour. */
+.section-fill {
+  min-height: calc(100svh - var(--anchor-offset));
+}
+
 @media (min-width: 768px) {
   .page-shell {
     width: min(100% - 5rem, 80rem);
+  }
+
+  :root {
+    --anchor-offset: 4.625rem;
   }
 }
 

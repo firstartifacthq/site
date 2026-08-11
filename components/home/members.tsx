@@ -91,7 +91,7 @@ function MemberPortrait({ profile }: { profile: MemberProfile }) {
 
 export function Members() {
   return (
-    <section aria-labelledby="team-title" className="scroll-mt-8 bg-white py-24 md:py-36" id="team">
+    <section aria-labelledby="team-title" className="section-anchor section-fill bg-white py-24 md:py-36" id="team">
       <div className="page-shell">
         <FadeUp>
           <h2 id="team-title" className="font-display text-balance max-w-[11ch] text-[clamp(3.4rem,7vw,6rem)] lowercase leading-[0.88] tracking-[-0.03em]">Meet the team</h2>

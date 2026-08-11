@@ -5,7 +5,7 @@ export function Apply() {
   return (
     <section
       aria-labelledby="apply-title"
-      className="scroll-mt-8 bg-[hsl(var(--signal))] py-24 md:py-36"
+      className="section-anchor section-fill bg-[hsl(var(--signal))] py-24 md:py-36"
       id="apply"
     >
       <div className="page-shell">

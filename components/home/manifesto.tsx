@@ -65,7 +65,7 @@ function RoseVine({ side }: { side: "left" | "right" }) {
 
 export function Manifesto() {
   return (
-    <section aria-labelledby="manifesto-title" className="relative z-10 flex min-h-screen w-full scroll-mt-24 flex-col overflow-hidden bg-[hsl(var(--signal))] text-white" id="manifesto">
+    <section aria-labelledby="manifesto-title" className="relative z-10 flex min-h-screen w-full section-anchor flex-col overflow-hidden bg-[hsl(var(--signal))] text-white" id="manifesto">
       <div className="relative flex min-h-0 flex-1 flex-col">
         <RoseVine side="left" />
         <RoseVine side="right" />

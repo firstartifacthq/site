@@ -12,7 +12,7 @@ export function CommunityFormats() {
   return (
     <section
       aria-labelledby="formats-title"
-      className="scroll-mt-8 bg-[hsl(var(--signal))] py-24 text-white md:py-36"
+      className="section-anchor section-fill bg-[hsl(var(--signal))] py-24 text-white md:py-36"
       id="formats"
     >
       <div className="page-shell">
