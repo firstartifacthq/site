@@ -1,3 +1,5 @@
+import { FadeUp } from "@/components/fade-up";
+
 const formats = [
   ["Hacker houses", "Live together long enough to turn loose ambition into concentrated work."],
   ["Hackathons", "Short, sharp constraints with a working artifact at the other end."],
@@ -7,16 +9,39 @@ const formats = [
 
 export function CommunityFormats() {
   return (
-    <section aria-labelledby="formats-title" id="formats">
-      <h2 id="formats-title">Make progress feel like play</h2>
-      <p>Formats we intend to host. They are not past events, and no dates have been announced yet.</p>
-      <div>
-        {formats.map(([title, description]) => (
-          <article key={title}>
-            <h3>{title}</h3>
-            <p>{description}</p>
-          </article>
-        ))}
+    <section
+      aria-labelledby="formats-title"
+      className="scroll-mt-8 bg-[hsl(var(--signal))] py-24 text-white md:py-36"
+      id="formats"
+    >
+      <div className="page-shell">
+        <FadeUp>
+          <p className="text-xs font-semibold uppercase tracking-[0.08em]">Intended formats</p>
+          <h2
+            id="formats-title"
+            className="font-display text-balance mt-5 max-w-[14ch] text-[clamp(3.2rem,7vw,6rem)] leading-[0.88] tracking-[-0.03em]"
+          >
+            Make progress feel like play
+          </h2>
+          <p className="mt-7 max-w-[40rem] text-lg leading-relaxed">
+            Formats we intend to host. They are not past events, and no dates have been announced
+            yet.
+          </p>
+        </FadeUp>
+
+        <FadeUp delay={0.08}>
+          <ul className="mt-14 border-t border-white/24 md:mt-20">
+            {formats.map(([title, description]) => (
+              <li
+                key={title}
+                className="grid gap-2 border-b border-white/24 py-7 md:grid-cols-[minmax(0,0.8fr)_minmax(0,1.2fr)] md:gap-12 md:py-9"
+              >
+                <h3 className="text-xl font-semibold leading-tight md:text-[1.5rem]">{title}</h3>
+                <p className="max-w-[44rem] leading-relaxed">{description}</p>
+              </li>
+            ))}
+          </ul>
+        </FadeUp>
       </div>
     </section>
   );

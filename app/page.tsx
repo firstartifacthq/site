@@ -1,5 +1,5 @@
-import { ApplicationForm } from "@/components/application-form";
 import { AdmissionStandard } from "@/components/home/admission-standard";
+import { Apply } from "@/components/home/apply";
 import { ClosingSignal } from "@/components/home/closing-signal";
 import { CommunityFormats } from "@/components/home/community-formats";
 import { Hero } from "@/components/home/hero";
@@ -16,11 +16,7 @@ export default function Home() {
       <AdmissionStandard />
       <Members />
       <CommunityFormats />
-      <section id="apply" aria-labelledby="apply-title">
-        <h2 id="apply-title">Apply with your work</h2>
-        <p>The first filter is simple: show us what exists, what you did, and the problem you keep returning to.</p>
-        <ApplicationForm />
-      </section>
+      <Apply />
       <ClosingSignal />
     </main>
   );
