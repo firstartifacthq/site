@@ -72,7 +72,10 @@ const members: MemberSlot[] = [
       image: "/members/michael-abejo.webp",
       building: { label: "Capsul" },
       bio: "Software engineer with 5+ years building product solutions to real-world problems. Tech enthusiast, driven by curiosity.",
-      links: [],
+      links: [
+        { label: "X", href: "https://x.com/_NoNameWrath" },
+        { label: "LinkedIn", href: "https://www.linkedin.com/in/abejomichael/" },
+      ],
     },
   },
   { kind: "pending", index: 5, image: "/members/founding-member-05.webp" },

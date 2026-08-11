@@ -38,6 +38,10 @@ describe("home page", () => {
     expect(within(memberList).getByRole("link", { name: /purplerain/i })).toHaveAttribute("href", "https://purplerain.tech");
     expect(within(memberList).getByText("Michael Abejo")).toBeInTheDocument();
     expect(within(memberList).getByText("Capsul")).toBeInTheDocument();
+    const hrefsFor = (name: RegExp) =>
+      within(memberList).getAllByRole("link", { name }).map((link) => link.getAttribute("href"));
+    expect(hrefsFor(/^x$/i)).toContain("https://x.com/_NoNameWrath");
+    expect(hrefsFor(/^linkedin$/i)).toContain("https://www.linkedin.com/in/abejomichael/");
     // Capsul has no confirmed public URL yet, so it must not render as a link.
     expect(within(memberList).queryByRole("link", { name: /^capsul$/i })).not.toBeInTheDocument();
     expect(within(memberList).queryByText(/profile pending/i)).not.toBeInTheDocument();
