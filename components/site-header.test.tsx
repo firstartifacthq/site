@@ -4,7 +4,7 @@ import { describe, expect, it } from "vitest";
 import { SiteHeader } from "@/components/site-header";
 
 describe("SiteHeader", () => {
-  it("provides one-page navigation and the application target", () => {
+  it("provides one-page navigation and the external application form", () => {
     const { container } = render(<SiteHeader />);
 
     expect(container.querySelector(".liquid-glass")).not.toBeInTheDocument();
@@ -21,7 +21,10 @@ describe("SiteHeader", () => {
     expect(within(primary).getByRole("link", { name: /^standard$/i })).toHaveAttribute("href", "/#standard");
     expect(within(primary).getByRole("link", { name: /^team$/i })).toHaveAttribute("href", "/#team");
     expect(within(primary).getByRole("link", { name: /^formats$/i })).toHaveAttribute("href", "/#formats");
-    expect(screen.getByRole("link", { name: /^apply$/i })).toHaveAttribute("href", "/#apply");
+    const apply = screen.getByRole("link", { name: /^apply$/i });
+    expect(apply).toHaveAttribute("href", "https://forms.gle/FGJtVdbWxTLgVsKA9");
+    expect(apply).toHaveAttribute("target", "_blank");
+    expect(apply).toHaveAttribute("rel", expect.stringContaining("noopener"));
     const discordLinks = screen.getAllByRole("link", { name: /join the discord/i });
     expect(discordLinks).toHaveLength(2);
     for (const discord of discordLinks) {

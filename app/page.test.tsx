@@ -19,7 +19,14 @@ describe("home page", () => {
     expect(screen.getByRole("heading", { name: /^obsession$/i })).toBeInTheDocument();
     expect(screen.getByRole("heading", { name: /meet the team/i })).toBeInTheDocument();
     expect(screen.getByRole("heading", { name: /make progress feel like play/i })).toBeInTheDocument();
-    expect(screen.getByRole("heading", { name: /apply with your work/i })).toBeInTheDocument();
+    expect(screen.getByRole("heading", { name: /your move/i })).toBeInTheDocument();
+    expect(screen.queryByRole("heading", { name: /apply with your work/i })).not.toBeInTheDocument();
+    const applyLinks = screen.getAllByRole("link", { name: /^apply$/i });
+    expect(applyLinks.length).toBeGreaterThanOrEqual(1);
+    for (const apply of applyLinks) {
+      expect(apply).toHaveAttribute("href", "https://forms.gle/FGJtVdbWxTLgVsKA9");
+      expect(apply).toHaveAttribute("target", "_blank");
+    }
     const discordLinks = screen.getAllByRole("link", { name: /join the discord/i });
     expect(discordLinks).toHaveLength(1);
     for (const discord of discordLinks) {
@@ -49,7 +56,7 @@ describe("home page", () => {
     expect(screen.queryByText(/remaining profiles will appear/i)).not.toBeInTheDocument();
 
     expect(screen.getByText(/formats we intend to host/i)).toBeInTheDocument();
-    expect(container.querySelector("#apply")).toBeInTheDocument();
+    expect(container.querySelector("#apply")).not.toBeInTheDocument();
 
     const manifesto = screen.getByRole("region", { name: /obsession beats talent/i });
     expect(manifesto).toHaveClass("bg-[hsl(var(--signal))]");

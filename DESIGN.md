@@ -158,7 +158,8 @@ Signal red is the public beacon, white is the editorial reading surface, and nea
 
 ### Primary
 
-- **Signal Red:** Owns the fixed header, hero, manifesto, community-format field, application surround, closing signal, error borders, and primary red action.
+- **Signal Red:** Owns the fixed header, hero, manifesto, community-format field, error borders, and primary red action.
+- **Near-black:** Owns the admission standard field, the closing CTA, footer authority, and sharp section changes that need to break consecutive red.
 - **Deep Signal Red:** The red action hover and readable error-copy color on light surfaces.
 - **Soft Signal Red:** A restrained error or signal tint; never a substitute for the main red field.
 
@@ -216,7 +217,7 @@ Large sections use asymmetric two-column grids, typically a narrower declaration
 
 The hero is a 120vh signal-red field with a grayscale decorative character, four offset GoCake word layers, and Source Sans side-word columns that resolve inward across the sticky range. A 40px white line grid sits behind the composition at 28% opacity, remains clear through the central 42%, and fades only toward the far perimeter through a radial mask. Its title stack begins after the fixed-header clearance plus 2vh mobile / 3vh desktop breathing room. Never add concentric rings or a glass panel.
 
-The site ships as one `/` route in this order: hero, marquee, manifesto, `#standard`, `#team`, `#formats`, the white working-model band, `#apply`, closing signal, and footer. The working-model band is a compact white interruption carrying the model for fun; it also keeps the signal-red formats field from running straight into the signal-red application surround. The fixed header and footer navigate within that sequence; there are no standalone Admission, Events, or FAQ routes.
+The site ships as one `/` route in this order: hero, marquee, manifesto, `#standard`, `#team`, `#formats`, the white working-model band, closing signal, and footer. The working-model band is a compact white interruption carrying the model for fun. Apply actions open the external Google Form rather than an on-page section. The fixed header and footer navigate within that sequence; there are no standalone Admission, Events, or FAQ routes.
 
 **The Transmission Fold Rule.** The home narrative moves from the signal-red hero through a compact white marquee into a signal-red manifesto. Preserve the crisp white interruption; do not insert a near-black manifesto or translucent panel.
 
@@ -224,7 +225,7 @@ The site ships as one `/` route in this order: hero, marquee, manifesto, `#stand
 
 First Artifact is flat. Depth comes from section color, 1px borders, type scale, overlap-free spacing, and motion—not from glassmorphism, backdrop blur, glowing edges, or a stack of drop-shadow cards. Permanent surfaces remain solid. The existing fade-up may transiently move 12px and apply a 1px content blur during entry; both resolve completely and are removed under reduced motion.
 
-The manifesto's bottom media is a full-width Cloudinary MP4 with a Mux HLS fallback and a 100px red-to-transparent edge blend. That gradient is a functional transition into real media, not a reusable surface effect. Separately, the closing CTA has an optional Mux HLS texture behind a 94%-opaque signal-red overlay; its solid red field preserves the composition if media is unavailable.
+The manifesto's bottom media is a full-width Cloudinary MP4 with a Mux HLS fallback and a 100px red-to-transparent edge blend. That gradient is a functional transition into real media, not a reusable surface effect. The closing CTA is a solid near-black field so the final ask stays distinct from the formats and working-model bands above it.
 
 **The Solid Surface Rule.** Do not use `backdrop-filter`, translucent glass panels, glow, or decorative shadow to create hierarchy. Use a field change or 1px rule.
 
@@ -240,7 +241,7 @@ Circles are semantic accents, reserved for the five founding-member signals and 
 
 - Keep the header fixed above every surface, including the home hero and marquee, with a stable, opaque signal-red background, `z-index: 70`, and a subtle white bottom rule. It must not change color or depend on underlying content for contrast.
 - Use the transparent inline `BrandMark` at 48px with controllable `currentColor` stroke plus the 28px lowercase GoCake wordmark, anchored navigation links, and one near-black Apply action. Desktop navigation uses line framing; mobile uses a native `details` disclosure with a solid near-black menu.
-- Navigation targets are Home, Manifesto, Standard, Team, Formats, and `/#apply`. Every target is an anchor within the single `/` sequence and appears in the order those sections appear on the page. Preserve semantic `nav` labels, a descriptive home-link label, and the skip link before the header.
+- Navigation targets are Home, Manifesto, Standard, Team, Formats, and the external Apply form. In-page targets are anchors within the single `/` sequence and appear in the order those sections appear on the page. Preserve semantic `nav` labels, a descriptive home-link label, and the skip link before the header.
 - Hover uses a modest opacity or solid-color change. Keyboard focus remains visible with a 2px outline/ring and clear offset.
 
 ### Buttons and text links
@@ -267,18 +268,15 @@ Circles are semantic accents, reserved for the five founding-member signals and 
 - Render exactly five semantic list items. Each uses an abstract red square field with simple white guide lines and a small circular signal, followed by “Founding member 01–05” and “Profile pending.”
 - Inner geometry is `aria-hidden`; the list and each visible label carry the meaning. Never infer a face, name, project, biography, or endorsement.
 
-### Application form
+### Application
 
-- The six required controls are Name, Email, Builder/Founder role, strongest shipped-work URL, build description, and obsession answer. Every control keeps a persistent visible label and a minimum 48px target; multiline answers remain vertically resizable.
-- Default fields are square white surfaces with a quiet dark border. Focus strengthens the border and adds a 2px near-black ring. Invalid fields use signal red plus an adjacent error linked through `aria-describedby`.
-- On invalid review, show a `role="alert"` summary, mark fields with `aria-invalid`, and focus the first invalid control. Do not erase entered values.
-- A valid review does not submit. It reveals a near-black `role="status"` region stating that submissions are not connected and that the answers remain on the page, plus a Copy application action.
-- Copy has distinct ready, copied, and copy-error messages announced through the same polite live region. On failure, instruct the visitor to select and copy from the still-populated form. Never display a success or response-time claim while no backend exists.
+- Membership applications open in an external Google Form (`applyFormUrl` in `lib/site-links.ts`). Header, closing CTA, and footer Apply actions use that URL with `target="_blank"` and `rel="noopener noreferrer"`.
+- Do not ship an on-page application form or claim an in-product submission path while the form remains external.
 
 ### Closing signal and footer
 
-- The closing section works first as a solid red CTA. HLS video is an optional, low-opacity, luminosity-mixed enhancement behind a red overlay; it is decorative, silent, unfocusable, and absent under reduced motion.
-- Remote media failure must not remove copy, controls, contrast, or meaning. The footer returns to solid near-black with anchored Standard, Team, and Formats links.
+- The closing section is a solid near-black CTA with a signal-red Apply action that opens the external form, plus a line Discord action.
+- Remote media failure must not remove copy, controls, contrast, or meaning. The footer keeps anchored Standard, Team, and Formats links, plus external Apply and Discord join actions.
 
 ### Accessibility and motion contract
 
@@ -305,7 +303,7 @@ Circles are semantic accents, reserved for the five founding-member signals and 
 - **Do** use the 40px hero grid, sparse downstream 1px guides, editorial rows, generous spacing, and type scale to organize the experience.
 - **Do** keep headings and the wordmark lowercase, with GoCake confined to major declarations and Source Sans 3 handling everything operational.
 - **Do** leave section titles without a trailing full stop; treat them as open declarations.
-- **Do** state unknowns plainly where they affect a visitor action: formats are intended, pricing and dates are unannounced, and application submission is unavailable. Do not narrate internal profile-approval process on the public team section.
+- **Do** state unknowns plainly where they affect a visitor action: formats are intended, and pricing and dates are unannounced. Do not narrate internal profile-approval process on the public team section.
 - **Do** preserve complete static meaning and the CSS-enforced reduced-motion path.
 
 ### Don't:
@@ -314,5 +312,5 @@ Circles are semantic accents, reserved for the five founding-member signals and 
 - **Don't** add concentric hero contours, glassmorphism, backdrop blur, unearned gradients, glow, decorative shadows, or a card stack. The manifesto's red/video blend is the one user-supplied functional gradient exception.
 - **Don't** round major surfaces, fields, or editorial containers; keep controls square or lightly rounded and reserve circles for member/signal markers.
 - **Don't** fabricate members, testimonials, shipped work, event history, partner or investor relationships, acceptance metrics, pricing, dates, locations, or response times.
-- **Don't** claim the application was sent. Keep answers recoverable and make unavailable, copy-success, and copy-failure states explicit.
+- **Don't** invent an on-page submission success state for the external Apply form.
 - **Don't** make optional HLS media, animation, generated imagery, or JavaScript hydration carry core content or interaction.

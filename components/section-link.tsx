@@ -7,7 +7,7 @@ import type { ComponentProps, MouseEvent } from "react";
  * In-page link that scrolls on every activation.
  *
  * A hash link only scrolls when the hash actually changes, so once the URL is
- * already `#apply` the control silently does nothing on later clicks. Scroll
+ * already on that hash the control silently does nothing on later clicks. Scroll
  * explicitly instead, and keep the real href so the link still works without
  * JavaScript, on middle click, and in a new tab.
  */

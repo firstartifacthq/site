@@ -3,7 +3,7 @@ import { SectionLink } from "@/components/section-link";
 import { DiscordMark } from "@/components/discord-mark";
 import { BrandMark } from "@/components/brand-mark";
 import { buttonVariants } from "@/components/ui/button";
-import { discordInviteUrl } from "@/lib/site-links";
+import { applyFormUrl, discordInviteUrl } from "@/lib/site-links";
 import { cn } from "@/lib/utils";
 
 const links = [
@@ -43,7 +43,14 @@ export function SiteHeader() {
             </nav>
           </details>
           <a href={discordInviteUrl} target="_blank" rel="noopener noreferrer" className="focus-ring hidden min-h-10 items-center gap-2 border border-white/60 px-3 text-xs font-semibold uppercase tracking-[0.08em] sm:inline-flex"><DiscordMark className="h-4 w-4 shrink-0" />Join the Discord</a>
-          <SectionLink href="/#apply" className={cn(buttonVariants({ variant: "primary", size: "compact" }), "focus-ring")}>Apply</SectionLink>
+          <a
+            href={applyFormUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={cn(buttonVariants({ variant: "primary", size: "compact" }), "focus-ring")}
+          >
+            Apply
+          </a>
         </div>
       </div>
     </header>

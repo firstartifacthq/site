@@ -8,13 +8,13 @@ import { useRef } from "react";
 
 import { BrandMark } from "@/components/brand-mark";
 import { DiscordMark } from "@/components/discord-mark";
-import { discordInviteUrl } from "@/lib/site-links";
+import { applyFormUrl, discordInviteUrl } from "@/lib/site-links";
 
 const socialActions = [
   {
     label: "Apply now",
-    href: "/#apply",
-    external: false,
+    href: applyFormUrl,
+    external: true,
     icon: ArrowUpRight,
   },
   {
@@ -39,7 +39,7 @@ const linkColumns = [
   {
     title: "Join",
     links: [
-      { label: "Apply", href: "/#apply" },
+      { label: "Apply", href: applyFormUrl, external: true },
       { label: "Discord", href: discordInviteUrl, external: true },
     ],
   },
@@ -48,7 +48,7 @@ const linkColumns = [
     links: [
       { label: "Home", href: "/" },
       { label: "Obsession", href: "/#manifesto" },
-      { label: "Apply with work", href: "/#apply" },
+      { label: "Apply with work", href: applyFormUrl, external: true },
     ],
   },
 ] as const;
