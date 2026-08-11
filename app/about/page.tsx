@@ -3,16 +3,48 @@ import type { Metadata } from "next";
 import { DiscordMark } from "@/components/discord-mark";
 import { EditorialRow } from "@/components/editorial-row";
 import { FadeUp } from "@/components/fade-up";
-import { MotionSitesBackground } from "@/components/motion-sites-background";
+import {
+  aboutHeroVideoUrl,
+  MotionSitesBackground,
+} from "@/components/motion-sites-background";
 import { SectionLink } from "@/components/section-link";
 import { buttonVariants } from "@/components/ui/button";
-import { applyFormUrl, discordInviteUrl, siteDescription } from "@/lib/site";
+import { absoluteUrl, applyFormUrl, discordInviteUrl, siteName } from "@/lib/site";
 import { cn } from "@/lib/utils";
+
+const aboutDescription =
+  "First Artifact is a private club for proven, high-agency builders and founders. Obsession beats talent, and the proof is the artifact.";
 
 export const metadata: Metadata = {
   title: "About",
-  description: siteDescription,
+  description: aboutDescription,
   alternates: { canonical: "/about" },
+  openGraph: {
+    title: `About · ${siteName}`,
+    description: aboutDescription,
+    url: "/about",
+  },
+  twitter: {
+    title: `About · ${siteName}`,
+    description: aboutDescription,
+  },
+};
+
+const aboutJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "AboutPage",
+  "@id": absoluteUrl("/about#webpage"),
+  url: absoluteUrl("/about"),
+  name: `About · ${siteName}`,
+  description: aboutDescription,
+  isPartOf: { "@id": absoluteUrl("/#website") },
+  about: { "@id": absoluteUrl("/#organization") },
+  mainEntity: {
+    "@type": "Club",
+    "@id": absoluteUrl("/#organization"),
+    name: siteName,
+    description: aboutDescription,
+  },
 };
 
 const filterRows = [
@@ -40,21 +72,28 @@ const formatRows = [
 export default function AboutPage() {
   return (
     <main id="main-content">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(aboutJsonLd) }}
+      />
       <section className="relative isolate flex min-h-[calc(100svh-var(--anchor-offset))] flex-col justify-end overflow-hidden bg-[hsl(var(--signal))] pt-[calc(var(--anchor-offset)+1.5rem)] text-white">
+        <MotionSitesBackground
+          src={aboutHeroVideoUrl}
+          load="idle"
+          testId="about-hero-video"
+        />
         <div aria-hidden="true" className="pointer-events-none absolute inset-0 z-[1]">
-          <div className="absolute inset-0 [background-size:40px_40px] [background-image:linear-gradient(to_right,rgb(255_255_255_/_0.28)_1px,transparent_1px),linear-gradient(to_bottom,rgb(255_255_255_/_0.28)_1px,transparent_1px)]" />
-          <div className="absolute inset-0 bg-[hsl(var(--signal))] [mask-image:radial-gradient(ellipse_at_center,transparent_38%,black_94%)]" />
+          <div className="absolute inset-0 bg-[hsl(var(--signal)/0.72)]" />
+          <div className="absolute inset-0 [background-size:40px_40px] [background-image:linear-gradient(to_right,rgb(255_255_255_/_0.18)_1px,transparent_1px),linear-gradient(to_bottom,rgb(255_255_255_/_0.18)_1px,transparent_1px)]" />
         </div>
 
         <div className="page-shell relative z-10 pb-16 md:pb-24">
-          <FadeUp>
-            <h1 className="font-display max-w-[9ch] text-balance text-[clamp(4.5rem,14vw,9rem)] lowercase leading-[0.84] tracking-[-0.035em]">
-              what this is
-            </h1>
-            <p className="mt-8 max-w-[28rem] text-[clamp(1.125rem,2.4vw,1.5rem)] font-semibold leading-[1.35] tracking-[-0.02em]">
-              A private club for proven, high-agency builders and founders.
-            </p>
-          </FadeUp>
+          <h1 className="font-display max-w-[9ch] text-balance text-[clamp(4.5rem,14vw,9rem)] lowercase leading-[0.84] tracking-[-0.035em]">
+            what this is
+          </h1>
+          <p className="mt-8 max-w-[28rem] text-[clamp(1.125rem,2.4vw,1.5rem)] font-semibold leading-[1.35] tracking-[-0.02em]">
+            A private club for proven, high-agency builders and founders.
+          </p>
         </div>
       </section>
 
