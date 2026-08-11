@@ -1,3 +1,4 @@
+import { EditorialRow } from "@/components/editorial-row";
 import { FadeUp } from "@/components/fade-up";
 
 const notes = [
@@ -40,29 +41,29 @@ export function AdmissionStandard() {
             </p>
           </FadeUp>
 
-          <FadeUp delay={0.08}>
-            <ul className="border-t border-white/16">
-              {notes.map((note, index) => (
-                <li
-                  key={note.title}
-                  className="grid grid-cols-[2.25rem_minmax(0,1fr)] gap-x-5 border-b border-white/16 py-7 md:grid-cols-[4rem_minmax(0,1fr)] md:py-9"
+          <ul className="border-t border-white/16">
+            {notes.map((note, index) => (
+              <EditorialRow
+                key={note.title}
+                index={index}
+                className="grid grid-cols-[2.25rem_minmax(0,1fr)] gap-x-5 py-7 md:grid-cols-[4rem_minmax(0,1fr)] md:py-9"
+                ruleClassName="bg-white/16 group-hover:bg-white/40"
+              >
+                <span
+                  aria-hidden="true"
+                  className="pt-1 text-sm font-semibold tabular-nums tracking-[0.08em] text-white/54 transition-colors duration-200 group-hover:text-[hsl(var(--signal))]"
                 >
-                  <span
-                    aria-hidden="true"
-                    className="pt-1 text-sm font-semibold tabular-nums tracking-[0.08em] text-white/54"
-                  >
-                    {String(index + 1).padStart(2, "0")}
-                  </span>
-                  <div className="min-w-0">
-                    <h3 className="text-xl font-semibold leading-tight md:text-[1.375rem]">
-                      {note.title}
-                    </h3>
-                    <p className="mt-3 max-w-[38rem] leading-relaxed text-white/70">{note.body}</p>
-                  </div>
-                </li>
-              ))}
-            </ul>
-          </FadeUp>
+                  {String(index + 1).padStart(2, "0")}
+                </span>
+                <div className="min-w-0">
+                  <h3 className="text-xl font-semibold leading-tight transition-transform duration-200 group-hover:translate-x-1.5 md:text-[1.375rem]">
+                    {note.title}
+                  </h3>
+                  <p className="mt-3 max-w-[38rem] leading-relaxed text-white/70">{note.body}</p>
+                </div>
+              </EditorialRow>
+            ))}
+          </ul>
         </div>
       </div>
     </section>

@@ -121,6 +121,17 @@ select {
   }
 }
 
+/* Scroll reveals are inline styles from the motion library. Without scripting
+   they would never be cleared, so hold every revealed element at rest. */
+@media (scripting: none) {
+  .reveal,
+  .fade-up {
+    opacity: 1 !important;
+    filter: none !important;
+    transform: none !important;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
@@ -141,6 +152,11 @@ select {
 
   .fade-up {
     filter: none !important;
+    transform: none !important;
+  }
+
+  .reveal {
+    opacity: 1 !important;
     transform: none !important;
   }
 

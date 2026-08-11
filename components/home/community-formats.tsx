@@ -1,3 +1,4 @@
+import { EditorialRow } from "@/components/editorial-row";
 import { FadeUp } from "@/components/fade-up";
 
 const formats = [
@@ -29,19 +30,21 @@ export function CommunityFormats() {
           </p>
         </FadeUp>
 
-        <FadeUp delay={0.08}>
-          <ul className="mt-14 border-t border-white/24 md:mt-20">
-            {formats.map(([title, description]) => (
-              <li
-                key={title}
-                className="grid gap-2 border-b border-white/24 py-7 md:grid-cols-[minmax(0,0.8fr)_minmax(0,1.2fr)] md:gap-12 md:py-9"
-              >
-                <h3 className="text-xl font-semibold leading-tight md:text-[1.5rem]">{title}</h3>
-                <p className="max-w-[44rem] leading-relaxed">{description}</p>
-              </li>
-            ))}
-          </ul>
-        </FadeUp>
+        <ul className="mt-14 border-t border-white/24 md:mt-20">
+          {formats.map(([title, description], index) => (
+            <EditorialRow
+              key={title}
+              index={index}
+              className="grid gap-2 py-7 md:grid-cols-[minmax(0,0.8fr)_minmax(0,1.2fr)] md:gap-12 md:py-9"
+              ruleClassName="bg-white/24 group-hover:bg-white/45"
+            >
+              <h3 className="text-xl font-semibold leading-tight transition-transform duration-200 group-hover:translate-x-1.5 md:text-[1.5rem]">
+                {title}
+              </h3>
+              <p className="max-w-[44rem] leading-relaxed">{description}</p>
+            </EditorialRow>
+          ))}
+        </ul>
       </div>
     </section>
   );
