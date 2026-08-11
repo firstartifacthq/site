@@ -7,7 +7,7 @@ const creed = [
     title: "Who we’re for",
     items: [
       ["Builders and founders", "who ship, not people who talk about shipping."],
-      ["High-agency people", "who just keep going — no permission, no roadmap, no waiting."],
+      ["High-agency people", "who just keep going. No permission, no roadmap, no waiting."],
       ["People who’ve already built something good", "proven, not aspiring."],
       ["People who live in the space", "and actually care where it’s heading. Doesn’t have to be AI."],
     ],
@@ -107,7 +107,7 @@ export function Manifesto() {
                       {items.map(([lead, rest]) => (
                         <li key={lead} className="max-w-[52rem]">
                           <span className="font-semibold">{lead}</span>
-                          {" — "}
+                          {": "}
                           {rest}
                         </li>
                       ))}

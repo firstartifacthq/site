@@ -68,7 +68,7 @@ export function buildOrganizationJsonLd() {
         "@type": "WebPage",
         "@id": webpageId,
         url: siteUrl,
-        name: `${siteName} — ${siteTagline}`,
+        name: `${siteName}: ${siteTagline}`,
         description: siteDescription,
         isPartOf: { "@id": websiteId },
         about: { "@id": organizationId },

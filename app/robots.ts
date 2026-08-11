@@ -4,7 +4,7 @@ import { siteUrl } from "@/lib/site";
 
 /**
  * Prefer allowing search + AI retrieval while signaling no training use.
- * Cloudflare AI Crawl Control may still inject managed rules at the edge —
+ * Cloudflare AI Crawl Control may still inject managed rules at the edge;
  * keep that panel aligned with this file (allow GPTBot/ClaudeBot/Google-Extended/CCBot
  * if you want citations and web-graph visibility; keep training opt-out via Content-Signal).
  */

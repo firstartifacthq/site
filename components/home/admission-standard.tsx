@@ -8,7 +8,7 @@ const notes = [
   },
   {
     title: "Obsession",
-    body: "Why you build — the personal story that keeps you returning to the same problem.",
+    body: "Why you build: the personal story that keeps you returning to the same problem.",
   },
   {
     title: "Traction",
@@ -36,7 +36,7 @@ export function AdmissionStandard() {
               What we look for
             </h2>
             <p className="mt-7 max-w-[34rem] text-lg leading-relaxed text-white/70">
-              Membership is earned through evidence of building — not interest, aspiration,
+              Membership is earned through evidence of building, not interest, aspiration,
               credentials, or talk.
             </p>
           </FadeUp>

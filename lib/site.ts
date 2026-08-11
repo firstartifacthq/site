@@ -5,7 +5,7 @@ export const siteName = "First Artifact" as const;
 export const siteTagline = "Obsession beats talent" as const;
 
 export const siteDescription =
-  "A private club for proven, high-agency builders and founders. Membership is earned through evidence of building — not interest, aspiration, or talk." as const;
+  "A private club for proven, high-agency builders and founders. Membership is earned through evidence of building, not interest, aspiration, or talk." as const;
 
 export const discordInviteUrl = "https://discord.gg/3nqumWTuHb" as const;
 

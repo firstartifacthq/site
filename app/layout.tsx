@@ -11,8 +11,8 @@ import { siteDescription, siteName, siteTagline, siteUrl } from "@/lib/site";
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: `${siteName} — Private club for builders`,
-    template: `%s — ${siteName}`,
+    default: `${siteName}: Private club for builders`,
+    template: `%s · ${siteName}`,
   },
   description: siteDescription,
   applicationName: siteName,
@@ -27,12 +27,12 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: siteUrl,
     siteName,
-    title: `${siteName} — ${siteTagline}`,
+    title: `${siteName}: ${siteTagline}`,
     description: siteDescription,
   },
   twitter: {
     card: "summary_large_image",
-    title: `${siteName} — ${siteTagline}`,
+    title: `${siteName}: ${siteTagline}`,
     description: siteDescription,
   },
   robots: {

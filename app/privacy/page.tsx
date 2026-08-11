@@ -27,8 +27,8 @@ export default function PrivacyPage() {
         <Link className="font-semibold text-[hsl(var(--signal))] underline-offset-2 hover:underline" href={applyFormUrl} rel="noopener noreferrer" target="_blank">
           apply form
         </Link>
-        ). Responses you enter there — such as your name, contact details, links to work, and answers
-        about your building history — are collected and stored by Google on our behalf under Google’s
+        ). Responses you enter there (such as your name, contact details, links to work, and answers
+        about your building history) are collected and stored by Google on our behalf under Google’s
         terms and privacy policy. We use that information only to evaluate membership and communicate
         about your application.
       </p>

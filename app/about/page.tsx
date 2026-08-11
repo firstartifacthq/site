@@ -15,7 +15,7 @@ export default function AboutPage() {
     <LegalPage eyebrow="About" title="What First Artifact is">
       <p>
         First Artifact is a private club for proven, high-agency builders and founders. The filter is
-        evidence of building — shipped work, obsession, and traction — not interest, aspiration,
+        evidence of building: shipped work, obsession, and traction, not interest, aspiration,
         credentials, or talk alone.
       </p>
       <p>
@@ -29,7 +29,7 @@ export default function AboutPage() {
         If you are still early, the Discord is the softer on-ramp while you keep shipping.
       </p>
       <p>
-        Formats we intend to host — hacker houses, hackathons, buildathons, and member gatherings —
+        Formats we intend to host (hacker houses, hackathons, buildathons, and member gatherings)
         are designed around momentum. They are not past events until dates are announced.
       </p>
       <p>
