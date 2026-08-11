@@ -36,6 +36,10 @@ describe("home page", () => {
     expect(within(memberList).getByRole("link", { name: /bountykai/i })).toHaveAttribute("href", "https://bountykai.com/");
     expect(within(memberList).getByText("Yash Kulkarni")).toBeInTheDocument();
     expect(within(memberList).getByRole("link", { name: /purplerain/i })).toHaveAttribute("href", "https://purplerain.tech");
+    expect(within(memberList).getByText("Michael Abejo")).toBeInTheDocument();
+    expect(within(memberList).getByText("Capsul")).toBeInTheDocument();
+    // Capsul has no confirmed public URL yet, so it must not render as a link.
+    expect(within(memberList).queryByRole("link", { name: /^capsul$/i })).not.toBeInTheDocument();
     expect(within(memberList).queryByText(/profile pending/i)).not.toBeInTheDocument();
     expect(screen.queryByText(/proven builders and founders already inside/i)).not.toBeInTheDocument();
     expect(screen.queryByText(/remaining profiles will appear/i)).not.toBeInTheDocument();

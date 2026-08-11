@@ -6,14 +6,17 @@ type MemberProfile = {
   slug: string;
   name: string;
   image: string;
-  building: { label: string; href: string };
+  /** `href` is omitted until the project's public URL is confirmed. */
+  building: { label: string; href?: string };
   bio: string;
   links: { label: string; href: string }[];
 };
 
 type MemberSlot =
   | { kind: "profile"; profile: MemberProfile }
-  | { kind: "pending"; index: number };
+  /** `image` appears once an approved portrait arrives but the name and
+   *  biography are still outstanding; the slot stays labelled by index. */
+  | { kind: "pending"; index: number; image?: string };
 
 const members: MemberSlot[] = [
   {
@@ -61,8 +64,18 @@ const members: MemberSlot[] = [
       ],
     },
   },
-  { kind: "pending", index: 4 },
-  { kind: "pending", index: 5 },
+  {
+    kind: "profile",
+    profile: {
+      slug: "michael-abejo",
+      name: "Michael Abejo",
+      image: "/members/michael-abejo.webp",
+      building: { label: "Capsul" },
+      bio: "Software engineer with 5+ years building product solutions to real-world problems. Tech enthusiast, driven by curiosity.",
+      links: [],
+    },
+  },
+  { kind: "pending", index: 5, image: "/members/founding-member-05.webp" },
 ];
 
 function MemberSignal() {
@@ -75,7 +88,7 @@ function MemberSignal() {
   );
 }
 
-function MemberPortrait({ profile }: { profile: MemberProfile }) {
+function MemberPortrait({ src }: { src: string }) {
   return (
     <div className="relative h-18 w-18 overflow-hidden bg-[hsl(var(--signal))] sm:aspect-square sm:h-auto sm:w-full">
       <Image
@@ -83,7 +96,7 @@ function MemberPortrait({ profile }: { profile: MemberProfile }) {
         className="object-cover"
         fill
         sizes="(max-width: 640px) 4.5rem, (max-width: 1024px) 40vw, 12vw"
-        src={profile.image}
+        src={src}
       />
     </div>
   );
@@ -101,7 +114,7 @@ export function Members() {
             if (member.kind === "pending") {
               return (
                 <li key={`pending-${member.index}`} className={index % 2 ? "lg:mt-16" : ""}>
-                  <MemberSignal />
+                  {member.image ? <MemberPortrait src={member.image} /> : <MemberSignal />}
                   <p className="sr-only">Founding member {String(member.index).padStart(2, "0")}</p>
                 </li>
               );
@@ -111,14 +124,18 @@ export function Members() {
 
             return (
               <li key={profile.slug} className={`grid grid-cols-[4.5rem_minmax(0,1fr)] items-start gap-4 sm:block ${index % 2 ? "lg:mt-16" : ""}`}>
-                <MemberPortrait profile={profile} />
+                <MemberPortrait src={profile.image} />
                 <div className="min-w-0">
                   <p className="text-sm font-semibold sm:mt-4">{profile.name}</p>
                   <p className="mt-1 text-sm text-black/54">
                     Currently building{" "}
-                    <a className="focus-ring rounded-sm font-medium text-black underline decoration-black/25 underline-offset-2 transition-colors hover:decoration-black" href={profile.building.href} rel="noreferrer" target="_blank">
-                      {profile.building.label}
-                    </a>
+                    {profile.building.href ? (
+                      <a className="focus-ring rounded-sm font-medium text-black underline decoration-black/25 underline-offset-2 transition-colors hover:decoration-black" href={profile.building.href} rel="noreferrer" target="_blank">
+                        {profile.building.label}
+                      </a>
+                    ) : (
+                      <span className="font-medium text-black">{profile.building.label}</span>
+                    )}
                   </p>
                   <p className="mt-3 text-sm leading-relaxed text-black/70">{profile.bio}</p>
                   <div className="mt-3 flex flex-wrap gap-x-3 gap-y-1 text-xs font-semibold uppercase tracking-[0.06em]">

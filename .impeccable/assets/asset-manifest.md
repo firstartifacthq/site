@@ -41,8 +41,8 @@ The five launch signals are honest placeholders, not member portraits. No names,
 | Member 1 | Abstract CSS/SVG signal | Replace only after the member’s approved name, profile image, and biography are supplied. |
 | Member 2 | Abstract CSS/SVG signal | Replace only after the member’s approved name, profile image, and biography are supplied. |
 | Member 3 | Abstract CSS/SVG signal | Replace only after the member’s approved name, profile image, and biography are supplied. |
-| Member 4 | Abstract CSS/SVG signal | Replace only after the member’s approved name, profile image, and biography are supplied. |
-| Member 5 | Abstract CSS/SVG signal | Replace only after the member’s approved name, profile image, and biography are supplied. |
+| Member 4 | Approved portrait, name, and biography supplied | Filled: Michael Abejo. `building.href` stays absent until Capsul’s public URL is confirmed; the label renders as plain text rather than a link. |
+| Member 5 | Approved portrait supplied; name and biography outstanding | A portrait may stand in the slot before its name and biography arrive. While it does, the slot keeps its “Founding member 05” label, the image stays `alt=""`, and no name, project, or biography may be inferred from the photograph. |
 
 When approved member media arrives, store optimized, project-owned files under `public/members/<stable-member-slug>.<avif|webp>` and render them with `next/image`. Use the approved full name as alt text when the portrait is the member’s only identifying label; use `alt=""` when an adjacent visible name already provides the same identification. Preserve the five-member count until product approval explicitly changes it, and keep the abstract signal fallback for missing or failed images.
 
