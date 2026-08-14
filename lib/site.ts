@@ -82,6 +82,9 @@ export const founders: FounderProfile[] = [
   },
 ];
 
+export const aboutPageDescription =
+  "First Artifact is a private club for proven, high-agency builders and founders. Obsession beats talent, and the proof is the artifact.";
+
 export function absoluteUrl(path = "/"): string {
   if (path.startsWith("http://") || path.startsWith("https://")) {
     return path;

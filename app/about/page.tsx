@@ -9,43 +9,26 @@ import {
 } from "@/components/motion-sites-background";
 import { SectionLink } from "@/components/section-link";
 import { buttonVariants } from "@/components/ui/button";
-import { absoluteUrl, applyFormUrl, discordInviteUrl, siteName } from "@/lib/site";
+import { buildAboutPageJsonLd } from "@/lib/json-ld";
+import { aboutPageDescription, applyFormUrl, discordInviteUrl, siteName } from "@/lib/site";
 import { cn } from "@/lib/utils";
-
-const aboutDescription =
-  "First Artifact is a private club for proven, high-agency builders and founders. Obsession beats talent, and the proof is the artifact.";
 
 export const metadata: Metadata = {
   title: "About",
-  description: aboutDescription,
+  description: aboutPageDescription,
   alternates: { canonical: "/about" },
   openGraph: {
     title: `About · ${siteName}`,
-    description: aboutDescription,
+    description: aboutPageDescription,
     url: "/about",
   },
   twitter: {
     title: `About · ${siteName}`,
-    description: aboutDescription,
+    description: aboutPageDescription,
   },
 };
 
-const aboutJsonLd = {
-  "@context": "https://schema.org",
-  "@type": "AboutPage",
-  "@id": absoluteUrl("/about#webpage"),
-  url: absoluteUrl("/about"),
-  name: `About · ${siteName}`,
-  description: aboutDescription,
-  isPartOf: { "@id": absoluteUrl("/#website") },
-  about: { "@id": absoluteUrl("/#organization") },
-  mainEntity: {
-    "@type": "Club",
-    "@id": absoluteUrl("/#organization"),
-    name: siteName,
-    description: aboutDescription,
-  },
-};
+const aboutJsonLd = buildAboutPageJsonLd();
 
 const filterRows = [
   {

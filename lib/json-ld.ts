@@ -1,4 +1,5 @@
 import {
+  aboutPageDescription,
   absoluteUrl,
   applyFormUrl,
   discordInviteUrl,
@@ -79,5 +80,24 @@ export function buildOrganizationJsonLd() {
       },
       ...people,
     ],
+  };
+}
+
+export function buildAboutPageJsonLd() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "AboutPage",
+    "@id": absoluteUrl("/about#webpage"),
+    url: absoluteUrl("/about"),
+    name: `About · ${siteName}`,
+    description: aboutPageDescription,
+    isPartOf: { "@id": absoluteUrl("/#website") },
+    about: { "@id": absoluteUrl("/#organization") },
+    mainEntity: {
+      "@type": "Club",
+      "@id": absoluteUrl("/#organization"),
+      name: siteName,
+      description: aboutPageDescription,
+    },
   };
 }
