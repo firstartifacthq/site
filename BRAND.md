@@ -14,7 +14,7 @@ This document owns **who we are, how we sound, and which assets make us recogniz
 
 ### Purpose
 
-First Artifact is a selective club **for founders and builders only**. It exists to concentrate people whose defining trait is **obsession expressed through action**: they build, ship, learn, and persist — then meet peers at the same density.
+First Artifact is a selective club **for the top 1% of builders and founders building with AI**. It exists to concentrate people whose defining trait is **obsession expressed through action**: they build, ship, learn, and persist — then meet peers at the same density.
 
 ### Positioning
 
@@ -22,7 +22,7 @@ Not a broad networking group. Not a generic tech community. Not for operators, i
 
 ### Onliness statement
 
-> **First Artifact is the only selective club for founders and builders that admits on shipped proof and sustained obsession — not talent theater, credentials, or talk.**
+> **First Artifact is the only selective club for the top 1% building with AI that admits on shipped proof and sustained obsession — not talent theater, credentials, or talk.**
 
 ### Trueline (internal)
 
@@ -362,7 +362,7 @@ Run before major visual or verbal drift:
 
 **Name:** First Artifact  
 **For:** Founders and builders only.  
-**Onliness:** The only selective club for founders and builders that admits on shipped proof and sustained obsession.  
+**Onliness:** The only selective club for the top 1% building with AI that admits on shipped proof and sustained obsession.  
 **Belief:** Obsession beats talent everytime — proof is the artifact.  
 **Look:** Signal red / white / near-black · angular mark · lowercase GoCake + Source Sans 3 · flat editorial fields · living transmission fold.  
 **Feel:** Direct, selective, energetic, honest, playfully strong.  

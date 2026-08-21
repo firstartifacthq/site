@@ -31,7 +31,7 @@ export default function OpenGraphImage() {
             Obsession beats talent
           </div>
           <div style={{ display: "flex", maxWidth: 820, fontSize: 32, lineHeight: 1.3, opacity: 0.9 }}>
-            A private club for proven, high-agency builders and founders.
+            A private club for the top 1% of builders and founders building with AI.
           </div>
         </div>
       </div>

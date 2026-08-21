@@ -5,13 +5,13 @@ const answers = [
     id: "what-is-first-artifact",
     question: "What is First Artifact?",
     answer:
-      "First Artifact is a private club for proven, high-agency builders and founders. The premise is that obsession beats talent, and the proof is the artifact: the shipped thing that makes the claim real. Most rooms reward talk; this one is for people who move from uncertainty to a working product, then keep compounding with peers who care about the same hard problems. It is a membership community, not a funding accelerator, and it is not affiliated with Founders, Inc. Artifact or any similarly named program.",
+      "First Artifact is a private club for the top 1% of builders and founders building with AI. The premise is that obsession beats talent, and the proof is the artifact: the shipped thing that makes the claim real. Most rooms reward talk; this one is for people who move from uncertainty to a working product, then keep compounding with peers who care about the same hard problems. It is a membership community, not a funding accelerator, and it is not affiliated with Founders, Inc. Artifact or any similarly named program.",
   },
   {
     id: "who-gets-in",
     question: "Who gets in?",
     answer:
-      "Membership is earned through evidence of building, not interest, aspiration, credentials, or talk alone. We look for high agency (you move work without waiting to be managed), obsession (a personal reason you return to the same problem), and traction (something real already moving: a shipped product, users, revenue, or public weight). The bar is high on the way in and stays high. One weak yes lowers the ceiling for everyone, so scarcity is part of what keeps the room worth being in.",
+      "Membership is earned through evidence of building, not interest, aspiration, credentials, or talk alone. We look for high agency (you move work without waiting to be managed), obsession (a personal reason you return to the same problem, and real depth with AI), and traction (something real already moving: a shipped product, users, revenue, or public weight). The bar is high on the way in and stays high. One weak yes lowers the ceiling for everyone, so scarcity is part of what keeps the room worth being in.",
   },
   {
     id: "what-formats",

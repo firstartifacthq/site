@@ -1,4 +1,4 @@
-export const marqueeCopy = "obsess · build · ship · prove · agency · evolve · purpose · artifact · ";
+export const marqueeCopy = "obsess · build with ai · ship · prove · top 1% · agency · evolve · artifact · ";
 
 export function Marquee() {
   return (

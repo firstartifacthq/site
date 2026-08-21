@@ -23,7 +23,7 @@ describe("Hero", () => {
 
     const heading = screen.getByRole("heading", { level: 1, name: /obsess/i });
     expect(heading).toBeInTheDocument();
-    expect(heading).toHaveTextContent(/First Artifact is a private club/i);
+    expect(heading).toHaveTextContent(/First Artifact is a private club for the top 1%/i);
     expect(heading.parentElement).toHaveClass("pt-[calc(5.5rem+2vh)]", "md:pt-[calc(5.5rem+3vh)]");
     expect(container.querySelectorAll('[aria-hidden="true"][data-title-layer]')).toHaveLength(3);
     expect(container.querySelector("[data-hero-grid]")).toHaveClass(

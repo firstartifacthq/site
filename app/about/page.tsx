@@ -33,7 +33,7 @@ const aboutJsonLd = buildAboutPageJsonLd();
 const filterRows = [
   {
     title: "Proven builders",
-    body: "The room is for founders and builders who already ship. Interest, aspiration, and talk are not enough.",
+    body: "The room is for the top 1% of founders and builders building with AI who already ship. Interest, aspiration, and talk are not enough.",
   },
   {
     title: "Evidence first",
@@ -75,7 +75,7 @@ export default function AboutPage() {
             what this is
           </h1>
           <p className="mt-8 max-w-[28rem] text-[clamp(1.125rem,2.4vw,1.5rem)] font-semibold leading-[1.35] tracking-[-0.02em]">
-            A private club for proven, high-agency builders and founders.
+            A private club for the top 1% of builders and founders building with AI.
           </p>
         </div>
       </section>
@@ -94,9 +94,9 @@ export default function AboutPage() {
 
             <FadeUp delay={0.08} className="space-y-6 text-base leading-relaxed text-black/75 md:text-lg">
               <p>
-                Most rooms reward conversation. This one is for people who move from uncertainty to a
-                shipped thing, then keep going with peers who compound both the work and the question
-                behind it.
+                Most rooms reward conversation. This one is for the top 1% building with AI who move
+                from uncertainty to a shipped thing, then keep going with peers who compound both the
+                work and the question behind it.
               </p>
               <p>
                 The filter is evidence of building: shipped work, obsession, and traction. Not

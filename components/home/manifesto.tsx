@@ -7,9 +7,9 @@ const creed = [
     title: "Who we’re for",
     items: [
       ["Builders and founders", "who ship, not people who talk about shipping."],
+      ["The top 1% with AI", "building with it at a level most people haven’t reached."],
       ["High-agency people", "who just keep going. No permission, no roadmap, no waiting."],
       ["People who’ve already built something good", "proven, not aspiring."],
-      ["People who live in the space", "and actually care where it’s heading. Doesn’t have to be AI."],
     ],
     note: "The test: is this the thing you think about all the time?",
   },
@@ -31,6 +31,15 @@ const creed = [
       ["Feedback", "you find out fast whether it worked."],
     ],
     note: "Get those right and nobody needs to be told to show up.",
+  },
+  {
+    title: "How the room runs",
+    items: [
+      ["AI is the default tool", "models, agents, and automation are how work gets done here, not a checkbox on the pitch."],
+      ["Depth over hype", "fine-tuning, evals, inference, and the unglamorous systems that make AI products hold up in production."],
+      ["Ship the model, not the demo", "a notebook isn’t an artifact. The proof is a product people use, or a system that stays up."],
+      ["Move at the speed of the frontier", "the state of the art changes weekly, and the room ships against that pace."],
+    ],
   },
   {
     title: "What we do",
@@ -80,7 +89,8 @@ export function Manifesto() {
 
           <div className="mt-8 flex w-full max-w-[38rem] flex-col items-center gap-5 font-sans text-[clamp(1.125rem,2.4vw,1.375rem)] font-normal leading-[1.55] text-white">
             <p>
-              Most rooms reward talk. First Artifact is for builders who move from uncertainty to a shipped thing.
+              Most rooms reward talk. First Artifact is for the top 1% building with AI who move from
+              uncertainty to a shipped thing.
             </p>
             <p>
               Bring the work, the question you cannot drop, and find peers who compound both.

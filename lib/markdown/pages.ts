@@ -55,24 +55,24 @@ function homeMarkdown(): string {
 
   const body = `# obsess
 
-${siteName} is a private club for proven, high-agency builders and founders. ${siteTagline}; the proof is the artifact.
+${siteName} is a private club for the top 1% of builders and founders building with AI. ${siteTagline}; the proof is the artifact.
 
-Principles: obsess · build · ship · prove · agency · evolve · purpose · artifact.
+Principles: obsess · build with ai · ship · prove · top 1% · agency · evolve · artifact.
 
 ## Obsession beats talent every time
 
 and the proof is the artifact.
 
-Most rooms reward talk. First Artifact is for builders who move from uncertainty to a shipped thing.
+Most rooms reward talk. First Artifact is for the top 1% building with AI who move from uncertainty to a shipped thing.
 
 Bring the work, the question you cannot drop, and find peers who compound both.
 
 ### Who we’re for
 
 - **Builders and founders**: who ship, not people who talk about shipping.
+- **The top 1% with AI**: building with it at a level most people haven’t reached.
 - **High-agency people**: who just keep going. No permission, no roadmap, no waiting.
 - **People who’ve already built something good**: proven, not aspiring.
-- **People who live in the space**: and actually care where it’s heading. Doesn’t have to be AI.
 
 The test: is this the thing you think about all the time?
 
@@ -92,6 +92,13 @@ The test: is this the thing you think about all the time?
 
 Get those right and nobody needs to be told to show up.
 
+### How the room runs
+
+- **AI is the default tool** — Models, agents, and automation are how work gets done here, not a checkbox on the pitch.
+- **Depth over hype** — Fine-tuning, evals, inference, and the unglamorous systems that make AI products hold up in production.
+- **Ship the model, not the demo** — A notebook isn’t an artifact. The proof is a product people use, or a system that stays up.
+- **Move at the speed of the frontier** — The state of the art changes weekly, and the room ships against that pace.
+
 ### What we do
 
 - **Put the obsessed in the same room**: and get out of the way.
@@ -105,12 +112,23 @@ That’s the whole thing.
 Membership is earned through evidence of building, not interest, aspiration, credentials, or talk.
 
 1. **High agency** — You notice what needs doing and move it. Nobody manufactures momentum for you.
-2. **Obsession** — Why you build: the personal story that keeps you returning to the same problem.
+2. **Obsession** — Why you build: the personal story that keeps you returning to the same problem, and the depth you take with AI.
 3. **Traction** — Something real is already moving: a shipped product, users, revenue, or public weight.
 
 ## Meet the team
 
 ${memberSections}
+
+## Are you in the top 1%?
+
+Almost everyone uses AI. Almost nobody builds with it. The distance between those two sentences is the whole club.
+
+1. **900M** people talk to AI every week — ChatGPT weekly active users, OpenAI, Feb 2026.
+2. **84%** of developers use or plan to use AI tools — Stack Overflow Developer Survey 2025.
+3. **14.1%** use AI agents at work, daily — Stack Overflow Developer Survey 2025.
+4. **16.3%** say their work changed to a great extent — Stack Overflow Developer Survey 2025.
+
+900M chat. 70,000 build. Against 900 million weekly ChatGPT users, developers shipped just over 70,000 new public generative-AI projects in 2024 (GitHub Octoverse 2024), a 98% year-over-year increase. Talking to a model is table stakes. Building the thing that runs is the top 1%.
 
 ## Make progress feel like play
 
@@ -129,11 +147,11 @@ Participation should feel worthwhile, not like another recurring obligation. The
 
 ### What is First Artifact?
 
-First Artifact is a private club for proven, high-agency builders and founders. The premise is that obsession beats talent, and the proof is the artifact: the shipped thing that makes the claim real. Most rooms reward talk; this one is for people who move from uncertainty to a working product, then keep compounding with peers who care about the same hard problems. It is a membership community, not a funding accelerator, and it is not affiliated with Founders, Inc. Artifact or any similarly named program.
+First Artifact is a private club for the top 1% of builders and founders building with AI. The premise is that obsession beats talent, and the proof is the artifact: the shipped thing that makes the claim real. Most rooms reward talk; this one is for people who move from uncertainty to a working product, then keep compounding with peers who care about the same hard problems. It is a membership community, not a funding accelerator, and it is not affiliated with Founders, Inc. Artifact or any similarly named program.
 
 ### Who gets in?
 
-Membership is earned through evidence of building, not interest, aspiration, credentials, or talk alone. We look for high agency (you move work without waiting to be managed), obsession (a personal reason you return to the same problem), and traction (something real already moving: a shipped product, users, revenue, or public weight). The bar is high on the way in and stays high. One weak yes lowers the ceiling for everyone, so scarcity is part of what keeps the room worth being in.
+Membership is earned through evidence of building, not interest, aspiration, credentials, or talk alone. We look for high agency (you move work without waiting to be managed), obsession (a personal reason you return to the same problem, and real depth with AI), and traction (something real already moving: a shipped product, users, revenue, or public weight). The bar is high on the way in and stays high. One weak yes lowers the ceiling for everyone, so scarcity is part of what keeps the room worth being in.
 
 ### What formats does the club run?
 
@@ -149,7 +167,7 @@ Already shipping? Apply with the work, or join the Discord and meet the room.
 
   return (
     yamlFrontmatter({
-      title: `${siteName}: Private club for builders`,
+      title: `${siteName}: Private club for the top 1% building with AI`,
       description: siteDescription,
     }) +
     body.trim() +
@@ -160,13 +178,13 @@ Already shipping? Apply with the work, or join the Discord and meet the room.
 function aboutMarkdown(): string {
   const body = `# what this is
 
-A private club for proven, high-agency builders and founders.
+A private club for the top 1% of builders and founders building with AI.
 
 ## Obsession beats talent
 
 and the proof is the artifact.
 
-Most rooms reward conversation. This one is for people who move from uncertainty to a shipped thing, then keep going with peers who compound both the work and the question behind it.
+Most rooms reward conversation. This one is for the top 1% building with AI who move from uncertainty to a shipped thing, then keep going with peers who compound both the work and the question behind it.
 
 The filter is evidence of building: shipped work, obsession, and traction. Not interest, aspiration, credentials, or talk alone.
 
@@ -176,7 +194,7 @@ Apply with the work. If you are still early, the Discord is the softer on-ramp w
 
 Evidence of building is the door. Interest, aspiration, and talk alone stay outside.
 
-- **Proven builders** — The room is for founders and builders who already ship. Interest, aspiration, and talk are not enough.
+- **Proven builders** — The room is for the top 1% of founders and builders building with AI who already ship. Interest, aspiration, and talk are not enough.
 - **Evidence first** — Membership is earned through shipped work, obsession, and traction, not interest, aspiration, credentials, or talk alone.
 - **Not that Artifact** — First Artifact is not a funding accelerator, not an open Discord growth play, and not affiliated with Founders, Inc. Artifact or any similarly named program.
 

@@ -8,7 +8,7 @@ describe("getMarkdownPage", () => {
   it("returns the home document with frontmatter, body, and JSON-LD", () => {
     const page = getMarkdownPage("/");
     expect(page.status).toBe(200);
-    expect(page.body).toContain("title: \"First Artifact: Private club for builders\"");
+    expect(page.body).toContain("title: \"First Artifact: Private club for the top 1% building with AI\"");
     expect(page.body).toContain("# obsess");
     expect(page.body).toContain("Aryan Iyappan");
     expect(page.body).toContain("https://forms.gle/FGJtVdbWxTLgVsKA9");

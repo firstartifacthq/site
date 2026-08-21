@@ -9,6 +9,7 @@ import { cn } from "@/lib/utils";
 const links = [
   ["Home", "/"],
   ["Manifesto", "/#manifesto"],
+  ["Top 1%", "/#top-percent"],
   ["Standard", "/#standard"],
   ["Team", "/#team"],
   ["Formats", "/#formats"],

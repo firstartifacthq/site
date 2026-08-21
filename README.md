@@ -1,6 +1,6 @@
 # First Artifact site
 
-The launch site for First Artifact: a selective community for proven, high-agency builders and founders.
+The launch site for First Artifact: a selective community for the top 1% of builders and founders building with AI.
 
 ## Run locally
 

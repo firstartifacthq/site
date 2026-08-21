@@ -18,7 +18,7 @@ Members are proven founders and builders in technology who demonstrate unusually
 
 ## Product Purpose
 
-First Artifact is a selective club for highly driven builders and founders. It exists to create a dense community of people whose defining trait is obsession expressed through action: they build, ship, learn, and persist.
+First Artifact is a selective club for the top 1% of builders and founders building with AI. It exists to create a dense community of people whose defining trait is obsession expressed through action: they build, ship, learn, and persist.
 
 The community should help members meet peers of a similarly high standard, make meaningful progress, and participate in experiences that feel fun rather than obligatory. Its working model for fun is:
 

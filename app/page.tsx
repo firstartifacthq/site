@@ -6,6 +6,7 @@ import { Hero } from "@/components/home/hero";
 import { Marquee } from "@/components/home/marquee";
 import { Manifesto } from "@/components/home/manifesto";
 import { Members } from "@/components/home/members";
+import { TopPercent } from "@/components/home/top-percent";
 import { WorkingModel } from "@/components/home/working-model";
 
 export default function Home() {
@@ -16,6 +17,7 @@ export default function Home() {
       <Manifesto />
       <AdmissionStandard />
       <Members />
+      <TopPercent />
       <CommunityFormats />
       <WorkingModel />
       <ClubAnswers />

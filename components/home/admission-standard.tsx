@@ -8,7 +8,7 @@ const notes = [
   },
   {
     title: "Obsession",
-    body: "Why you build: the personal story that keeps you returning to the same problem.",
+    body: "Why you build: the personal story that keeps you returning to the same problem, and the depth you take with AI.",
   },
   {
     title: "Traction",

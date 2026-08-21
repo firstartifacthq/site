@@ -31,6 +31,7 @@ const linkColumns = [
   {
     title: "Club",
     links: [
+      { label: "Top 1%", href: "/#top-percent" },
       { label: "Standard", href: "/#standard" },
       { label: "Team", href: "/#team" },
       { label: "Formats", href: "/#formats" },

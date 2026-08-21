@@ -11,7 +11,7 @@ import { siteDescription, siteName, siteTagline, siteUrl } from "@/lib/site";
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: `${siteName}: Private club for builders`,
+    default: `${siteName}: Private club for the top 1% building with AI`,
     template: `%s · ${siteName}`,
   },
   description: siteDescription,
@@ -55,7 +55,7 @@ export const viewport: Viewport = {
 };
 
 const directionContract = `<!-- IMPECCABLE DIRECTION CONTRACT
-THESIS: Obsession appears larger than life, then resolves into a rigorous community story instead of a generic exclusive-club pitch.
+THESIS: Obsession appears larger than life, then resolves into a rigorous community story for the top 1% building with AI instead of a generic exclusive-club pitch.
 OWN-WORLD: A vivid signal-red character tableau with stacked GoCake type; downstream signal red and white, lowercase GoCake declarations, Source Sans UI, sparse line grid, no glass effects.
 STORY: Visitors recognize the belief, read a red manifesto transmission, see a high bar and founding members, then apply through the external form.
 FIRST VIEWPORT: Fixed signal-red navigation above oversized stacked OBSESS lettering, a vivid character portrait, scroll-resolving principle words, and a compact marquee.

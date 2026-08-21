@@ -25,7 +25,7 @@ export function getSideWordStyle(side: Side, index: number, progress: number, is
 
 function WordColumn({ side, words, progress, isMobile }: { side: Side; words: string[]; progress: number; isMobile: boolean }) {
   return (
-    <div className={`flex flex-col gap-1 md:gap-2 ${side === "right" ? "items-end" : ""}`}>
+    <div className={`flex flex-col ${side === "right" ? "items-end" : ""}`}>
       {words.map((word, index) => {
         const style = getSideWordStyle(side, index, progress, isMobile);
 
@@ -38,7 +38,7 @@ function WordColumn({ side, words, progress, isMobile }: { side: Side; words: st
               fontFamily: "var(--font-source-sans), sans-serif",
               fontSize: "clamp(1.6rem, 7vw, 9rem)",
               fontWeight: 500,
-              lineHeight: 1.1,
+              lineHeight: 1,
               opacity: style.opacity,
               transform: `translateX(${style.x}px)`,
               transition: "transform 0.05s linear",
@@ -131,13 +131,13 @@ export function Hero() {
           <h1 className="beyond-title relative select-none text-white">
             obsess
             <span className="sr-only">
-              . First Artifact is a private club for proven, high-agency builders and founders.
-              Obsession beats talent; the proof is the artifact.
+              . First Artifact is a private club for the top 1% of builders and founders building
+              with AI. Obsession beats talent; the proof is the artifact.
             </span>
           </h1>
         </div>
 
-        <div aria-hidden="true" className="pointer-events-none absolute inset-0 flex items-end justify-between px-[3vw] md:px-[6vw]" style={{ bottom: "-8vh" }}>
+        <div aria-hidden="true" className="pointer-events-none absolute inset-0 flex items-end justify-between px-[3vw] md:px-[6vw]" style={{ bottom: "-16vh" }}>
           <WordColumn side="left" words={leftWords} progress={progress} isMobile={isMobile} />
           <WordColumn side="right" words={rightWords} progress={progress} isMobile={isMobile} />
         </div>
